@@ -7,7 +7,7 @@ import { Home } from "./view/Home";
 import { Carrito } from "./view/Carrito";
 import { Footer } from "./components/Footer";
 import { Pizza } from "./view/Pizza";
-import Caurosel from "./components/Carousel/carousel";
+import Caurosel from "./components/Carousel/Carousel";
 // import { useState } from 'react'
 import './App.css'
 
