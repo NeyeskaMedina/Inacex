@@ -15,7 +15,7 @@ const slides = [
     title: 'CAMIÓN EXTRACCIÓN ALTO TONELAJE',
     Marca2: 'CAT',
     Modelo2: '797F Y 793F',
-    notification: 'Obtén tu certificado modalidad normal en sólo 4 meses.',
+    notification: 'Obtén tu certificado en sólo 4 meses.',
     image: './imgCarousel/930e-komatsu.png',
   },
   {
@@ -77,7 +77,7 @@ const Carousel = () => {
                   color: '#fff',
                   width: '100%',
                   height: '100%',
-                  paddingLeft: { xs: 6, md: 10 },
+                  paddingLeft: { xs: 0, md: 10 },
                 }}
               >
 
@@ -97,7 +97,7 @@ const Carousel = () => {
                         xl: '2.3rem',
                     },
                     lineHeight: 1,
-                    width: {sx: '100%', md: '50%'},
+                    width: {xs: '100%', md: '50%'},
                     color: 'white',
                     textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)'
                   }}
@@ -119,7 +119,7 @@ const Carousel = () => {
                         xl: '2.5rem',
                     },
                     lineHeight: 1,
-                    width: {sx: '100%', md: '50%'},
+                    width: {xs: '100%', md: '50%'},
                     color: 'var(--verde-inacex)',
                     textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)'
                   }}
@@ -158,11 +158,11 @@ const Carousel = () => {
                     fontWeight: '100',
                     letterSpacing: '0',
                     fontSize: {
-                        xs: '0.7rem',  
-                        sm: '0.7rem',
-                        md: '0.9rem',
-                        lg: '1.1rem',
-                        xl: '1.3rem',
+                        xs: '0.9rem',  
+                        sm: '0.9rem',
+                        md: '1.2rem',
+                        lg: '1.3rem',
+                        xl: '1.5rem',
                     },
                     lineHeight: 1,
                   }}
