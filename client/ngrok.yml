@@ -1,0 +1,4 @@
+tunnels:
+  vite:
+    addr: 5173
+    proto: http

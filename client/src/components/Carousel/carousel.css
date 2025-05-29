@@ -1,0 +1,44 @@
+.mi-swiper .swiper-button-prev,
+    .mi-swiper .swiper-button-next {
+      color: var(--verde-inacex);
+      width: 40px;
+      height: 40px;
+    }
+
+    .mi-swiper .swiper-button-prev::after,
+    .mi-swiper .swiper-button-next::after {
+      font-size: 20px;
+    }
+
+    .mi-swiper .swiper-pagination-bullet {
+      background: #ffffff;
+      opacity: 0.5;
+    }
+
+    .mi-swiper .swiper-pagination-bullet-active {
+      background: var(--verde-inacex);
+      opacity: 1;
+    }
+
+    .mi-swiper .swiper-pagination {
+      bottom: 15px !important;
+    }
+
+@media screen and (min-width: 768px) {
+      .roboto-condensed {
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 50px;
+      }
+  
+}
+@media screen and (max-width: 768px) {
+      .roboto-condensed {
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+      }
+  
+}
