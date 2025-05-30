@@ -25,9 +25,9 @@ const NavbarInacex = () => {
 
   const MenuButtons = ({ onClick, fullWidth = false }) => (
     <>
-      <Button onClick={onClick} color="inherit" fullWidth={fullWidth}>Nosotros</Button>
-      <Button onClick={onClick} color="inherit" fullWidth={fullWidth}>Nuestros cursos</Button>
-      <Button onClick={onClick} color="inherit" fullWidth={fullWidth}>Contacto</Button>
+      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Nosotros</Button>
+      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Nuestros cursos</Button>
+      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Contacto</Button>
       <Button onClick={onClick} color="inherit" fullWidth={fullWidth}> <span className='btnMat' style={{border: '1px solid var(--verde-inacex)', borderRadius: '20px'}}>Matricúlate</span></Button>
     </>
   );
