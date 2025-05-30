@@ -21,13 +21,16 @@ const slides = [
   {
     anexoTitle: 'OPERACIÓN SEGURA DE',
     title: 'GRÚA HORQUILLA',
-    subtitle: '',
+    notification: 'Con nuestros beneficios obten tu licencia clase D.',
     image: './imgCarousel/horquilla.jpg',
   },
   {
-    title: 'Certificación INACEX',
-    subtitle: 'Capacitación reconocida a nivel nacional',
-    image: 'https://source.unsplash.com/1600x600/?construction',
+    anexoTitle: 'OPERACIÓN SEGURA DE',
+    title: 'BULLDOZER',
+    Marca2: 'CAT',
+    Modelo2: 'D09 Y D11',
+    notification: 'Capacitación reconocida en Chile y Perú',
+    image: './imgCarousel/bulldozer.jpg',
   },
 ];
 
@@ -143,7 +146,7 @@ const Carousel = () => {
                     color: 'var(--naranja-cat)',
                     fontWeight: '100',
                     marginLeft: 0,
-                    lineHeight: 2,
+                    lineHeight: 1,
                   }}
                 >
                   {slide.Marca2} {slide.Modelo2}
@@ -165,6 +168,7 @@ const Carousel = () => {
                         xl: '1.5rem',
                     },
                     lineHeight: 1,
+                    marginTop: 2,
                   }}
                 >
                   {slide.notification}
