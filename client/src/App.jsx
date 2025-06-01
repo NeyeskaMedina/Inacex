@@ -4,12 +4,13 @@ import NavbarInacex from "./components/Navbar/NavbarInacex";
 import TicketsBar from "./components/TicketsBar/TicketsBar";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
-import { Carrito } from "./view/Carrito";
-import { Footer } from "./components/Footer";
-import { Pizza } from "./view/Pizza";
-import Caurosel from "./components/Carousel/Carousel";
+import Footer from "./components/Footer/Footer";
 // import { useState } from 'react'
 import './App.css'
+// En tu index.js o App.jsx
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 
@@ -18,11 +19,14 @@ function App() {
 
   return (
     <>
+    
     <ContextProvider>
+      <navbar>
     <NavbarInacex />
     <TicketsBar />
-    <Caurosel />
-    
+    </navbar>
+
+    <main>
     
       {/* <div>
         <button onClick={() => setCount((count) => count + 1)}>
@@ -30,20 +34,13 @@ function App() {
         </button>
       </div> */}
 
-      {/* <Routes>
+      <Routes>
         <Route
             path ='/'
             element ={<Home/>}
-        /> 
-        <Route
-            path ='/carrito'
-            element ={<Carrito/>}
-        /> 
-        <Route
-            path ='/pizza/:id'
-            element ={<Pizza/>}
-        /> 
-    </Routes> */}
+        />
+    </Routes>
+    </main>
     <Footer />
     </ContextProvider>
     </>

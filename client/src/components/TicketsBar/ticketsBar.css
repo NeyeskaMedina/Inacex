@@ -2,6 +2,7 @@
   display: inline-block;
   animation-delay: 0s;
   animation: ticker 20s linear infinite;
+  animation-delay: 3s;
 }
 
 @keyframes ticker {
