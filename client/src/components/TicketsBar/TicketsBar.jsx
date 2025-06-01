@@ -6,7 +6,7 @@ const TicketsBar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: 'var(--naranja-cat)', // O usa '#FFA500' si no tienes la variable
+        backgroundColor: 'var(--naranja-oscuro)',
         overflow: 'hidden',
         width: '100%',
         height: '40px',
@@ -19,12 +19,12 @@ const TicketsBar = () => {
           sx={{
             whiteSpace: 'nowrap',
             fontWeight: 'bold',
-            fontSize: { xs: '0.8rem', sm: '1rem' },
-            color: 'var(--negro-ticket)',
+            fontSize: { xs: '1rem', sm: '1.2rem' },
+            color: 'white',
             px: 2,
           }}
         >
-          🎉 ¡Inscripciones abiertas! — 40% de descuento en cursos de camión alto tonelaje — Certifícate con INACEX — Cupos limitados 🚨 — ¡Matricúlate ahora!
+          🎉 ¡Inscripciones abiertas! — <span style={{color: 'var(--negro-ticket)'}}> 40% de descuento </span> en cursos de camión alto tonelaje — Certifícate con INACEX — Cupos limitados 🚨 — ¡Matricúlate ahora!
         </Typography>
       </Box>
     </Box>

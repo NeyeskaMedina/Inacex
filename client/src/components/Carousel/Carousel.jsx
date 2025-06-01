@@ -54,7 +54,7 @@ const Carousel = () => {
           <SwiperSlide key={index}>
             <Box
               sx={{
-                height: '82vh',
+                height: {xs: '90vh', md: '82vh'},
                 width: '100%',
                 backgroundImage: `url(${slide.image})`,
                 backgroundSize: 'cover',
@@ -111,16 +111,16 @@ const Carousel = () => {
                   {/* TÍTULO */}
                 <Typography
                   className="roboto-condensed"
-                  variant="h4"
+                  variant="h2"
                   sx={{
                     fontWeight: {xs: '400', md: '800' },
-                    fontSize: {
-                        xs: '1.6rem',  
-                        sm: '1.6rem',
-                        md: '1.9rem',
-                        lg: '2.5rem',
-                        xl: '2.5rem',
-                    },
+                    // fontSize: {
+                    //     xs: '1.6rem',  
+                    //     sm: '1.6rem',
+                    //     md: '1.9rem',
+                    //     lg: '2.5rem',
+                    //     xl: '2.5rem',
+                    // },
                     lineHeight: 1,
                     width: {xs: '100%', md: '50%'},
                     color: 'var(--verde-inacex)',
@@ -167,7 +167,7 @@ const Carousel = () => {
                         lg: '1.3rem',
                         xl: '1.5rem',
                     },
-                    lineHeight: 1,
+                    lineHeight: 2,
                     marginTop: 2,
                   }}
                 >
