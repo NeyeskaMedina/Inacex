@@ -5,6 +5,7 @@ import TicketsBar from "./components/TicketsBar/TicketsBar";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
+import Whatsapp from "./components/Buttons/Whatsapp/Whatsapp";
 // import { useState } from 'react'
 import './App.css'
 // En tu index.js o App.jsx
@@ -42,6 +43,7 @@ function App() {
     </Routes>
     </main>
     <Footer />
+    <Whatsapp />
     </ContextProvider>
     </>
   )
