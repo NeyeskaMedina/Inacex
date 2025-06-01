@@ -16,13 +16,13 @@ const Whatsapp = () => {
       onClick={handleClick}
       sx={{
         position: 'fixed',
-        bottom: isMobile ? 15 : 30,
-        right: isMobile ? 15 : 30,
+        bottom: isMobile ? 20 : 30,
+        right: isMobile ? 20 : 30,
         zIndex: 1300,
         boxShadow: 3,
       }}
     >
-      <WhatsAppIcon sx={{ fontSize: isMobile ? 24 : 28, color: 'white' }} />
+      <WhatsAppIcon sx={{ fontSize: isMobile ? 30 : 32, color: 'white' }} />
     </Fab>
   );
 };
