@@ -70,7 +70,7 @@ const CardCourses = ({ image, title, subtitle }) => {
           variant="contained"
           sx={{
             mt: 2,
-            backgroundColor: '#A0FF00',
+            backgroundColor: 'var(--verde-inacex)',
             color: '#000',
             borderRadius: '20px',
             fontWeight: 'bold',

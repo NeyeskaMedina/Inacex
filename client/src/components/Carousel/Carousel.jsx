@@ -111,7 +111,7 @@ const Carousel = () => {
                   {/* TÍTULO */}
                 <Typography
                   className="roboto-condensed"
-                  variant="h2"
+                  variant="h3"
                   sx={{
                     fontWeight: {xs: '400', md: '800' },
                     // fontSize: {
