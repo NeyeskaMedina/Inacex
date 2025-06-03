@@ -28,7 +28,7 @@ const slides = [
     anexoTitle: 'OPERACIÓN SEGURA DE',
     title: 'BULLDOZER',
     Marca2: 'CAT',
-    Modelo2: 'D09 Y D11',
+    Modelo2: 'D09 al D11',
     notification: 'Capacitación reconocida en Chile y Perú',
     image: './imgCarousel/bulldozer.jpg',
   },

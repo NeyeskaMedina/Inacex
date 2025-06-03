@@ -7,10 +7,11 @@ import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Buttons/Whatsapp/Whatsapp";
 // import { useState } from 'react'
-import './App.css'
 // En tu index.js o App.jsx
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+// import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
+import Cabina from './view/Cabina';
 
 
 
@@ -41,6 +42,13 @@ function App() {
             element ={<Home/>}
         />
     </Routes>
+    <Routes>
+        <Route
+            path ='/cabina'
+            element ={<Cabina/>}
+        />
+    </Routes>
+
     </main>
     <Footer />
     <Whatsapp />
