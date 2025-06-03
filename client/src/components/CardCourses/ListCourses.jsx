@@ -10,27 +10,27 @@ const cards = [
   {
     title: 'Camión de Extracción de alto tonelaje',
     subtitle: 'Modalidad Online / Zoom',
-    image: './imgCarousel/horquilla.jpg',
+    image: './imgCursos/caex.png',
   },
   {
-    title: 'Bulldozer D09-D11',
+    title: 'Bulldozer D09 al D11',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCarousel/horquilla.jpg',
+    image: './imgCursos/caex.png',
   },
   {
     title: 'Grúa Horquilla ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCarousel/horquilla.jpg',
+    image: './imgCursos/caex.png',
   },
   {
     title: 'Motoniveladora ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCarousel/horquilla.jpg',
+    image: './imgCursos/caex.png',
   },
   {
     title: 'Retroexcavadora ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCarousel/horquilla.jpg',
+    image: './imgCursos/caex.png',
   },
 ];
 

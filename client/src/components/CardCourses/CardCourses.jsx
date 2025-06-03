@@ -7,7 +7,7 @@ const CardCourses = ({ image, title, subtitle }) => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: { xs: '420px', md: '450px' },
+        height: { xs: '450px', md: '450px' },
         borderRadius: "40px",
         overflow: 'hidden',
         boxShadow: 1,
@@ -31,7 +31,7 @@ const CardCourses = ({ image, title, subtitle }) => {
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'grayscale(100%)',
+          filter: {xs: 'none', md: 'grayscale(100%)'},
           transition: 'filter 0.5s ease, transform 0.5s ease',
           zIndex: 0,
         }}
