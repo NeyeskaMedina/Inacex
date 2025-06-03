@@ -9,7 +9,7 @@ const ParabrisasCabina = ({ image }) => {
         gap: 2,
         width: '100%',
         height: {xs: '90vh', md: '80vh'},
-        p: '16px 0 16px 0',
+        p: {xs: '0', md: '16px 0 16px 0'},
         backgroundColor: '#1e1e1e',
       }}
     >
@@ -25,7 +25,7 @@ const ParabrisasCabina = ({ image }) => {
         //   backdropFilter: 'blur(4px)',
           transform: 'perspective(800px) rotateY(15deg)',
         //   transformOrigin: 'right center',
-          clipPath: { xs: 'polygon(5% 5%, 100% 0%, 100% 100%, 5% 95%)',md: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+          clipPath: { xs: 'polygon(0% 0%, 100% 5%, 95% 95%, 0% 100%)',md: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
           borderRadius: '60px 0 0 60px',
           overflow: 'hidden'
         }}
@@ -42,7 +42,7 @@ const ParabrisasCabina = ({ image }) => {
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(2px)',
           borderRadius: 2,
-          height: {xs: '99%' , md: '95%'},
+          height: {xs: '90%' , md: '95%'},
           alignSelf: 'center',
           overflow: 'hidden',
         }}
@@ -68,7 +68,7 @@ const ParabrisasCabina = ({ image }) => {
         //   backdropFilter: 'blur(4px)',
           transform: 'perspective(800px) rotateY(-15deg)',
         //   transformOrigin: 'left center',
-          clipPath: {xs: 'polygon(0 0%, 95% 5%, 100% 95%, 5% 100%)', md: 'polygon(0 0%, 100% 0, 100% 100%, 0% 100%)'},
+          clipPath: {xs: 'polygon(0% 5%, 100% 0%, 100% 100%, 5% 95%)', md: 'polygon(0 0%, 100% 0, 100% 100%, 0% 100%)'},
           borderRadius: '0 60px 60px 0',
           overflow: 'hidden',
         }}
