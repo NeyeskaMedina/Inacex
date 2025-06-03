@@ -42,14 +42,14 @@ const ParabrisasCabina = ({ image }) => {
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(2px)',
           borderRadius: 2,
-          height: {xs: '100%' , md: '95%'},
+          height: {xs: '98%' , md: '95%'},
           alignSelf: 'center',
           overflow: 'hidden',
         }}
       >
         <Box
           sx={{
-            width: '100%',
+            width: '98%',
             height: '100%',
             border: 'none',
           }}
