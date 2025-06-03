@@ -1,4 +1,8 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined';
+import CastForEducationOutlinedIcon from '@mui/icons-material/CastForEducationOutlined';
+import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 // import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 // import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
@@ -6,6 +10,7 @@ import { Box } from '@mui/material';
 export const Metodologia = () => {
 
   return (
+    // Box Principal
     <Box 
         sx={{
             display: 'flex',
@@ -19,8 +24,13 @@ export const Metodologia = () => {
             width: '100vw',
         }}
     >
+        {/* Box HIJO 1 */}
         <Box 
             sx={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'space-evelyn',
                 position: 'relative',
                 border: '1px solid var(--naranja-cat)',
                 width: '120px',
@@ -29,20 +39,73 @@ export const Metodologia = () => {
                 backgroundColor: 'var(--bg-transp)',
             }}
         >
+            <CastForEducationOutlinedIcon 
+                sx={{
+                    fontSize: '50px',
+                    color: 'var(--naranja-oscuro)',
+                    m: 1,
+                }}
+            />
+            <Typography 
+                className=""
+                variant="p"
+                sx={{
+                    m: 0,
+                    p: 0,
+                    fontWeight: '100',
+                    textAlign: 'center',
+                    fontSize: {xs: '0.8rem', md: '1rem'},
+                    color: 'var(--naranja-cat)',
+                }}
+            >
+                {'Aprendizaje E-Learning'}
+            </Typography>
+            
         </Box>
+        {/* Box HIJO 2 */}
         <Box 
             sx={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'space-evelyn',
                 position: 'relative',
-                border: '1px solid var(--naranja-cat)',
+                border: '1px solid var(--naranja-oscuro)',
                 width: '120px',
                 height: '120px',
                 borderRadius: '10px',
                 backgroundColor: 'var(--bg-transp)',
             }}
         >
+            <AssuredWorkloadOutlinedIcon 
+                sx={{
+                    fontSize: '50px',
+                    color: 'var(--naranja-oscuro)',
+                    m: 1,
+                }}
+            />
+            <Typography 
+                className=""
+                variant="p"
+                sx={{
+                    m: 0,
+                    p: 0,
+                    fontWeight: '100',
+                    textAlign: 'center',
+                    fontSize: {xs: '0.8rem', md: '1rem'},
+                    color: 'var(--naranja-cat)',
+                }}
+            >
+                {'Campus virtual'}
+            </Typography>
         </Box>
+    {/*Box HIJO 3 */}
         <Box 
             sx={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'space-evelyn',
                 position: 'relative',
                 border: '1px solid var(--naranja-cat)',
                 width: '120px',
@@ -51,11 +114,36 @@ export const Metodologia = () => {
                 backgroundColor: 'var(--bg-transp)',
             }}
         >
+            <AssignmentIndOutlinedIcon 
+                sx={{
+                    fontSize: '50px',
+                    color: 'var(--naranja-oscuro)',
+                    m: 1,
+                }}
+            />
+            <Typography 
+                className=""
+                variant="p"
+                sx={{
+                    m: 0,
+                    p: 0,
+                    fontWeight: '100',
+                    textAlign: 'center',
+                    fontSize: {xs: '0.8rem', md: '1rem'},
+                    color: 'var(--naranja-cat)',
+                }}
+            >
+                {'Tutor especializado'}
+            </Typography>
         </Box>
+        {/* HIJO 4 */}
         <Box 
             sx={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'space-evelyn',
                 position: 'relative',
-                p: 2,
                 border: '1px solid var(--naranja-cat)',
                 width: '120px',
                 height: '120px',
@@ -63,6 +151,27 @@ export const Metodologia = () => {
                 backgroundColor: 'var(--bg-transp)',
             }}
         >
+            <SupportAgentOutlinedIcon 
+                sx={{
+                    fontSize: '50px',
+                    color: 'var(--naranja-oscuro)',
+                    m: 1,
+                }}
+            />
+            <Typography 
+                className=""
+                variant="p"
+                sx={{
+                    m: 0,
+                    p: 0,
+                    fontWeight: '100',
+                    textAlign: 'center',
+                    fontSize: {xs: '0.8rem', md: '1rem'},
+                    color: 'var(--naranja-cat)',
+                }}
+            >
+                {'Soporte al alumno'}
+            </Typography>
         </Box>
     </Box>
   );

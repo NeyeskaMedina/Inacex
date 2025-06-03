@@ -24,7 +24,7 @@ const ParabrisasCabina = ({ image }) => {
         sx={{
           border: 1,
           borderColor: 'orange',
-          flex: isXs ? 0.3 : 1,
+          flex: isXs ? 0.8 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
           backgroundSize: '450% 100%',
@@ -74,7 +74,7 @@ const ParabrisasCabina = ({ image }) => {
         sx={{
           border: 1,
           borderColor: 'orange',
-          flex: isXs ? 0.3 : 1,
+          flex: isXs ? 0.8 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
           backgroundSize: '450% 100%',
