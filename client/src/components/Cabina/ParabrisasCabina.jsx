@@ -1,7 +1,13 @@
 import { Box } from '@mui/material';
+import { useMediaQuery, useTheme } from '@mui/material';
+
 
 const ParabrisasCabina = ({ image }) => {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+
   return (
+
     <Box
       sx={{
         display: 'flex',
@@ -16,10 +22,12 @@ const ParabrisasCabina = ({ image }) => {
       {/* Parabrisas Izquierdo con perspectiva */}
       <Box
         sx={{
-          flex: 1,
+          border: 1,
+          borderColor: 'orange',
+          flex: isXs ? 0.3 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
-          backgroundSize: '350% 100%',
+          backgroundSize: '450% 100%',
           backgroundPosition: 'left center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(4px)',
@@ -29,15 +37,16 @@ const ParabrisasCabina = ({ image }) => {
           borderRadius: '60px 0 0 60px',
           overflow: 'hidden'
         }}
+        
       />
-
+        
       {/* Parabrisas Central */}
       <Box
         sx={{
-          flex: {xs: 4, md: 2},
+          flex: {xs: 4, md: 3},
           p: 0,
           backgroundImage: `url(${image})`,
-          backgroundSize: {xs: '250% 100%', md: '150% 110%'},
+          backgroundSize: {xs: '250% 100%', md: '110% 110%'},
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(2px)',
@@ -45,8 +54,11 @@ const ParabrisasCabina = ({ image }) => {
           height: {xs: '90%' , md: '95%'},
           alignSelf: 'center',
           overflow: 'hidden',
+          border: 1,
+          borderColor: 'orange',
         }}
       >
+               
         <Box
           sx={{
             width: '98%',
@@ -54,15 +66,18 @@ const ParabrisasCabina = ({ image }) => {
             border: 'none',
           }}
         />
+        
       </Box>
 
       {/* Parabrisas Derecho con perspectiva */}
       <Box
         sx={{
-          flex: 1,
+          border: 1,
+          borderColor: 'orange',
+          flex: isXs ? 0.3 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
-          backgroundSize: '350% 100%',
+          backgroundSize: '450% 100%',
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(4px)',
