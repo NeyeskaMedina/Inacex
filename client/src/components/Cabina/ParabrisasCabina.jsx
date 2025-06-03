@@ -9,7 +9,7 @@ const ParabrisasCabina = ({ image }) => {
         gap: 2,
         width: '100%',
         height: {xs: '60vh', md: '80vh'},
-        p: 2,
+        p: '16px 0 16px 0',
         backgroundColor: '#1e1e1e',
       }}
     >
@@ -42,7 +42,7 @@ const ParabrisasCabina = ({ image }) => {
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(2px)',
           borderRadius: 2,
-          height: '95%',
+          height: {xs: '100%' , md: '95%'},
           alignSelf: 'center',
           overflow: 'hidden',
         }}
