@@ -11,13 +11,19 @@ import Whatsapp from "./components/Buttons/Whatsapp/Whatsapp";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 // import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
-import Cabina from './view/Cabina';
+import Horquilla from './view/Horquilla';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
 
 function App() {
   // const [count, setCount] = useState(0)
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true });
+  }, []); 
 
   return (
     <>
@@ -44,8 +50,8 @@ function App() {
     </Routes>
     <Routes>
         <Route
-            path ='/cabina'
-            element ={<Cabina/>}
+            path ='/gruaHorquilla'
+            element ={<Horquilla/>}
         />
     </Routes>
 

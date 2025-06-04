@@ -5,6 +5,11 @@ import { useMediaQuery, useTheme } from '@mui/material';
 const ParabrisasCabina = ({ image }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+  const cursos = { 
+        curso: 'GRUA HORQUILLA',
+        image: "./imgCursos/horquilla.jpg"
+      }
+  
 
   return (
 
@@ -24,7 +29,7 @@ const ParabrisasCabina = ({ image }) => {
         sx={{
           border: 1,
           borderColor: 'orange',
-          flex: isXs ? 0.8 : 1,
+          flex: isXs ? 0.2 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
           backgroundSize: '450% 100%',
@@ -74,7 +79,7 @@ const ParabrisasCabina = ({ image }) => {
         sx={{
           border: 1,
           borderColor: 'orange',
-          flex: isXs ? 0.8 : 1,
+          flex: isXs ? 0.2 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
           backgroundSize: '450% 100%',
