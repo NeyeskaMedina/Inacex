@@ -5,13 +5,9 @@ import { useMediaQuery, useTheme } from '@mui/material';
 const ParabrisasCabina = ({ image }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
-  const cursos = { 
-        curso: 'GRUA HORQUILLA',
-        image: "./imgCursos/horquilla.jpg"
-      }
   
-
   return (
+    <>
 
     <Box
       sx={{
@@ -94,6 +90,7 @@ const ParabrisasCabina = ({ image }) => {
         }}
       />
     </Box>
+    </>
   );
 };
 
