@@ -61,7 +61,7 @@ const Tips = () => {
                     fontSize: '1.4rem',
                     fontWeight: 'bold',
                     lineHeight: '1',
-               }}> Certificado valido </Typography>
+               }}> Doble certificación </Typography>
                <Typography sx={{
                     fontSize: '1.4rem',
                     lineHeight: '1',

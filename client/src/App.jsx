@@ -50,7 +50,7 @@ function App() {
     </Routes>
     <Routes>
         <Route
-            path ='/gruaHorquilla'
+            path ='/grua-horquilla'
             element ={<Horquilla/>}
         />
     </Routes>

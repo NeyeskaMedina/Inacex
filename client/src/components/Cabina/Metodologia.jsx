@@ -36,7 +36,7 @@ export const Metodologia = () => {
                 width: '120px',
                 height: '120px',
                 borderRadius: '10px',
-                backgroundColor: 'var(--verde-trans)',
+                backgroundColor: {xs: 'var(--bg-transp)', md: 'var(--verde-trans)'},
             }}
         >
             <CastForEducationOutlinedIcon 
@@ -74,7 +74,7 @@ export const Metodologia = () => {
                 width: '120px',
                 height: '120px',
                 borderRadius: '10px',
-                backgroundColor: 'var(--verde-trans)',
+                backgroundColor: {xs: 'var(--bg-transp)', md: 'var(--verde-trans)'},
             }}
         >
             <AssuredWorkloadOutlinedIcon 
@@ -111,7 +111,7 @@ export const Metodologia = () => {
                 width: '120px',
                 height: '120px',
                 borderRadius: '10px',
-                backgroundColor: 'var(--verde-trans)',
+                backgroundColor: {xs: 'var(--bg-transp)', md: 'var(--verde-trans)'},
             }}
         >
             <AssignmentIndOutlinedIcon 
@@ -148,7 +148,7 @@ export const Metodologia = () => {
                 width: '120px',
                 height: '120px',
                 borderRadius: '10px',
-                backgroundColor: 'var(--verde-trans)',
+                backgroundColor: {xs: 'var(--bg-transp)', md: 'var(--verde-trans)'}
             }}
         >
             <SupportAgentOutlinedIcon 
