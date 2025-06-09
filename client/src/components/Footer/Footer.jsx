@@ -9,6 +9,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
+        position: 'relative',
         backgroundColor: 'black',
         color: 'white',
         pt: 4,
