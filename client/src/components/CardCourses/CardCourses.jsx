@@ -15,7 +15,7 @@ const CardCourses = ({ image, title, subtitle, view }) => {
         display: 'flex',
         alignItems: 'flex-end',
         cursor: 'pointer',
-        backgroundColor: '#000',
+        backgroundColor: 'var(--gris-section)',
         '&:hover .image-layer': {
           filter: 'grayscale(0%)',
           transform: 'scale(1.05)',
