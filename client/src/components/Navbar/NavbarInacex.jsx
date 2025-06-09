@@ -14,7 +14,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
-import { useLocation } from 'react-router-dom'; // 👈 importar
+import { useLocation } from 'react-router-dom';
 
 
 const NavbarInacex = () => {
@@ -70,7 +70,7 @@ const NavbarInacex = () => {
       {/* Título que aparece al hacer scroll */}
       {/* Mostrar ScrollTitleBar solo si no es Home y hay título */}
     {!isHome && dynamicTitle && (
-      <ScrollTitleBar show={showTitleBar} title={dynamicTitle} />
+      <ScrollTitleBar show={showTitleBar} title={dynamicTitle}/>
     )}
 
 
@@ -82,7 +82,7 @@ const NavbarInacex = () => {
             color: 'white',
             boxShadow: 'none',
             px: 1,
-            height: '60px',
+            minHeight: '60px',
             zIndex: 1200,
           }}
           position="fixed"

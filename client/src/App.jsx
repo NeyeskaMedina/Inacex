@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ContextProvider } from './context/UserContext';
 import NavbarInacex from "./components/Navbar/NavbarInacex";
 import TicketsBar from "./components/TicketsBar/TicketsBar";
@@ -6,13 +6,13 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Buttons/Whatsapp/Whatsapp";
+import ScrollToTop from './components/Buttons/ScrollTop/ScrollToTop';
 // import { useState } from 'react'
 // En tu index.js o App.jsx
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 // import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
-import Horquilla from './view/Horquilla';
-import { useEffect } from 'react';
+import Horquilla from './view/NuestrosCursos/Horquilla';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -29,10 +29,10 @@ function App() {
     <>
     
     <ContextProvider>
-      <navbar>
+      <nav>
     <NavbarInacex />
     <TicketsBar />
-    </navbar>
+    </nav>
 
     <main>
     
@@ -54,10 +54,10 @@ function App() {
             element ={<Horquilla/>}
         />
     </Routes>
-
+        <ScrollToTop />
+        <Whatsapp />
     </main>
     <Footer />
-    <Whatsapp />
     </ContextProvider>
     </>
   )
