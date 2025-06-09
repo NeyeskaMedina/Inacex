@@ -4,35 +4,21 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const requisitos = [
-  {
-    textoPrincipal: 'Tener disponibilidad de tiempo según el horario del curso',
-    fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
-  },
-  {
-    textoPrincipal: 'Tener rendido 4° año medio deseable (mínimo 8 básico)',
-    fondo: '#1D1D1D',
-  },
-  {
-    textoPrincipal: 'Tener mínimo 18 años de edad',
-    textoSecundario: 'Requisito obligatorio de acuerdo a la normativa legal vigente.',
-    fondo: '#1D1D1D',
-  },
-  {
-    textoPrincipal: 'Ser peruano o extranjero con residencia permanente o en trámite',
-    fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
-  },
-];
-
-export const Requisitos = ({ image }) => {
+export const Requisitos = ({ image, requisitos }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
   const isXlUp = useMediaQuery(theme.breakpoints.up('xl'));
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  // }, []);
+  if (!Array.isArray(requisitos) || requisitos.length === 0) {
+    return null; 
+  }
+
+  const descripcion = requisitos[0].descripcion ?? '';
+  const listaRequisitos = requisitos.slice(1);
 
   return (
     <section style={{ position: 'relative', width: '100vw', minHeight: '100vh' }}>
@@ -113,10 +99,7 @@ export const Requisitos = ({ image }) => {
             sx={{ color: 'white' }}
             data-aos="fade-up"
           >
-            Nuestras clases de grúa cumplen con todos los estándares actuales. Esto asegura que 
-            los operadores estén instruidos en las mejores prácticas de seguridad, reduciendo el 
-            riesgo de incidentes. Póngase en contacto con nuestros ejecutivos de admisión  hoy 
-            mismo
+            {descripcion}
           </Typography>
         </Box>
 
@@ -127,7 +110,7 @@ export const Requisitos = ({ image }) => {
           sx={{ width: isXlUp ? '50%' : '100%' }}
           justifyContent="center"
         >
-          {requisitos.map((item, index) => (
+          {listaRequisitos.map((item, index) => (
             <Grid item xs={12} md={6} key={index} data-aos="fade-up">
               <Box
                 sx={{

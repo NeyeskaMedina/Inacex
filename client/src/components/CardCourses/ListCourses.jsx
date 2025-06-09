@@ -11,26 +11,31 @@ const cards = [
     title: 'Camión de Extracción de alto tonelaje',
     subtitle: 'Modalidad Online / Zoom',
     image: './imgCursos/caex.png',
+    view: '/caex'
   },
   {
     title: 'Bulldozer D09 al D11',
     subtitle: 'Modalidad E-Learning',
     image: './imgCursos/caex.png',
+    view: '/bulldozer'
   },
   {
     title: 'Grúa Horquilla ',
     subtitle: 'Modalidad E-Learning',
     image: './imgCursos/caex.png',
+    view: '/grua-horquilla'
   },
   {
     title: 'Motoniveladora ',
     subtitle: 'Modalidad E-Learning',
     image: './imgCursos/caex.png',
+    view: '/motoniveladora'
   },
   {
     title: 'Retroexcavadora ',
     subtitle: 'Modalidad E-Learning',
     image: './imgCursos/caex.png',
+    view: '/retroexcavadora'
   },
 ];
 
@@ -114,6 +119,7 @@ const ListCourses = () => {
 
   return (
     <Box
+       id={'nuestros-cursos'}
       sx={{
         width: '100vw',
         position: 'relative',
