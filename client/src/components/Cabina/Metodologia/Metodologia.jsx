@@ -46,7 +46,7 @@ export const Metodologia = ({ icons }) => {
             width: { xs: '100px', sm: '120px', md: '150px' },
             height: { xs: '100px', sm: '120px', md: '150px' },
             borderRadius: '12px',
-            backgroundColor: 'transparent',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
             backdropFilter: 'blur(3px)', //zoom
           }}
         >
