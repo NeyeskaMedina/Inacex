@@ -8,7 +8,6 @@ const ParabrisasCabina = ({ image }) => {
   
   return (
     <>
-
     <Box
       sx={{
         display: 'flex',

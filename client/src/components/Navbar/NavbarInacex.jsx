@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import {
   AppBar,
   Toolbar,
@@ -14,7 +15,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 
 const NavbarInacex = () => {
@@ -56,10 +57,41 @@ const NavbarInacex = () => {
 
   const MenuButtons = ({ onClick, fullWidth = false }) => (
     <>
-      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Nosotros</Button>
-      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Nuestros cursos</Button>
-      <Button className={'btnNav'} onClick={onClick} color="inherit" fullWidth={fullWidth}>Contacto</Button>
-      <Button onClick={onClick} color="inherit" fullWidth={fullWidth}>
+      <Button 
+          className={'btnNav'} 
+          component={Link} 
+          to="/nosotros" 
+          onClick={onClick} 
+          color="inherit" 
+          fullWidth={fullWidth}
+      >Nosotros
+      </Button>
+      <Button 
+          className={'btnNav'} 
+          component={HashLink} 
+          smooth
+          to="/#nuestros-cursos"
+          onClick={onClick} 
+          color="inherit" 
+          fullWidth={fullWidth}
+      >Nuestros cursos
+      </Button>
+      <Button 
+          className={'btnNav'} 
+          component={Link} 
+          to="/contacto"
+          onClick={onClick} 
+          color="inherit" 
+          fullWidth={fullWidth}
+      >Contacto
+      </Button>
+      <Button 
+          component={Link} 
+          to="/matriculate"
+          onClick={onClick} 
+          color="inherit" 
+          fullWidth={fullWidth}
+      >
         <span className='btnMat' style={{border: '1px solid var(--verde-inacex)', borderRadius: '20px', padding: '10px'}}>Matricúlate</span>
       </Button>
     </>

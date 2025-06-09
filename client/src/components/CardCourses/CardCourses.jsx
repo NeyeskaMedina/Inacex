@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom'
 
-const CardCourses = ({ image, title, subtitle }) => {
+const CardCourses = ({ image, title, subtitle, view }) => {
   return (
     <Box
       sx={{
@@ -68,6 +69,8 @@ const CardCourses = ({ image, title, subtitle }) => {
         </Typography>
         <Button
           variant="contained"
+          component={Link}
+          to={view}
           sx={{
             mt: 2,
             backgroundColor: 'var(--verde-inacex)',

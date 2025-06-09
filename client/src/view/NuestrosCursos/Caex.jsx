@@ -2,21 +2,21 @@ import ParabrisasCabina from '../../components/Cabina/ParabrisasCabina';
 import Metodologia from '../../components/Cabina/Metodologia/Metodologia';
 import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
 import FormularioInacex from '../../components/Formulary/FormularioInacex';
-import iconsHorquilla from '../../components/Cabina/Metodologia/icons/iconsHorquilla'
-import infoHorquilla from '../../components/Cabina/Requisitos/Info/InfoHorquilla';
+import iconsCaex from '../../components/Cabina/Metodologia/icons/iconsCaex'
+import infoCaex from '../../components/Cabina/Requisitos/Info/InfoCaex';
 
-function Horquilla() {
-  const image = "./imgCursos/horquillaIA.jpg";
-  const imgForms = './imgCursos/horquillaForms.jpg'
+function Caex() {
+  const image = "./imgCarousel/930e-komatsu.png";
+  const imgForms = './imgCursos/caex.png'
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>
-      <ParabrisasCabina image="./imgCursos/horquilla.jpg" />
+      <ParabrisasCabina image={image} />
     </div>
-    <Metodologia icons={iconsHorquilla} />
-    <Requisitos image={image} requisitos={infoHorquilla} />
+    <Metodologia icons={iconsCaex} />
+    <Requisitos image={image} requisitos={infoCaex} />
     <FormularioInacex image={imgForms} />
     </>
   );
 }
-export default Horquilla;
+export default Caex;
