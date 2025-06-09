@@ -16,6 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
 import { useLocation, Link } from 'react-router-dom';
+import { useMemo } from 'react';
+
 
 
 const NavbarInacex = () => {
@@ -24,22 +26,28 @@ const NavbarInacex = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const menuRef = useRef(null);
-
   const location = useLocation();
+
+   useEffect(() => {
+  console.log("Current path:", location.pathname);
+  }, [location]);
+  
 
     // Define los títulos por ruta
     const titlesByPath = {
-      '/grua-horquilla': 'OPERACÓN SEGURA DE GRÚA HORQUILLA',
-      '/caex': 'CAMIÓN EXTRACCIÓN DE ALTO TONELAJE',
-      '/retroexcavadora': 'OPERACÓN SEGURA DE RETRO-EXCAVADORA',
-      '/motoniveladora': 'OPERACIÓN SEGURA DE MOTONIVELADORA',
+      '/grua-horquilla': 'GRÚA HORQUILLA',
+      '/caex': 'CAMIÓN EXTRACCIÓN',
+      '/retroexcavadora': 'RETRO-EXCAVADORA',
+      '/motoniveladora': 'MOTONIVELADORA',
     };
 
     // Saber si estamos en la home
     const isHome = location.pathname === '/';
 
     // Obtener el título dinámicamente
-    const dynamicTitle = titlesByPath[location.pathname];
+    const dynamicTitle = useMemo(() => {
+      return titlesByPath[location.pathname];
+    }, [location.pathname]);
 
   const handleToggle = () => {
     setOpen((prev) => !prev);

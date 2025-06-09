@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import './nav.css';
 
-const ScrollTitleBar = ({ show }) => {
+const ScrollTitleBar = ({ show, title }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -44,7 +44,13 @@ const ScrollTitleBar = ({ show }) => {
               />
               </Box>
               <Toolbar>
-                <Typography className={'roboto-condensed'} sx={{fontSize: '1.2rem'}} variant="h6">OPERACIÓN SEGURA DE <span style={{color: 'var(--verde-inacex)'}}>GRUA HORQUILLA</span></Typography>
+                <Typography 
+                    className={'roboto-condensed'} 
+                    sx={{fontSize: '1.2rem'}} 
+                    variant="h6">{title === 'CAMIÓN EXTRACCIÓN' ? title : 'OPERACIÓN SEGURA DE ' }
+                      <span style={{color: 'var(--verde-inacex)'}}>{title === 'CAMIÓN EXTRACCIÓN' ? ' DE ALTO TONELAJE' : title }
+                      </span>
+                    </Typography>
               </Toolbar>
               </>
             ) : (

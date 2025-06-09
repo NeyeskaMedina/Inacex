@@ -6,7 +6,7 @@ import iconsCaex from '../../components/Cabina/Metodologia/icons/iconsCaex'
 import infoCaex from '../../components/Cabina/Requisitos/Info/InfoCaex';
 
 function Caex() {
-  const image = "./imgCarousel/930e-komatsu.png";
+  const image = "./imgCursos/komatsu-930e.jpg";
   const imgForms = './imgCursos/caex.png'
   return (
     <>
