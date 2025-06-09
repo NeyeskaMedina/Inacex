@@ -9,10 +9,13 @@ import {
   useTheme,
   useMediaQuery,
   Slide
+
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
+import { useLocation } from 'react-router-dom';
+
 
 const NavbarInacex = () => {
   const [open, setOpen] = useState(false);
@@ -20,6 +23,22 @@ const NavbarInacex = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const menuRef = useRef(null);
+
+  const location = useLocation();
+
+    // Define los títulos por ruta
+    const titlesByPath = {
+      '/grua-horquilla': 'OPERACÓN SEGURA DE GRÚA HORQUILLA',
+      '/caex': 'CAMIÓN EXTRACCIÓN DE ALTO TONELAJE',
+      '/retroexcavadora': 'OPERACÓN SEGURA DE RETRO-EXCAVADORA',
+      '/motoniveladora': 'OPERACIÓN SEGURA DE MOTONIVELADORA',
+    };
+
+    // Saber si estamos en la home
+    const isHome = location.pathname === '/';
+
+    // Obtener el título dinámicamente
+    const dynamicTitle = titlesByPath[location.pathname];
 
   const handleToggle = () => {
     setOpen((prev) => !prev);
@@ -49,7 +68,11 @@ const NavbarInacex = () => {
   return (
     <>
       {/* Título que aparece al hacer scroll */}
-      <ScrollTitleBar show={showTitleBar} />
+      {/* Mostrar ScrollTitleBar solo si no es Home y hay título */}
+    {!isHome && dynamicTitle && (
+      <ScrollTitleBar show={showTitleBar} title={dynamicTitle}/>
+    )}
+
 
       {/* AppBar principal: solo visible si estamos en el top */}
       <Slide appear={false} direction="down" in={!showTitleBar}>
@@ -59,7 +82,7 @@ const NavbarInacex = () => {
             color: 'white',
             boxShadow: 'none',
             px: 1,
-            height: '60px',
+            minHeight: '60px',
             zIndex: 1200,
           }}
           position="fixed"
@@ -105,7 +128,6 @@ const NavbarInacex = () => {
           </Box>
         </Collapse>
       )}
-
       {/* Espaciador para que el contenido no quede tapado */}
       <Toolbar />
     </>

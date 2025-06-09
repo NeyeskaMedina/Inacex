@@ -1,6 +1,6 @@
-import ParabrisasCabina from '../components/Cabina/ParabrisasCabina';
-import Metodologia from '../components/Cabina/Metodologia';
-import Requisitos from '../components/Cabina/Requisitos';
+import ParabrisasCabina from '../../components/Cabina/ParabrisasCabina';
+import Metodologia from '../../components/Cabina/Metodologia';
+import Requisitos from '../../components/Cabina/Requisitos';
 
 function Horquilla() {
   const image = "./imgCursos/horquillaIA.jpg";
