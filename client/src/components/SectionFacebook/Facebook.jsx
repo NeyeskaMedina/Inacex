@@ -22,39 +22,54 @@ const Facebook = () => {
     <Box
       sx={{
         width: '100vw',
-        minHeigth: '100vh',
+        minHeight: '100vh',
         overflow: 'hidden',
-        position: 'relative', // necesario para posicionar la franja detrás
-        // backgroundColor: 'var(--bg-forms)',
+        position: 'relative',
         py: 8,
         px: { xs: 2, md: 10 },
       }}
     >
-      <Typography
-        variant="h4"
-        sx={{
-          mb: 4,
-          fontFamily: '"Roboto Condensed", sans-serif',
-          fontWeight: 'bold',
-          color: 'var(--verde-inacex)',
-          // color: 'white',
-          textAlign: 'center',
-        }}
-      >
-        CONECTADOS CON NUESTRA COMUNIDAD
-      </Typography>
+      {/* Imagen de fondo en escala de grises */}
+<Box
+  sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundImage: 'url(./imgCursos/horquilla/horquillaIA.jpg)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    filter: 'grayscale(1)',
+    zIndex: -2,
+  }}
+/>
 
-      {/* Franja horizontal verde-inacex en background */}
+{/* Capa oscura encima de la imagen */}
+<Box
+  sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)', // más opacidad
+    zIndex: -1,
+  }}
+/>
+
+      {/* Franja verde-inacex */}
       <Box
         sx={{
           position: 'absolute',
-          top: {xs: '0%', md: '50%'},
-          left: {xs: '70%', md: 0},
-          width: {xs: '50px', md: '100%'},
-          height: {xs: '100%', md: '300px'},
+          top: { xs: '0%', md: '50%' },
+          left: { xs: '70%', md: 0 },
+          width: { xs: '50px', md: '100%' },
+          height: { xs: '100%', md: '300px' },
           backgroundColor: 'var(--verde-inacex)',
           zIndex: 0,
-          transform: {xs: 'translateX(-10%)', md: 'translateY(-50%)'},
+          transform: { xs: 'translateX(-10%)', md: 'translateY(-50%)' },
           opacity: 0.2,
           animation: 'slideIn 2s ease-out forwards',
           '@keyframes slideIn': {
@@ -64,16 +79,29 @@ const Facebook = () => {
         }}
       />
 
-      {/* Contenido principal (posts) */}
+      {/* Título */}
+      <Typography
+        variant="h4"
+        sx={{
+          mb: 4,
+          fontFamily: '"Roboto Condensed", sans-serif',
+          fontWeight: 'bold',
+          color: 'var(--verde-inacex)',
+          textAlign: 'center',
+        }}
+      >
+        CONECTADOS CON NUESTRA COMUNIDAD
+      </Typography>
+
+      {/* Posts de Facebook */}
       <Box
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={4}
         justifyContent="center"
-        alignItems={{xs: 'center'}}
-        sx={{ position: 'relative', zIndex: 1 }} // para estar sobre la franja
+        alignItems="center"
+        sx={{ position: 'relative', zIndex: 1 }}
       >
-        {/* Primer post */}
         <Box sx={{ width: '100%', maxWidth: 400 }}>
           <div
             className="fb-post"
@@ -82,7 +110,6 @@ const Facebook = () => {
           ></div>
         </Box>
 
-        {/* Segundo post */}
         <Box sx={{ width: '100%', maxWidth: 400 }}>
           <div
             className="fb-post"
