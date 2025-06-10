@@ -22,9 +22,10 @@ const Facebook = () => {
     <Box
       sx={{
         width: '100vw',
+        minHeigth: '100vh',
         overflow: 'hidden',
         position: 'relative', // necesario para posicionar la franja detrás
-        backgroundColor: '#f2f2f2',
+        // backgroundColor: 'var(--bg-forms)',
         py: 8,
         px: { xs: 2, md: 10 },
       }}
@@ -36,6 +37,7 @@ const Facebook = () => {
           fontFamily: '"Roboto Condensed", sans-serif',
           fontWeight: 'bold',
           color: 'var(--verde-inacex)',
+          // color: 'white',
           textAlign: 'center',
         }}
       >
@@ -46,13 +48,13 @@ const Facebook = () => {
       <Box
         sx={{
           position: 'absolute',
-          top: '50%',
-          left: 0,
-          width: '100%',
-          height: '300px',
+          top: {xs: '0%', md: '50%'},
+          left: {xs: '70%', md: 0},
+          width: {xs: '50px', md: '100%'},
+          height: {xs: '100%', md: '300px'},
           backgroundColor: 'var(--verde-inacex)',
           zIndex: 0,
-          transform: 'translateY(-50%)',
+          transform: {xs: 'translateX(-10%)', md: 'translateY(-50%)'},
           opacity: 0.2,
           animation: 'slideIn 2s ease-out forwards',
           '@keyframes slideIn': {
@@ -68,6 +70,7 @@ const Facebook = () => {
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={4}
         justifyContent="center"
+        alignItems={{xs: 'center'}}
         sx={{ position: 'relative', zIndex: 1 }} // para estar sobre la franja
       >
         {/* Primer post */}
