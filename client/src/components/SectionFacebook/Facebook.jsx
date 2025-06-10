@@ -18,14 +18,15 @@ const Facebook = () => {
     }
   }, []);
 
-  const urlPage = "profile.php?id=61575995351165";
-
   return (
     <Box
       sx={{
+        width: '100vw',
+        overflow: 'hidden',
+        position: 'relative', // necesario para posicionar la franja detrás
         backgroundColor: '#f2f2f2',
         py: 8,
-        px: { xs: 3, md: 10 },
+        px: { xs: 2, md: 10 },
       }}
     >
       <Typography
@@ -38,25 +39,54 @@ const Facebook = () => {
           textAlign: 'center',
         }}
       >
-        Conectados con Nuestra Comunidad
+        CONECTADOS CON NUESTRA COMUNIDAD
       </Typography>
 
-      <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={4}>
-        {/* Timeline principal más alto */}
-          <Box
-            display="flex"
-            flexDirection="column"
-            gap={3}
-          >
-            <div
-              className="fb-post"
-              data-href="https://www.facebook.com/61575995351165/videos/1084001953635192/"
-              data-width="350"
-            ></div>
+      {/* Franja horizontal verde-inacex en background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+          width: '100%',
+          height: '300px',
+          backgroundColor: 'var(--verde-inacex)',
+          zIndex: 0,
+          transform: 'translateY(-50%)',
+          opacity: 0.2,
+          animation: 'slideIn 2s ease-out forwards',
+          '@keyframes slideIn': {
+            from: { width: 0, opacity: 0 },
+            to: { width: '100%', opacity: 0.5 },
+          },
+        }}
+      />
 
-            {/* Puedes duplicar más publicaciones aquí */}
-            {/* <div className="fb-post" data-href="..." data-width="350"></div> */}
-          </Box>
+      {/* Contenido principal (posts) */}
+      <Box
+        display="flex"
+        flexDirection={{ xs: 'column', md: 'row' }}
+        gap={4}
+        justifyContent="center"
+        sx={{ position: 'relative', zIndex: 1 }} // para estar sobre la franja
+      >
+        {/* Primer post */}
+        <Box sx={{ width: '100%', maxWidth: 400 }}>
+          <div
+            className="fb-post"
+            data-href="https://www.facebook.com/permalink.php?story_fbid=pfbid02DQqL55H75iGrBvG4ypKCiyP5WYJ97jdfDozGiEwCnvzkMiLwCiBPTDB12cGvZpcJl&id=61575995351165"
+            data-width="100%"
+          ></div>
+        </Box>
+
+        {/* Segundo post */}
+        <Box sx={{ width: '100%', maxWidth: 400 }}>
+          <div
+            className="fb-post"
+            data-href="https://www.facebook.com/permalink.php?story_fbid=pfbid0qFedE5ZJ2evZEG1jhUroJrVFvLNeUS2F6Qp5A3sp8qbTGBgQr5SGb9x8S9oc6mHKl&id=61575995351165"
+            data-width="100%"
+          ></div>
+        </Box>
       </Box>
     </Box>
   );
