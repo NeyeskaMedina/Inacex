@@ -17,6 +17,7 @@ import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
 import { useLocation, Link } from 'react-router-dom';
 import { useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -86,16 +87,16 @@ const NavbarInacex = () => {
       </Button>
       <Button 
           className={'btnNav'} 
-          component={Link} 
-          to="/contacto"
+          component={HashLink} 
+          to="/#contacto"
           onClick={onClick} 
           color="inherit" 
           fullWidth={fullWidth}
       >Contacto
       </Button>
       <Button 
-          component={Link} 
-          to="/matriculate"
+          component={HashLink} 
+          to="/#matriculate"
           onClick={onClick} 
           color="inherit" 
           fullWidth={fullWidth}
