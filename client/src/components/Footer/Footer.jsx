@@ -8,6 +8,7 @@ const Footer = () => {
   return (
     <Box
       component="footer"
+      id='contacto'
       sx={{
         position: 'relative',
         disiplay: 'flex',

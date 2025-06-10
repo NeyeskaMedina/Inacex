@@ -22,13 +22,64 @@ const Facebook = () => {
     <Box
       sx={{
         width: '100vw',
+        minHeight: '100vh',
         overflow: 'hidden',
-        position: 'relative', // necesario para posicionar la franja detrás
-        backgroundColor: '#f2f2f2',
+        position: 'relative',
         py: 8,
         px: { xs: 2, md: 10 },
       }}
     >
+      {/* Imagen de fondo en escala de grises */}
+<Box
+  sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundImage: 'url(./imgCursos/horquilla/horquillaIA.jpg)',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    filter: 'grayscale(1)',
+    zIndex: -2,
+  }}
+/>
+
+{/* Capa oscura encima de la imagen */}
+<Box
+  sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)', // más opacidad
+    zIndex: -1,
+  }}
+/>
+
+      {/* Franja verde-inacex */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: { xs: '0%', md: '50%' },
+          left: { xs: '70%', md: 0 },
+          width: { xs: '50px', md: '100%' },
+          height: { xs: '100%', md: '300px' },
+          backgroundColor: 'var(--verde-inacex)',
+          zIndex: 0,
+          transform: { xs: 'translateX(-10%)', md: 'translateY(-50%)' },
+          opacity: 0.2,
+          animation: 'slideIn 2s ease-out forwards',
+          '@keyframes slideIn': {
+            from: { width: 0, opacity: 0 },
+            to: { width: '100%', opacity: 0.5 },
+          },
+        }}
+      />
+
+      {/* Título */}
       <Typography
         variant="h4"
         sx={{
@@ -42,35 +93,15 @@ const Facebook = () => {
         CONECTADOS CON NUESTRA COMUNIDAD
       </Typography>
 
-      {/* Franja horizontal verde-inacex en background */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '50%',
-          left: 0,
-          width: '100%',
-          height: '300px',
-          backgroundColor: 'var(--verde-inacex)',
-          zIndex: 0,
-          transform: 'translateY(-50%)',
-          opacity: 0.2,
-          animation: 'slideIn 2s ease-out forwards',
-          '@keyframes slideIn': {
-            from: { width: 0, opacity: 0 },
-            to: { width: '100%', opacity: 0.5 },
-          },
-        }}
-      />
-
-      {/* Contenido principal (posts) */}
+      {/* Posts de Facebook */}
       <Box
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={4}
         justifyContent="center"
-        sx={{ position: 'relative', zIndex: 1 }} // para estar sobre la franja
+        alignItems="center"
+        sx={{ position: 'relative', zIndex: 1 }}
       >
-        {/* Primer post */}
         <Box sx={{ width: '100%', maxWidth: 400 }}>
           <div
             className="fb-post"
@@ -79,7 +110,6 @@ const Facebook = () => {
           ></div>
         </Box>
 
-        {/* Segundo post */}
         <Box sx={{ width: '100%', maxWidth: 400 }}>
           <div
             className="fb-post"
