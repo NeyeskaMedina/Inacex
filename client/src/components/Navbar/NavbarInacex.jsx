@@ -128,7 +128,7 @@ const NavbarInacex = () => {
           position="fixed"
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box className={'logoNav'} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+            <Box className={'logoNav'} onClick={""} sx={{ cursor: 'pointer', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <img src="./LogoInacex.png" alt="Logo de Inacex sin letras" height={35} />
               <img src="./LogoInacexWhite.png" alt="Logo de Inacex con letras" width={140} height={35} />
             </Box>

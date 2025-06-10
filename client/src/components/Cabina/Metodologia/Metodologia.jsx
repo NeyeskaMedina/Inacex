@@ -24,8 +24,8 @@ export const Metodologia = ({ icons }) => {
           md: 'absolute',    // posición absoluta en cabina (pantallas grandes)
         },
         bottom: {
-          xs: '20px',        // fijo al fondo en móviles
-          md: '40px',        // pegado abajo en cabina
+          xs: '10px',        // fijo al fondo en móviles
+          md: '20px',        // pegado abajo en cabina
         },
         left: 0,
         backgroundColor: {

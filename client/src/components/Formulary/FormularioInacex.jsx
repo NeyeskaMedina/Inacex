@@ -201,7 +201,7 @@ const FormularioInacex = ({ image }) => {
               }}
               fullWidth
             >
-              Enviar
+              Matricularme
             </Button>
           </Stack>
         </form>
