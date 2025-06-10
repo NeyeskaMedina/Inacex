@@ -10,37 +10,37 @@ const cards = [
   {
     title: 'Camión de Extracción de alto tonelaje',
     subtitle: 'Modalidad Online / Zoom',
-    image: './imgCursos/caex-bg.png',
+    image: './imgCursos/caex/caex-bg.png',
     view: '/caex'
   },
   {
     title: 'Bulldozer D09 al D11',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/bull-bg.png',
+    image: './imgCursos/bull/bull-bg.png',
     view: '/bulldozer'
   },
   {
     title: 'Grúa Horquilla ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/horquilla-bg.png',
+    image: './imgCursos/horquilla/horquilla-bg.png',
     view: '/grua-horquilla'
   },
   {
     title: 'Motoniveladora ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/moto-bg-w.webp',
+    image: './imgCursos/moto/moto-bg-w.webp',
     view: '/motoniveladora'
   },
   {
     title: 'Retroexcavadora ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/retro-bg.png',
+    image: './imgCursos/retro/retro-bg.png',
     view: '/retroexcavadora'
   },
   {
     title: 'Cargador Frontal ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/cargador-bg.png',
+    image: './imgCursos/frontal/cargador-bg.png',
     view: '/cargador-frontal'
   },
 ];

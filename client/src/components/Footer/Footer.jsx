@@ -1,8 +1,8 @@
 import { Box, Grid, Typography, Link, Divider } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const Footer = () => {
   return (
@@ -10,6 +10,8 @@ const Footer = () => {
       component="footer"
       sx={{
         position: 'relative',
+        disiplay: 'flex',
+        flexDirection: 'column',
         backgroundColor: 'black',
         color: 'white',
         pt: 4,
@@ -23,18 +25,24 @@ const Footer = () => {
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
             Contacto
           </Typography>
-          <Typography variant="body2">📍 Av. Principal 123, Santiago</Typography>
-          <Typography variant="body2">📞 +56 9 1234 5678</Typography>
-          <Typography variant="body2">✉ contacto@inacex.cl</Typography>
+          <Typography variant="body2">📍 Antofagasta , Arica, Calama, Concepción, Copiapó,<br/> 
+                                        Iquique, Ovalle, Rancagua, Serena, Viña del mar
+          </Typography>
+          <Typography variant="body2">📞 +56 9 38807453</Typography>
+          <Typography variant="body2">✉ admision@inacexmatriculate.cl</Typography>
         </Grid>
-
         {/* Navegación */}
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
             Navegación
           </Typography>
           <Link href="#" underline="hover" color="inherit" variant="body2">Nuestros Cursos</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Preguntas Frecuentes</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Bulldozer</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Cargador frontal</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Camión Extracción</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Grua Horquilla</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
         </Grid>
@@ -44,10 +52,10 @@ const Footer = () => {
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
             Recursos
           </Typography>
-          <Link href="#" underline="hover" color="inherit" variant="body2">Simuladores</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">CATSIMULATOR</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Campus Virtual</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Certificaciones</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Manual del Alumno</Link>
+          <Link href="#" underline="hover" color="inherit" variant="body2">Instructores especializados</Link>
         </Grid>
 
         {/* Redes Sociales */}
@@ -56,10 +64,10 @@ const Footer = () => {
             Conéctate
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
-            <FacebookIcon sx={{ color: 'var(--verde-inacex)' }} />
-            <InstagramIcon sx={{ color: 'var(--verde-inacex)' }} />
-            <YouTubeIcon sx={{ color: 'var(--verde-inacex)' }} />
-            <WhatsAppIcon sx={{ color: 'var(--verde-inacex)' }} />
+            <FacebookIcon sx={{ color: 'var(--verde-inacex)', cursor: 'pointer' }} />
+            <InstagramIcon sx={{ color: 'var(--verde-inacex)', cursor: 'pointer' }} />
+            <MailOutlineIcon sx={{ color: 'var(--verde-inacex)', cursor: 'pointer' }} />
+            <WhatsAppIcon sx={{ color: 'var(--verde-inacex)', cursor: 'pointer' }} />
           </Box>
         </Grid>
       </Grid>

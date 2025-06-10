@@ -14,7 +14,7 @@ const ParabrisasCabina = ({ image }) => {
         flexDirection: 'row',
         gap: 2,
         width: '100%',
-        height: {xs: '90vh', md: '80vh'},
+        height: '95vh',
         p: {xs: '0', md: '16px 0 16px 0'},
         backgroundColor: '#1e1e1e',
       }}

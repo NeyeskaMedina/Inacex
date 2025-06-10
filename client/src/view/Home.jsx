@@ -1,18 +1,20 @@
 import Carousel from '../components/Carousel/Carousel.jsx';
 import ListCourses from '../components/CardCourses/ListCourses.jsx';
-// import Facebook from '../components/SectionFacebook/Facebook.jsx';
+import Facebook from '../components/SectionFacebook/Facebook.jsx';
 import Tips from '../components/Tips/Tips.jsx';
 import FormularioInacex from '../components/Formulary/FormularioInacex.jsx';
+import CatSimulator from '../components/CatSimulator/CatSimulator.jsx';
 
 export const Home = () => {
-  
+  const image= "./imgCursos/maquinaria.png"
   return (
     <>
       <Carousel />
       <ListCourses />
-      {/* <Facebook /> */}
+      {/* <CatSimulator /> */}
       <Tips />
-      <FormularioInacex />
+      <Facebook />
+      <FormularioInacex image={image}/>
     </>
   )
 }
