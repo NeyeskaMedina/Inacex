@@ -25,7 +25,8 @@ export const Metodologia = ({ icons }) => {
         },
         bottom: {
           xs: '10px',        // fijo al fondo en móviles
-          md: '20px',        // pegado abajo en cabina
+          md: '15px',
+          lg: '20px'        // pegado abajo en cabina
         },
         left: 0,
         backgroundColor: {
@@ -43,8 +44,8 @@ export const Metodologia = ({ icons }) => {
             alignItems: 'center',
             justifyContent: 'center',
             border: '1px solid var(--naranja-cat)',
-            width: { xs: '100px', sm: '120px', md: '150px' },
-            height: { xs: '100px', sm: '120px', md: '150px' },
+            width: { xs: '120px', sm: '120px', md: '150px' },
+            height: { xs: '120px', sm: '120px', md: '150px' },
             borderRadius: '12px',
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
             backdropFilter: 'blur(3px)', //zoom

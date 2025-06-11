@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 
-const ParabrisasCabina = ({ image }) => {
+const ParabrisasCabina = ({ image, viewIzq, viewDer, viewCentXS, viewCentMD }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
   
@@ -27,7 +27,7 @@ const ParabrisasCabina = ({ image }) => {
           flex: isXs ? 0.2 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
-          backgroundSize: '450% 100%',
+          backgroundSize: viewIzq,
           backgroundPosition: 'left center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(4px)',
@@ -46,7 +46,7 @@ const ParabrisasCabina = ({ image }) => {
           flex: {xs: 4, md: 3},
           p: 0,
           backgroundImage: `url(${image})`,
-          backgroundSize: {xs: '250% 100%', md: '110% 110%'},
+          backgroundSize: {xs: viewCentXS, md: viewCentMD},
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(2px)',
@@ -77,7 +77,7 @@ const ParabrisasCabina = ({ image }) => {
           flex: isXs ? 0.2 : 1,
         //   p: 2,
           backgroundImage: `url(${image})`,
-          backgroundSize: '450% 100%',
+          backgroundSize: viewDer,
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
         //   backdropFilter: 'blur(4px)',
