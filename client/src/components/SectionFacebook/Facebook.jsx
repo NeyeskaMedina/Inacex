@@ -80,19 +80,16 @@ const Facebook = () => {
       />
 
       {/* Título */}
-      <Typography
-        variant="h4"
-        sx={{
-          mb: 4,
-          fontFamily: '"Roboto Condensed", sans-serif',
-          fontWeight: 'bold',
-          color: 'var(--verde-inacex)',
+      <h2 
+        className='roboto-condensed' 
+        style={{
+          color: 'black',
           textAlign: 'center',
+          width: '100%'
         }}
       >
-        CONECTADOS CON NUESTRA COMUNIDAD
-      </Typography>
-
+        Conectados con nuestra comunidad
+      </h2>
       {/* Posts de Facebook */}
       <Box
         display="flex"

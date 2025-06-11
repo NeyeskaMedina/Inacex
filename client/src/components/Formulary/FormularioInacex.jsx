@@ -84,7 +84,7 @@ const FormularioInacex = ({ image }) => {
           width: '100%',
           borderRadius: 3,
           p: 4,
-          backgroundColor: 'var(--bg-forms)',
+          backgroundColor: 'var(--verde-trans)',
         //   backgroundColor: 'var(--bg-transp)',
           color: 'white',
         }}

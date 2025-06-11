@@ -17,7 +17,7 @@ import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
 import { useLocation, Link } from 'react-router-dom';
 import { useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 
 
@@ -38,7 +38,7 @@ const NavbarInacex = () => {
     const titlesByPath = {
       '/grua-horquilla': 'GRÚA HORQUILLA',
       '/caex': 'CAMIÓN EXTRACCIÓN',
-      '/retroexcavadora': 'RETRO-EXCAVADORA',
+      '/retroexcavadora': 'RETROEXCAVADORA',
       '/motoniveladora': 'MOTONIVELADORA',
     };
 
@@ -101,7 +101,7 @@ const NavbarInacex = () => {
           color="inherit" 
           fullWidth={fullWidth}
       >
-        <span className='btnMat' style={{border: '1px solid var(--verde-inacex)', borderRadius: '20px', padding: '10px'}}>Matricúlate</span>
+        <span className={'btnMat'} style={{border: '1px solid var(--verde-inacex)', borderRadius: '20px', padding: '10px'}}>Matricúlate</span>
       </Button>
     </>
   );

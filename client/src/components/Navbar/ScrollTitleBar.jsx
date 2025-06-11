@@ -70,7 +70,13 @@ const ScrollTitleBar = ({ show, title }) => {
               />
               </Box>
                     <Toolbar>
-                      <Typography className={'roboto-condensed'} sx={{}} variant="h5">OPERACIÓN SEGURA DE <span style={{color: 'var(--verde-inacex)'}}>GRÚA HORQUILLA</span></Typography>
+                      <Typography 
+                    className={'roboto-condensed'} 
+                    sx={{fontSize: '1.2rem'}} 
+                    variant="h5">{title === 'CAMIÓN EXTRACCIÓN' ? title : 'OPERACIÓN SEGURA DE ' }
+                      <span style={{color: 'var(--verde-inacex)'}}>{title === 'CAMIÓN EXTRACCIÓN' ? ' DE ALTO TONELAJE' : title }
+                      </span>
+                    </Typography>
                     </Toolbar>
             </>
             )}

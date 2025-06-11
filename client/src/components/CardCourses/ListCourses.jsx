@@ -22,7 +22,7 @@ const cards = [
   {
     title: 'Grúa Horquilla ',
     subtitle: 'Modalidad E-Learning',
-    image: './imgCursos/horquilla/horquilla-bg.png',
+    image: './imgCursos/horquilla/horquillaBG.png',
     view: '/grua-horquilla'
   },
   {
@@ -109,15 +109,15 @@ const ListCourses = () => {
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
         },
       },
       {
         breakpoint: 1526,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4
+          slidesToShow: 5,
+          slidesToScroll: 5
         },
       },
     ],
@@ -154,7 +154,7 @@ const ListCourses = () => {
           zIndex: 1,
         }}
       >
-        <h1 className='roboto-condensed'style={{ color: 'var(--verde-inacex)'}}>CURSOS DE MAQUINARIA PESADA</h1>
+        <h2 className='roboto-condensed'style={{ color: 'var(--verde-inacex)'}}>CURSOS DE MAQUINARIA PESADA</h2>
         <Slider {...settings}>
           {cards.map((card, i) => (
             <Box key={i} px={2}>
