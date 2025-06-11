@@ -1,92 +1,132 @@
 import React from 'react';
-import { Box, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  useMediaQuery,
+} from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useTheme } from '@mui/material/styles';
 
 const CatSimulator = () => {
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
   const listItems = [
-    {
-      text: 'Controles Cat auténticos para una experiencia real.',
-      aos: 'fade-up-right'
-    },
-    {
-      text: 'Entorno minero virtual con terreno, iluminación y maquinaria.',
-      aos: 'fade-up-left'
-    },
-    {
-      text: 'Compatibilidad con realidad virtual para mayor inmersión.',
-      aos: 'fade-up-right'
-    },
-    {
-      text: 'Entrenamiento en seguridad y procedimientos de mantenimiento.',
-      aos: 'fade-up-left'
-    },
-    {
-      text: 'Evaluación de habilidades en carga, descarga y conducción.',
-      aos: 'fade-up-right'
-    },
+    'Controles Cat auténticos para una experiencia real.',
+    'Entorno minero virtual con terreno, iluminación y maquinaria.',
+    'Compatibilidad con realidad virtual para mayor inmersión.',
+    'Entrenamiento en seguridad y procedimientos de mantenimiento.',
+    'Evaluación de habilidades en carga, descarga y conducción.',
   ];
 
   return (
     <Box
+      id="cat-simulator"
       sx={{
-        backgroundColor: '#1b1b1b',
-        display: 'flex',
-        flexDirection: {xs: 'column', md: 'row'},
-        // backgroundImage: 'url(./imgCursos/catSimulator.png)',
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: '100%',
+        position: 'relative',
+        backgroundColor: '#111',
+        backgroundImage: 'url(./imgCursos/bgCat.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: '#fff',
         py: { xs: 8, md: 12 },
         px: { xs: 3, md: 10 },
-        color: 'white',
         fontFamily: '"Roboto Condensed", sans-serif',
+        overflow: 'hidden',
       }}
-      id="cat-simulator"
     >
-      <Grid container spacing={6} alignItems="center">
-        {/* Texto */}
-        <Grid item xs={12} md={6}>
-          <Box data-aos="fade-right" data-aos-duration="1000">
-            <Typography
-              variant="h3"
-              component="h2"
-              sx={{
-                fontWeight: 700,
-                color: 'white',
-                mb: 2,
-                fontSize: { xs: '2rem', md: '2.8rem' },
-              }}
-            >
-              <span style={{color: 'var(--naranja-cat)'}}>CAT</span>SIMULATOR
-            </Typography>
+      {/* Overlay oscuro sobre imagen de fondo */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(9, 8, 8, 0.86)', // puedes ajustar el nivel de opacidad aquí
+          zIndex: 1,
+        }}
+      />
 
-            <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
-              "CAT SIMULATOR" (Caterpillar) es una herramienta avanzada que permite capacitar operadores de camiones mineros de forma segura y realista:
-            </Typography>
+      {/* Contenido principal sobre el overlay */}
+      <Box sx={{ position: 'relative', zIndex: 2 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            gap: { xs: 6, md: 8 },
+          }}
+        >
+          {/* Texto */}
+          <Box
+            sx={{
+              flex: 1,
+              transform: { xs: 'none', md: 'skewX(-6deg)' },
+              background: { md: 'rgba(255,255,255,0.02)' },
+              px: { xs: 0, md: 4 },
+              py: { xs: 0, md: 3 },
+              borderRadius: 2,
+            }}
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <Box sx={{ transform: { xs: 'none', md: 'skewX(6deg)' } }}>
+              <Typography
+                variant="h3"
+                component="h2"
+                sx={{
+                  fontWeight: 700,
+                  color: 'white',
+                  mb: 2,
+                  fontSize: { xs: '2rem', md: '2.8rem' },
+                }}
+              >
+                <span style={{ color: 'var(--naranja-cat)' }}>CAT</span>SIMULATOR
+              </Typography>
+
+              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
+                "CAT SIMULATOR" (Caterpillar) es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
+              </Typography>
+
+              <List>
+                {listItems.map((text, index) => (
+                  <ListItem
+                    key={index}
+                    data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
+                    data-aos-duration="900"
+                    sx={{
+                      py: 0.5,
+                      transition: 'transform 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateX(5px)',
+                      },
+                    }}
+                  >
+                    <ListItemIcon>
+                      <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+              </List>
+
+              <Typography
+                variant="body2"
+                sx={{ mt: 3, color: '#ccc' }}
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
+              </Typography>
+            </Box>
           </Box>
 
-          <List>
-            {listItems.map((item, index) => (
-              <ListItem
-                key={index}
-                data-aos={item.aos}
-                data-aos-duration="900"
-                sx={{ py: 0.5 }}
-              >
-                <ListItemIcon>
-                  <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
-                </ListItemIcon>
-                <ListItemText primary={item.text} />
-              </ListItem>
-            ))}
-          </List>
-
-          <Typography variant="body2" sx={{ mt: 3, color: '#ccc' }} data-aos="fade-up" data-aos-delay="300">
-            Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
-          </Typography>
-        </Grid>
-
-        {/* Imagen */}
-        <Grid item xs={12} md={6}>
+          {/* Imagen */}
           <Box
             component="img"
             src="./imgCursos/catSimulator.png"
@@ -94,15 +134,18 @@ const CatSimulator = () => {
             data-aos="zoom-in"
             data-aos-duration="1200"
             sx={{
+              flex: 1,
               width: '100%',
-              maxHeight: { xs: 300, md: 500 },
+              maxHeight: { xs: 300, md: 600 },
               objectFit: 'cover',
               borderRadius: 3,
               boxShadow: 6,
+              mt: { xs: 4, md: 0 },
+              p: '50px',
             }}
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

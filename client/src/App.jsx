@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
 import Horquilla from './view/NuestrosCursos/Horquilla';
+import Retroexcavadora from './view/NuestrosCursos/Retroexcavadora'
 import Caex from './view/NuestrosCursos/Caex'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -70,6 +71,12 @@ function App() {
         <Route
             path ='/grua-horquilla'
             element ={<Horquilla/>}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/retroexcavadora'
+            element ={<Retroexcavadora/>}
         />
     </Routes>
     <Routes>

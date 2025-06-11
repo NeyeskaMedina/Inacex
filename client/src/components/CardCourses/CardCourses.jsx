@@ -23,7 +23,7 @@ const CardCourses = ({ image, title, subtitle, view }) => {
         },
       }}
     >
-      {/* Imagen con grayscale (clase para apuntar en el hover) */}
+      {/* Imagen  */}
       <Box
         className="image-layer"
         sx={{
@@ -34,8 +34,8 @@ const CardCourses = ({ image, title, subtitle, view }) => {
           backgroundSize: '100%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          filter: {xs: 'none', md: 'grayscale(100%)'},
-          transition: 'filter 0.5s ease, transform 0.5s ease',
+          // filter: {xs: 'none', md: 'grayscale(100%)'},
+          // transition: 'filter 0.5s ease, transform 0.5s ease',
           zIndex: 0,
         }}
       />

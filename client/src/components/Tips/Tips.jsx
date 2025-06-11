@@ -7,7 +7,7 @@ const Tips = () => {
   return (
     <>
     <section style={{ padding: '20px', textAlign: 'center', height: 'auto', backgroundColor: 'var(--gris-section)' }}>
-        <h1 className='roboto-condensed'>Razones para elegir INACEX</h1>
+        <h2 className='roboto-condensed'>Razones para elegir <span style={{color:'var(--verde-inacex)'}}>INACEX</span></h2>
         <Box sx={{
             display: 'flex',
             justifyContent: 'center',

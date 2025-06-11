@@ -6,12 +6,12 @@ import FormularioInacex from '../components/Formulary/FormularioInacex.jsx';
 import CatSimulator from '../components/CatSimulator/CatSimulator.jsx';
 
 export const Home = () => {
-  const image= "./imgCursos/maquinaria.png"
+  const image= "./imgCursos/caex/caexForms.webp"
   return (
     <>
       <Carousel />
       <ListCourses />
-      {/* <CatSimulator /> */}
+      <CatSimulator />
       <Tips />
       <Facebook />
       <FormularioInacex image={image}/>

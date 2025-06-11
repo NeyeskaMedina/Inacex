@@ -16,7 +16,7 @@ const slides = [
     Marca2: 'CAT',
     Modelo2: '797F Y 793F',
     notification: 'Obtén tu certificado en sólo 4 meses.',
-    image: './imgCarousel/930e-komatsu.png',
+    image: './imgCursos/caex/caexSepia1.jpg',
   },
   {
     anexoTitle: 'OPERACIÓN SEGURA DE',
