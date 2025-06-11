@@ -32,7 +32,7 @@ const validateRUT = (rut) => {
   return dv === expectedDV;
 };
 
-const FormularioInacex = ({ image }) => {
+const FormularioInacex = ({ image, bgColor, font }) => {
   const [form, setForm] = useState({
     rut: '', telefono: '', correo: '', sede: '', direccion: '',
   });
@@ -84,9 +84,9 @@ const FormularioInacex = ({ image }) => {
           width: '100%',
           borderRadius: 3,
           p: 4,
-          backgroundColor: 'var(--verde-trans)',
+          backgroundColor: bgColor,
         //   backgroundColor: 'var(--bg-transp)',
-          color: 'white',
+          color: font,
         }}
       >
         <Typography
@@ -99,7 +99,7 @@ const FormularioInacex = ({ image }) => {
             mb: 4,
           }}
         >
-          <span style={{color: 'white'}}>MATRICULARME EN</span> INACEX
+          <span style={{color: font}}>MATRICULARME EN</span> INACEX
         </Typography>
 
         <form onSubmit={handleSubmit}>
@@ -113,8 +113,8 @@ const FormularioInacex = ({ image }) => {
               fullWidth
               error={!!errors.rut}
               helperText={errors.rut}
-              InputLabelProps={{ style: { color: '#ccc' } }}
-              InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             />
 
@@ -128,8 +128,8 @@ const FormularioInacex = ({ image }) => {
               fullWidth
               error={!!errors.telefono}
               helperText={errors.telefono}
-              InputLabelProps={{ style: { color: '#ccc' } }}
-              InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             />
 
@@ -143,8 +143,8 @@ const FormularioInacex = ({ image }) => {
               fullWidth
               error={!!errors.correo}
               helperText={errors.correo}
-              InputLabelProps={{ style: { color: '#ccc' } }}
-              InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             />
 
@@ -158,8 +158,8 @@ const FormularioInacex = ({ image }) => {
               fullWidth
               error={!!errors.sede}
               helperText={errors.sede}
-              InputLabelProps={{ style: { color: '#ccc' } }}
-              InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             >
               {sedes.map((sede, i) => (
@@ -180,8 +180,8 @@ const FormularioInacex = ({ image }) => {
               rows={3}
               error={!!errors.direccion}
               helperText={errors.direccion}
-              InputLabelProps={{ style: { color: '#ccc' } }}
-              InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             />
 
@@ -192,7 +192,7 @@ const FormularioInacex = ({ image }) => {
               sx={{
                 mt: 2,
                 background: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
-                color: '#000',
+                color: font,
                 fontWeight: 'bold',
                 py: 1.5,
                 borderRadius: 2,

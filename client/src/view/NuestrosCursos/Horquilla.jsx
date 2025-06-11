@@ -7,15 +7,22 @@ import infoHorquilla from '../../components/Cabina/Requisitos/Info/InfoHorquilla
 
 function Horquilla() {
   const image = "./imgCursos/horquilla/horquillaIA.jpg";
+  const imageCab= "./imgCursos/horquilla/horquilla.jpg";
   const imgForms = './imgCursos/horquilla/horquillaForms.jpg'
+  const bgColor = 'var(--verde-trans-otro)';
+  const font = 'black';
+  const viewIzq = '450% 100%'
+  const viewDer = '450% 100%'
+  const viewCentXS = '250% 100%'
+  const viewCentMD = '110% 110%'
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>
-      <ParabrisasCabina image="./imgCursos/horquilla/horquilla.jpg" />
+      <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
     </div>
     <Metodologia icons={iconsHorquilla} />
     <Requisitos image={image} requisitos={infoHorquilla} />
-    <FormularioInacex image={imgForms} />
+    <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
   );
 }

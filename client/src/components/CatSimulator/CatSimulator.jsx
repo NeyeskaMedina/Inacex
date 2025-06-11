@@ -136,7 +136,7 @@ const CatSimulator = () => {
             sx={{
               flex: 1,
               width: '100%',
-              maxHeight: { xs: 300, md: 600 },
+              height: { xs: 300, md: 600 },
               objectFit: 'cover',
               borderRadius: 3,
               boxShadow: 6,

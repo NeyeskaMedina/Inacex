@@ -7,6 +7,9 @@ import CatSimulator from '../components/CatSimulator/CatSimulator.jsx';
 
 export const Home = () => {
   const image= "./imgCursos/caex/caexForms.webp"
+  const bgColor = 'var(--verde-trans)';
+  const font = 'white';
+
   return (
     <>
       <Carousel />
@@ -14,7 +17,7 @@ export const Home = () => {
       <CatSimulator />
       <Tips />
       <Facebook />
-      <FormularioInacex image={image}/>
+      <FormularioInacex image={image} bgColor={bgColor} font={font}/>
     </>
   )
 }
