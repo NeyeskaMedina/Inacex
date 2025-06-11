@@ -1,4 +1,5 @@
 import { Box, Grid, Typography, Link, Divider } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -20,7 +21,7 @@ const Footer = () => {
         px: { xs: 2, md: 8 },
       }}
     >
-      <Grid container spacing={4}>
+      <Grid container spacing={4} sx={{ justifyContent:'space-around' }}>
         {/* Información de contacto */}
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
@@ -37,12 +38,12 @@ const Footer = () => {
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
             Navegación
           </Typography>
-          <Link href="#" underline="hover" color="inherit" variant="body2">Nuestros Cursos</Link><br />
+          <Link href="#nuestros-cursos" underline="hover" color="inherit" variant="body2">Nuestros Cursos</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Bulldozer</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Cargador frontal</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Camión Extracción</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Grua Horquilla</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
+          <Link href="/caex" underline="hover" color="inherit" variant="body2">Camión Extracción</Link><br />
+          <Link href="/grua-horquilla" underline="hover" color="inherit" variant="body2">Grua Horquilla</Link><br />
+          <Link component={RouterLink} to="/retroexcavadora" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>

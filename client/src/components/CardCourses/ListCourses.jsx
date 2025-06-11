@@ -90,7 +90,7 @@ const ListCourses = () => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    slidesToShow: 3,
+    slidesToShow: 6,
     responsive: [
       {
         breakpoint: 600,
@@ -157,7 +157,7 @@ const ListCourses = () => {
         <h2 className='roboto-condensed'style={{ color: 'var(--verde-inacex)'}}>CURSOS DE MAQUINARIA PESADA</h2>
         <Slider {...settings}>
           {cards.map((card, i) => (
-            <Box key={i} px={2}>
+            <Box sx={{ maxWidth: { xs: '100%', sm: 300, md: 320, lg: 350, xl: 380 } }} key={i} px={2} >
               <CardCourses {...card} />
             </Box>
           ))}

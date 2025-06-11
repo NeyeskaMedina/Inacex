@@ -8,6 +8,8 @@ const CardCourses = ({ image, title, subtitle, view }) => {
       sx={{
         position: 'relative',
         width: '100%',
+        maxWidth: { xs: '100%', sm: 280, md: 300, lg: 320 },
+        margin: '0 auto', // para centrar
         height: { xs: '450px', md: '450px' },
         borderRadius: "40px",
         overflow: 'hidden',

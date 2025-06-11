@@ -141,7 +141,7 @@ const CatSimulator = () => {
               borderRadius: 3,
               boxShadow: 6,
               mt: { xs: 4, md: 0 },
-              p: '50px',
+              // p: '50px',
             }}
           />
         </Box>
