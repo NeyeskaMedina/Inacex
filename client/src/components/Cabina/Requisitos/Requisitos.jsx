@@ -4,7 +4,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export const Requisitos = ({ image, requisitos }) => {
+export const Requisitos = ({ image, requisitos, colorIcon }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
@@ -126,7 +126,7 @@ export const Requisitos = ({ image, requisitos }) => {
                   clipPath: 'polygon(0 0, 93% 0, 100% 10%, 100% 100%, 0 100%)',
                 }}
               >
-                <CheckCircleOutlineIcon sx={{ color: '#8BC34A', fontSize: { xs: 32, lg: 42 } }} />
+                <CheckCircleOutlineIcon sx={{ color: colorIcon, fontSize: { xs: 32, lg: 42 } }} />
                 <Typography variant="subtitle1" fontWeight="bold" fontSize={{ xs: 16, lg: 20 }}>
                   {item.textoPrincipal}
                 </Typography>

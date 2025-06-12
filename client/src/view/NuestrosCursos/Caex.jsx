@@ -24,7 +24,7 @@ function Caex() {
       <ParabrisasCabina image={image} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD} />
     </div>
     <Metodologia icons={iconsCaex} />
-    <Requisitos image={req} requisitos={infoCaex} />
+    <Requisitos image={req} requisitos={infoCaex} colorIcon={'var(--verde-inacex)'}/>
     <Advances image={imageAdvances} />
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
