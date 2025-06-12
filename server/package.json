@@ -2,9 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Backend para INACEX",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "npm start"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Neyeska Goidas",
   "license": "ISC",
