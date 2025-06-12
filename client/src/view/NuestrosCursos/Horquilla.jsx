@@ -9,7 +9,7 @@ function Horquilla() {
   const image = "./imgCursos/horquilla/horquillaIA.jpg";
   const imageCab= "./imgCursos/horquilla/horquilla.jpg";
   const imgForms = './imgCursos/horquilla/horquillaForms.jpg'
-  const bgColor = 'var(--verde-trans-otro)';
+  const bgColor = 'var(--bg-transp-forms)';
   const font = 'black';
   const viewIzq = '450% 100%'
   const viewDer = '450% 100%'
@@ -21,7 +21,7 @@ function Horquilla() {
       <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
     </div>
     <Metodologia icons={iconsHorquilla} />
-    <Requisitos image={image} requisitos={infoHorquilla} />
+    <Requisitos image={image} requisitos={infoHorquilla} colorIcon={'var(--verde-inacex)'}/>
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
   );

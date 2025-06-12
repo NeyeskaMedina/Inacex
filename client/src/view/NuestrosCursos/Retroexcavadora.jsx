@@ -22,7 +22,7 @@ function Retroexcavadora() {
       <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
     </div>
     <Metodologia icons={iconsRetro} />
-    <Requisitos image={image} requisitos={infoRetro} />
+    <Requisitos image={image} requisitos={infoRetro} colorIcon={'var(--naranja-cat)'}/>
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font}/>
     </>
   );
