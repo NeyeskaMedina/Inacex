@@ -21,7 +21,7 @@ const Footer = () => {
         px: { xs: 2, md: 8 },
       }}
     >
-      <Grid container spacing={4} sx={{ justifyContent:'space-around' }}>
+      <Grid container spacing={4} sx={{ justifyContent: {xs: 'left', md: 'space-around'} }}>
         {/* Información de contacto */}
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
