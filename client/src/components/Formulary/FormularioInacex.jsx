@@ -9,32 +9,22 @@ import {
   Stack,
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import { 
+  sedes,
+  cursos,
+  validateEmail,
+  validateRUT
+} from '../../utils/utils'
 
-const sedes = [
-  'Antofagasta', 'Arica', 'Calama', 'Concepción', 'Copiapó',
-  'Iquique', 'Ovalle', 'Rancagua', 'Serena', 'Viña del mar'
-].sort();
-
-const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
-
-const validateRUT = (rut) => {
-  rut = rut.replace(/\./g, '').replace('-', '');
-  if (rut.length < 8) return false;
-  let body = rut.slice(0, -1);
-  let dv = rut.slice(-1).toUpperCase();
-  let sum = 0, mul = 2;
-  for (let i = body.length - 1; i >= 0; i--) {
-    sum += +body[i] * mul;
-    mul = mul === 7 ? 2 : mul + 1;
-  }
-  let expectedDV = 11 - (sum % 11);
-  expectedDV = expectedDV === 11 ? '0' : expectedDV === 10 ? 'K' : expectedDV.toString();
-  return dv === expectedDV;
-};
 
 const FormularioInacex = ({ image, bgColor, font }) => {
   const [form, setForm] = useState({
-    rut: '', telefono: '', correo: '', sede: '', direccion: '',
+    rut: '',
+    telefono: '',
+    correo: '',
+    sede: '',
+    direccion: '',
+    curso: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -47,10 +37,11 @@ const FormularioInacex = ({ image, bgColor, font }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!validateRUT(form.rut)) newErrors.rut = 'RUT no válido';
-    if (!form.telefono.match(/^\d{9,}$/)) newErrors.telefono = 'Número no válido';
+    if (!validateRUT(form.rut)) newErrors.rut = 'RUT no valido';
+    if (!form.telefono.match(/^9\d{8}$/)) newErrors.telefono = 'Debe comenzar con 9 y tener 9 dígitos';
     if (!validateEmail(form.correo)) newErrors.correo = 'Correo no válido';
     if (!form.sede) newErrors.sede = 'Seleccione una sede';
+    if (!form.curso) newErrors.curso = 'Seleccione un curso';
     if (!form.direccion.trim()) newErrors.direccion = 'Campo requerido';
 
     if (Object.keys(newErrors).length > 0) {
@@ -65,8 +56,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
     <Box
       id={'matriculate'}
       sx={{
-        // position: 'relative',
-         position: 'sticky',
+        position: 'sticky',
         py: 8,
         px: 2,
         backgroundImage: `url(${image})`,
@@ -85,7 +75,6 @@ const FormularioInacex = ({ image, bgColor, font }) => {
           borderRadius: 3,
           p: 4,
           backgroundColor: bgColor,
-        //   backgroundColor: 'var(--bg-transp)',
           color: font,
         }}
       >
@@ -99,7 +88,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
             mb: 4,
           }}
         >
-          <span style={{color: font}}>MATRICULARME EN</span> INACEX
+          <span style={{ color: font }}>MATRICULARME EN</span> INACEX
         </Typography>
 
         <form onSubmit={handleSubmit}>
@@ -109,6 +98,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
               name="rut"
               value={form.rut}
               onChange={handleChange}
+              placeholder="20123456-2"
               variant="outlined"
               fullWidth
               error={!!errors.rut}
@@ -165,6 +155,33 @@ const FormularioInacex = ({ image, bgColor, font }) => {
               {sedes.map((sede, i) => (
                 <MenuItem key={i} value={sede}>
                   {sede}
+                </MenuItem>
+              ))}
+            </TextField>
+
+            <TextField
+              select
+              label="Curso de Interés"
+              name="curso"
+              value={form.curso}
+              onChange={handleChange}
+              variant="outlined"
+              fullWidth
+              error={!!errors.curso}
+              helperText={errors.curso}
+              InputLabelProps={{ style: { color: font } }}
+              InputProps={{ style: { color: font } }}
+              sx={textFieldStyles}
+            >
+              {cursos.map((curso, i) => (
+                <MenuItem
+                  key={i}
+                  value={curso}
+                  sx={{
+                    backgroundColor: form.curso === curso ? 'rgba(0,0,0,0.1)' : 'transparent',
+                  }}
+                >
+                  {curso}
                 </MenuItem>
               ))}
             </TextField>

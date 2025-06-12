@@ -4,8 +4,10 @@ import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
 import FormularioInacex from '../../components/Formulary/FormularioInacex';
 import iconsCaex from '../../components/Cabina/Metodologia/icons/iconsCaex'
 import infoCaex from '../../components/Cabina/Requisitos/Info/InfoCaex';
+import Advances from '../../components/Advances/Advances';
 
 function Caex() {
+  const imageAdvances = "./imgCursos/caex/caexAdvances.png"
   const image = "./imgCursos/caex/caex-cab.png";
   const req = "./imgCursos/caex/caex-cat.png"
   const imgForms = './imgCursos/caex/caex-cat.png'
@@ -23,6 +25,7 @@ function Caex() {
     </div>
     <Metodologia icons={iconsCaex} />
     <Requisitos image={req} requisitos={infoCaex} />
+    <Advances image={imageAdvances} />
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
   );
