@@ -54,19 +54,22 @@ const FormularioInacex = ({ image, bgColor, font }) => {
 
   return (
     <Box
-      id={'matriculate'}
-      sx={{
-        position: 'sticky',
-        py: 8,
-        px: 2,
-        backgroundImage: `url(${image})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
+  id={'matriculate'}
+  sx={{
+    position: 'sticky',
+    py: 8,
+    px: 2,
+    minHeight: '100vh',
+    backgroundImage: `url(${image})`,
+    backgroundPosition: { xs: 'top center', sm: 'center' },
+    backgroundSize: { xs: 'contain', sm: 'cover' },
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: { xs: 'scroll', md: 'fixed' },
+    display: 'flex',
+    justifyContent: 'center',
+  }}
+>
+
       <Paper
         elevation={8}
         sx={{
