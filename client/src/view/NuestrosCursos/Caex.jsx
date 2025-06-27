@@ -1,10 +1,10 @@
 import ParabrisasCabina from '../../components/Cabina/ParabrisasCabina';
 import Metodologia from '../../components/Cabina/Metodologia/Metodologia';
 import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
-import FormularioInacex from '../../components/Formulary/FormularioInacex';
+import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
 import iconsCaex from '../../components/Cabina/Metodologia/icons/iconsCaex'
 import infoCaex from '../../components/Cabina/Requisitos/Info/InfoCaex';
-import Advances from '../../components/Advances/Advances';
+import Advances from '../../components/Main/Advances/Advances';
 
 function Caex() {
   const imageAdvances = "./imgCursos/caex/caexAdvances.png"
@@ -24,7 +24,7 @@ function Caex() {
       <ParabrisasCabina image={image} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD} />
     </div>
     <Metodologia icons={iconsCaex} />
-    <Requisitos image={req} requisitos={infoCaex} colorIcon={'var(--verde-inacex)'}/>
+    <Requisitos image={req} requisitos={infoCaex} colorIcon={'var(--verde-icons)'}/>
     <Advances image={imageAdvances} />
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>

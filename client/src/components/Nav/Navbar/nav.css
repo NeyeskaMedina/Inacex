@@ -1,0 +1,27 @@
+.borde-fino {
+  height: 1px;
+  background-color: green;
+  transform: scaleY(0.5); /* Aparece como 0.5px */
+  transform-origin: top;
+}
+.btnMat:hover {
+  background-color: var(--verde-inacex);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+
+}
+.logoNav {
+  cursor: pointer;
+}
+.btnNav {
+  border-radius: 5px;
+  align-self: center;
+  height: 70%;
+  padding: 0;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.btnNav:hover{
+  border-bottom: 2px solid var(--verde-inacex);
+  transition: all 0.3s ease-in-out;
+}

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { ContextProvider } from './context/UserContext';
-import NavbarInacex from "./components/Navbar/NavbarInacex";
-import TicketsBar from "./components/TicketsBar/TicketsBar";
+import NavbarInacex from "./components/Nav/Navbar/NavbarInacex";
+import TicketsBar from "./components/Nav/TicketsBar/TicketsBar";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
-import Whatsapp from "./components/Buttons/Whatsapp/Whatsapp";
-import ScrollToTop from './components/Buttons/ScrollTop/ScrollToTop';
-import ScrollTopAut from './components/Buttons/ScrollTop/ScrollTopAut'
+import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
+import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
+import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut'
 import { useLocation } from 'react-router-dom';
 // import { useState } from 'react'
 // En tu index.js o App.jsx
@@ -17,6 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Horquilla from './view/NuestrosCursos/Horquilla';
 import Retroexcavadora from './view/NuestrosCursos/Retroexcavadora'
 import Caex from './view/NuestrosCursos/Caex'
+import ListProspectBk from './view/ListProspectBk';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -54,7 +55,7 @@ function App() {
     </nav>
 
     <main>
-    
+
       {/* <div>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -83,6 +84,12 @@ function App() {
         <Route
             path ='/caex'
             element ={<Caex/>}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/prospectos'
+            element ={<ListProspectBk />}
         />
     </Routes>
         <ScrollToTop />

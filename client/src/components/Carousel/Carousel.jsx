@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -17,12 +18,14 @@ const slides = [
     Modelo2: '797F Y 793F',
     notification: 'Obtén tu certificado en sólo 4 meses.',
     image: './imgCursos/caex/caexSepia1.jpg',
+    URL: '/caex'
   },
   {
     anexoTitle: 'OPERACIÓN SEGURA DE',
     title: 'GRÚA HORQUILLA',
     notification: 'Con nuestros beneficios obten tu licencia clase D.',
     image: './imgCarousel/horquilla.jpg',
+    URL: '/grua-horquilla',
   },
   {
     anexoTitle: 'OPERACIÓN SEGURA DE',
@@ -31,6 +34,7 @@ const slides = [
     Modelo2: 'D09 al D11',
     notification: 'Capacitación reconocida en Chile y Perú',
     image: './imgCarousel/bulldozer.jpg',
+    URL: '/bull'
   },
 ];
 
@@ -174,31 +178,34 @@ const Carousel = () => {
                   {slide.notification}
                 </Typography>
 
-                <Button 
-                    color="inherit"
-                    sx={{
-                      backgroundColor: 'var(--verde-inacex)',
-                      alignSelf: {xs: 'center', md: 'start'},
-                      color: 'white',
-                      width: 'fit-content',
-                      fontWeight: 'bold',
-                      fontSize: {
-                        xs: '0.8rem',  
-                        sm: '0.8rem',
-                        md: '0.8rem',
-                        lg: '1rem',
-                        xl: '1.2rem',
-                      },
-                      marginTop: 2,
-                      padding: 1,
-                      borderRadius: '40px',
-                      '&:hover': {
-                        backgroundColor: 'var(--naranja-cat-hover)',
-                      },
-                    }}
-                >
-                    Mas información
-                </Button>
+                <Link to={slide.URL} style={{ textDecoration: 'none' }}>
+        <Button
+          color="inherit"
+          sx={{
+            backgroundColor: 'var(--verde-inacex)',
+            alignSelf: { xs: 'center', md: 'start' },
+            color: 'white',
+            width: 'fit-content',
+            fontWeight: 'bold',
+            fontSize: {
+              xs: '0.8rem',
+              sm: '0.8rem',
+              md: '0.8rem',
+              lg: '1rem',
+              xl: '1.2rem',
+            },
+            marginTop: 2,
+            padding: 1,
+            borderRadius: '40px',
+            '&:hover': {
+              backgroundColor: 'var(--naranja-cat-hover)',
+            },
+          }}
+        >
+          Más información
+        </Button>
+    </Link>
+
               </Box>
             </Box>
           </SwiperSlide>
