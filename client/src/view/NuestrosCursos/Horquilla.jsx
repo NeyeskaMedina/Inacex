@@ -1,7 +1,7 @@
 import ParabrisasCabina from '../../components/Cabina/ParabrisasCabina';
 import Metodologia from '../../components/Cabina/Metodologia/Metodologia';
 import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
-import FormularioInacex from '../../components/Formulary/FormularioInacex';
+import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
 import iconsHorquilla from '../../components/Cabina/Metodologia/icons/iconsHorquilla'
 import infoHorquilla from '../../components/Cabina/Requisitos/Info/InfoHorquilla';
 
@@ -21,7 +21,7 @@ function Horquilla() {
       <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
     </div>
     <Metodologia icons={iconsHorquilla} />
-    <Requisitos image={image} requisitos={infoHorquilla} colorIcon={'var(--verde-inacex)'}/>
+    <Requisitos image={image} requisitos={infoHorquilla} colorIcon={'var(--verde-icons)'}/>
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
   );

@@ -4,9 +4,10 @@ export const sedes = [
 ].sort();
 
 export const cursos = [
-  'CAMIÓN EXTRACCIÓN de alto tonelaje',
+  'CAMIÓN EXTRACCIÓN de alto tonelaje + GRÚA HORQUILLA',
   'Operación segura de GRÚA HORQUILLA',
   'Operación segura de RETROEXCAVADORA',
+  'Operación segura de RETROEXCAVADORA + GRÚA HORQUILLA',
   'Operación segura de BULLDOZER',
   'Operación segura de MOTONIVELADORA',
   'Operación segura de CARGADOR FRONTAL'
@@ -18,18 +19,25 @@ export const validateEmail = (email) => {
     };
 
 export const validateRUT = (rut) => {
-  rut = rut.replace(/\./g, '').replace('-', '');
-  if (rut.length < 8) return false;
-  let body = rut.slice(0, -1);
-  let dv = rut.slice(-1).toUpperCase();
-  let sum = 0, mul = 2;
+  // Validar formato: números (0-9) antes del guion, seguido por un guion y un dígito verificador (0-9 o K/k)
+  const regex = /^[0-9]{7,8}-[0-9Kk]$/;
+  if (!regex.test(rut)) return false;
+
+  // Separar cuerpo y dígito verificador
+  const [body, dv] = rut.split('-');
+  let sum = 0;
+  let multiplier = 2;
+
+  // Calcular la suma según el algoritmo de RUT
   for (let i = body.length - 1; i >= 0; i--) {
-    sum += +body[i] * mul;
-    mul = mul === 7 ? 2 : mul + 1;
+    sum += parseInt(body.charAt(i), 10) * multiplier;
+    multiplier = multiplier === 7 ? 2 : multiplier + 1;
   }
-  let expectedDV = 11 - (sum % 11);
-  expectedDV = expectedDV === 11 ? '0' : expectedDV === 10 ? 'K' : expectedDV.toString();
-  return dv === expectedDV;
+
+  const expectedDV = 11 - (sum % 11);
+  const computedDV = expectedDV === 11 ? '0' : expectedDV === 10 ? 'K' : expectedDV.toString();
+
+  return dv.toUpperCase() === computedDV;
 };
 
 

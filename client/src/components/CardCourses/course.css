@@ -1,5 +1,0 @@
-.card-image:hover{
-    filter: grayscale(0%);
-    transition: filter 0.3s ease-in-out;
-    cursor: pointer;
-}
