@@ -2,19 +2,13 @@ import { Box, Typography, Grid } from '@mui/material';
 const Videos = () => {
 const videos = [
   {
-    title: 'Grua Horquilla',
-    desc: 'Video de presentación del curso',
-    url: 'https://player.cloudinary.com/embed/?cloud_name=dvgttiygo&public_id=27_auobhp&profile=cld-default',
+    url: './videos/21.mp4',
   },
   {
-    title: 'Testimonio alumno Bulldozer',
-    desc: 'Conoce la experiencia de un egresado',
-    url: 'https://www.youtube.com/embed/tu_id_de_video2',
+    url: './videos/13.mp4',
   },
   {
-    title: 'Cómo inscribirse en INACEX',
-    desc: 'Guía paso a paso',
-    url: 'https://www.youtube.com/embed/tu_id_de_video3',
+    url: './videos/18.mp4',
   },
 ];
 
@@ -23,9 +17,10 @@ const videos = [
   <Typography
     variant="h4"
     textAlign="center"
+    className='roboto-condensed'
     sx={{ fontWeight: 700, mb: 3 }}
   >
-    Lo más reciente en videos
+    <span style={{ color: 'var(--verde-inacex)'}}>LO MÁS RECIENTE</span> EN VIDEOS
   </Typography>
 
   <Grid container spacing={3} justifyContent="center">
@@ -41,10 +36,10 @@ const videos = [
         >
           <iframe
             width="100%"
-            height="220"
+            height="400"
             src={video.url}
             title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             style={{ border: 'none' }}
           ></iframe>
