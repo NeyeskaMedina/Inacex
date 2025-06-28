@@ -40,6 +40,7 @@ const NavbarInacex = () => {
       '/caex': 'CAMIÓN EXTRACCIÓN',
       '/retroexcavadora': 'RETROEXCAVADORA',
       '/motoniveladora': 'MOTONIVELADORA',
+      '/cargador-frontal': 'CARGADOR FRONTAL',
     };
 
     // Saber si estamos en la home

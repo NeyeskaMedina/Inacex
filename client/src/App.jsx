@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
+import Cargador from './view/NuestrosCursos/Cargador';
 import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
 import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut'
 import { useLocation } from 'react-router-dom';
@@ -84,6 +85,12 @@ function App() {
         <Route
             path ='/caex'
             element ={<Caex/>}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/cargador-frontal'
+            element ={<Cargador />}
         />
     </Routes>
     <Routes>

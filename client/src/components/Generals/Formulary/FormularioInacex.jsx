@@ -77,7 +77,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
         if (error === null && loading === true) {
           Swal.fire({
             title: '¡Éxito!',
-            text: 'Tus datos se han enviado correctamente, en breve te contactaremos.',
+            text: '¡Registro exitoso!, se acaba de enviar un correo de confirmación para continuar con el proceso.',
             icon: 'success',
             confirmButtonText: 'Continuar',
             confirmButtonColor: 'var(--verde-inacex)',

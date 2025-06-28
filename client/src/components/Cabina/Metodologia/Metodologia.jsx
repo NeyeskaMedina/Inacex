@@ -13,20 +13,19 @@ export const Metodologia = ({ icons }) => {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: {xs: 'center', md: 'end'},
         gap: 2,
-        px: 2,
-        py: 2,
         width: '100%',
         zIndex: { xs: 0, md: 2 }, // detrás en XS, encima en grandes
         position: {
           xs: 'fixed',       // fijo en móviles
-          md: 'absolute',    // posición absoluta en cabina (pantallas grandes)
+          md: 'absolute',  // absoluto en pantallas grandes
         },
         bottom: {
-          xs: '10px',        // fijo al fondo en móviles
-          md: '15px',
-          lg: '20px'        // pegado abajo en cabina
+          xs: '10px',  
+          md: '-20px'      // fijo al fondo en móviles
+          // md: '15px',
+          // lg: '20px'        // pegado abajo en cabina
         },
         left: 0,
         backgroundColor: {
