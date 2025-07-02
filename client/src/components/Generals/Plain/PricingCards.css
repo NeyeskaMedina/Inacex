@@ -6,10 +6,17 @@ body {
 }
 
 .pricing-section {
-  background-color: #f4f6f8;
+  background-color: var(--verde-transp);
   padding: 6rem 1rem;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
+}
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 @keyframes fadeIn {
@@ -25,7 +32,7 @@ body {
 }
 
 .pricing-subtitle {
-  color: #666;
+  color: #222121;
   margin-bottom: 3rem;
   font-size: 1rem;
   font-family: 'Roboto Condensed', sans-serif;

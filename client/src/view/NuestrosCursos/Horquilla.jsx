@@ -5,32 +5,14 @@ import FormularioInacex from '../../components/Generals/Formulary/FormularioInac
 import iconsHorquilla from '../../components/Cabina/Metodologia/icons/iconsHorquilla'
 import infoHorquilla from '../../components/Cabina/Requisitos/Info/InfoHorquilla';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
+import { plans } from '../../utils/utils';
 
 function Horquilla() {
-  const plans = [
-    {
-      title: 'CAMIÓN EXTRACCIÓN + GRÚA HORQUILLA',
-      subtitle: 'Programa especial',
-      price: '$454.000',
-      features: ['4 Maquinaria', 'Modalidad Online-Zoom / E-learning', '4 meses de duración', 'Soporte al alumno', 'Certificación digital','Instructores especializados', 'Bolsa de trabajo', 'Practicas en terreno', 'Practicatest'],
-      foo: 'El valor PAGO ÚNICO y todos los beneficios del programa seleccionado.',
-    },
-    {
-      title: 'OPERACIÓN SEGURA DE GRÚA HORQUILLA',
-      subtitle: 'Programa único',
-      price: '$140.000',
-      features: ['1 Maquinaria', 'Modalidad E-Learning', '2 meses de duración', 'Soporte al alumno', 'Certificación digital', 'Certificación impresa', 'Bolsa de trabajo', 'Practicas en terreno', 'Practicatest'],
-      foo: 'El valor es PAGO ÚNICO e incluye todos los beneficios del programa seleccionado.',
-      highlighted: true,
-    },
-    {
-      title: 'RETROEXCAVADORA + GRÚA HORQUILLA',
-      subtitle: 'Programa duo',
-      price: '$290.000',
-      features: ['2 Maquinaria', 'Modalidad E-Learning', '2 meses de duración', 'Soporte al alumno', 'Certificación digital', 'Certificación impresa',  'Bolsa de trabajo', 'Practicas en terreno', 'Practicatest'],
-      foo: 'El valor es PAGO ÚNICO y todos los beneficios del programa seleccionado.',
-    },
-  ];
+  const { cabinaRef } = useContext(UserContext);
+  const groupPlans = plans[2];
+
 
 
   const image = "./imgCursos/horquilla/horquillaIA.jpg";
@@ -47,11 +29,20 @@ function Horquilla() {
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>
-      <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
+      <ParabrisasCabina 
+          image={imageCab} 
+          viewIzq={viewIzq} 
+          viewDer={viewDer} 
+          viewCentXS={viewCentXS} 
+          viewCentMD={viewCentMD}
+          refProp={cabinaRef}
+      />
     </div>
-    <Metodologia icons={iconsHorquilla} />
+    <Metodologia 
+        targetRef={cabinaRef} 
+        icons={iconsHorquilla} />
     <Requisitos image={image} requisitos={infoHorquilla} colorIcon={'var(--verde-icons)'}/>
-    <PricingCards plans={plans} color={color} colorInacex={colorInacex} />
+    <PricingCards plans={groupPlans} color={color} colorInacex={colorInacex} />
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
     </>
   );

@@ -57,17 +57,23 @@ export default function TableRolled() {
   }, []);
 
   return (
+  <Box
+    sx={{
+      width: '100vw',
+      overflowX: 'scroll',
+    }}
+  >
     <Box
       sx={{
-        width: '100%',
+        width: '100%', // esto hace que se ajuste al contenedor padre
+        maxWidth: '100vw',
         height: 600,
-        overflowX: 'auto', // scroll horizontal en el contenedor
       }}
     >
       {loading ? (
         <Box
           sx={{
-            height: 600,
+            height: '100%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -76,22 +82,26 @@ export default function TableRolled() {
           <CircularProgress color="success" />
         </Box>
       ) : (
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          sx={{
-            minWidth: 1200, // obliga ancho para scroll
-          }}
-          disableRowSelectionOnClick
-          initialState={{
-            pagination: {
-              paginationModel: { pageSize: 10 },
-            },
-          }}
-          pageSizeOptions={[5, 10, 20]}
-          checkboxSelection
-        />
+        <Box sx={{ height: 600, width: '100%'}}>
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            sx={{
+              width: '100%',
+            }}
+            disableRowSelectionOnClick
+            initialState={{
+              pagination: {
+                paginationModel: { pageSize: 10 },
+              },
+            }}
+            pageSizeOptions={[5, 10, 20]}
+            checkboxSelection
+          />
+        </Box>
       )}
     </Box>
-  );
+  </Box>
+);
+
 }

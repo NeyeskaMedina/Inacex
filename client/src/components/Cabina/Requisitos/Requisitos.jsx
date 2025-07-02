@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Grid, Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -126,7 +125,7 @@ export const Requisitos = ({ image, requisitos, colorIcon }) => {
                   clipPath: 'polygon(0 0, 93% 0, 100% 10%, 100% 100%, 0 100%)',
                 }}
               >
-                <CheckCircleOutlineIcon sx={{ color: colorIcon, fontSize: { xs: 32, lg: 42 } }} />
+                  {item.icon}
                 <Typography variant="subtitle1" fontWeight="bold" fontSize={{ xs: 16, lg: 20 }}>
                   {item.textoPrincipal}
                 </Typography>

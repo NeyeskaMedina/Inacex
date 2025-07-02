@@ -5,6 +5,7 @@ html{
 :root{
     --verde-inacex: #8ba920;
     --verde-icons: #809c19;
+    --verde-icon: #677d14;
     --verde-gradient:  #84BD2F;
     --verde-transp: #8ba92090;
     --azul-komatsu: #140c9b;
@@ -20,6 +21,7 @@ html{
     --verde-trans: #9fc41a27;
     --verde-trans-otro: #9fc41a78;
     --bg-forms: #1d1d1d83;
+    --gris-sub: rgb(45, 45, 45);
 
 
 .roboto-condensed {
