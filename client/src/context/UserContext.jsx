@@ -1,11 +1,12 @@
 import { createContext } from 'react'
+import { useRef } from 'react';
 // import { getData } from "../helpers/getData";
 
 export const UserContext = createContext({})
 
 export const ContextProvider = ( {children} ) => {
         
-        // const [ total, setTotal ] = useState(0);
+        const cabinaRef = useRef(null);
         // const [ carro, setCarro ] = useState([])
         
         // useEffect(() => {
@@ -30,7 +31,7 @@ export const ContextProvider = ( {children} ) => {
        
         
         const sharedContext = {
-            // dataPizzas,
+            cabinaRef,
             // setDataPizzas,
             // carro,
             // setCarro,

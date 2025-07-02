@@ -2,13 +2,14 @@ import { Box } from '@mui/material';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 
-const ParabrisasCabina = ({ image, viewIzq, viewDer, viewCentXS, viewCentMD }) => {
+const ParabrisasCabina = ({ image, viewIzq, viewDer, viewCentXS, viewCentMD, refProp }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
   
   return (
     <>
     <Box
+      ref={refProp}
       sx={{
         display: 'flex',
         flexDirection: 'row',

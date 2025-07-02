@@ -41,6 +41,7 @@ const NavbarInacex = () => {
       '/retroexcavadora': 'RETROEXCAVADORA',
       '/motoniveladora': 'MOTONIVELADORA',
       '/cargador-frontal': 'CARGADOR FRONTAL',
+      '/bulldozer': 'BULLDOZER',
     };
 
     // Saber si estamos en la home
@@ -70,11 +71,11 @@ const NavbarInacex = () => {
       <Button 
           className={'btnNav'} 
           component={Link} 
-          to="/nosotros" 
+          to="/" 
           onClick={onClick} 
           color="inherit" 
           fullWidth={fullWidth}
-      >Nosotros
+      >Home
       </Button>
       <Button 
           className={'btnNav'} 
@@ -130,10 +131,12 @@ const NavbarInacex = () => {
           position="fixed"
         >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box className={'logoNav'} onClick={""} sx={{ cursor: 'pointer', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Box className={'logoNav'} sx={{ cursor: 'pointer', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <img src="./LogoInacex.png" alt="Logo de Inacex sin letras" height={35} />
               <img src="./LogoInacexWhite.png" alt="Logo de Inacex con letras" width={140} height={35} />
             </Box>
+            </Link>
             {isMobile ? (
               <IconButton onClick={handleToggle} sx={{ color: 'white' }}>
                 <MenuIcon sx={{ fontSize: 28 }} />

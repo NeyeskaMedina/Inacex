@@ -21,7 +21,7 @@ const slides = [
     URL: '/caex'
   },
   {
-    anexoTitle: 'OPERACIÓN SEGURA DE',
+    anexoTitle: 'OPERACIÓN SEGURA DE ',
     title: 'GRÚA HORQUILLA',
     notification: 'Con nuestros beneficios obten tu licencia clase D.',
     image: './imgCarousel/horquilla.jpg',
@@ -34,7 +34,7 @@ const slides = [
     Modelo2: 'D09 al D11',
     notification: 'Capacitación reconocida en Chile y Perú',
     image: './imgCarousel/bulldozer.jpg',
-    URL: '/bull'
+    URL: '/bulldozer'
   },
 ];
 

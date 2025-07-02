@@ -1,13 +1,30 @@
 import { Box, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 // import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined';
 // import CastForEducationOutlinedIcon from '@mui/icons-material/CastForEducationOutlined';
 // import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined';
 // import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
-export const Metodologia = ({ icons }) => {
-  
+export const Metodologia = ({ targetRef, icons }) => {
+     const [visible, setVisible] = useState(false);
 
-  return (
+      useEffect(() => {
+        const handleScroll = () => {
+        if (!targetRef?.current) return;
+
+        const rect = targetRef.current.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom > 380;
+
+        setVisible(isInView);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // ejecutar al cargar
+
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, [targetRef]);
+
+  return visible && (
     <Box
       sx={{
         display: 'flex',
@@ -19,11 +36,11 @@ export const Metodologia = ({ icons }) => {
         zIndex: { xs: 0, md: 2 }, // detrás en XS, encima en grandes
         position: {
           xs: 'fixed',       // fijo en móviles
-          md: 'absolute',  // absoluto en pantallas grandes
+          md: 'fixed',  // absoluto en pantallas grandes
         },
         bottom: {
           xs: '10px',  
-          md: '-20px'      // fijo al fondo en móviles
+          md: '10px'      // fijo al fondo en móviles
           // md: '15px',
           // lg: '20px'        // pegado abajo en cabina
         },
@@ -43,8 +60,8 @@ export const Metodologia = ({ icons }) => {
             alignItems: 'center',
             justifyContent: 'center',
             border: '1px solid var(--naranja-cat)',
-            width: { xs: '120px', sm: '120px', md: '150px' },
-            height: { xs: '120px', sm: '120px', md: '150px' },
+            width: { xs: '120px', sm: '120px', md: '150px', xl: '200px' },
+            height: { xs: '120px', sm: '120px', md: '150px', xl: '200px' },
             borderRadius: '12px',
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
             backdropFilter: 'blur(3px)', //zoom
@@ -56,7 +73,7 @@ export const Metodologia = ({ icons }) => {
             sx={{
               textAlign: 'center',
               fontWeight: 500,
-              fontSize: { xs: '0.75rem', sm: '0.85rem', md: '1rem' },
+              fontSize: { xs: '0.75rem', sm: '0.85rem', md: '1rem', xl: '1.5rem' },
               color: 'var(--naranja-cat)',
               px: 1,
             }}

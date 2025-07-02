@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
-import Cargador from './view/NuestrosCursos/Cargador';
 import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
 import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut'
 import { useLocation } from 'react-router-dom';
@@ -16,9 +15,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
 import Horquilla from './view/NuestrosCursos/Horquilla';
+import CargadorFrontal from './view/NuestrosCursos/CargadorFrontal';
 import Retroexcavadora from './view/NuestrosCursos/Retroexcavadora'
 import Caex from './view/NuestrosCursos/Caex'
+import Bulldozer from './view/NuestrosCursos/Bulldozer';
+import Motoniveladora from './view/NuestrosCursos/Motoniveladora';
 import ListProspectBk from './view/ListProspectBk';
+import Programas from './view/Programas/Programas'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -90,7 +93,25 @@ function App() {
     <Routes>
         <Route
             path ='/cargador-frontal'
-            element ={<Cargador />}
+            element ={<CargadorFrontal />}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/bulldozer'
+            element ={<Bulldozer />}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/motoniveladora'
+            element ={<Motoniveladora />}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/programas'
+            element ={<Programas />}
         />
     </Routes>
     <Routes>

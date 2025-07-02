@@ -5,8 +5,11 @@ import FormularioInacex from '../../components/Generals/Formulary/FormularioInac
 import iconsRetro from '../../components/Cabina/Metodologia/icons/iconsRetro'
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 import infoRetro from '../../components/Cabina/Requisitos/Info/InfoRetro';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 function Retroexcavadora() {
+  const { cabinaRef } = useContext(UserContext);
   const plans = [
     {
       title: 'CAMIÓN EXTRACCIÓN + GRÚA HORQUILLA',
@@ -33,25 +36,36 @@ function Retroexcavadora() {
   ];
 
   const image = "./imgCursos/retro/retro.jpg";
-  const imageCab = "./imgCursos/retro/retroCabina.jpg";
+  const imageCab = "./imgCursos/retro/retro2.jpg";
   const imgForms = './imgCursos/retro/retro.jpg';
+  const imagePlans = './imgCursos/retro/11.jpg';
   const bgColor = 'var(--verde-trans)';
   const font = 'black';
   const color = 'var(--naranja-oscuro)';
   const colorInacex = 'var(--verde-inacex)';
-  const viewIzq = '500% 200%';
-  const viewDer = '500% 200%';
+  const viewIzq = '300% 160%';
+  const viewDer = '300% 160%';
   const viewCentXS = '100% 100%';
   const viewCentMD = '100% 160%';
 
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>
-      <ParabrisasCabina image={imageCab} viewIzq={viewIzq} viewDer={viewDer} viewCentXS={viewCentXS} viewCentMD={viewCentMD}/>
+      <ParabrisasCabina 
+          image={imageCab} 
+          viewIzq={viewIzq} 
+          viewDer={viewDer} 
+          viewCentXS={viewCentXS} 
+          viewCentMD={viewCentMD} 
+          refProp={cabinaRef}
+      />  
     </div>
-    <Metodologia icons={iconsRetro} />
+    <Metodologia 
+        targetRef={cabinaRef} 
+        icons={iconsRetro} 
+    />
     <Requisitos image={image} requisitos={infoRetro} colorIcon={'var(--naranja-cat)'}/>
-    <PricingCards plans={plans} color={color} colorInacex={colorInacex} />
+    <PricingCards plans={plans} color={color} colorInacex={colorInacex} image={imagePlans} />
     <FormularioInacex image={imgForms} bgColor={bgColor} font={font}/>
     </>
   );

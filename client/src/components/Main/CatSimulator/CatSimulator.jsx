@@ -39,7 +39,6 @@ const CatSimulator = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Overlay oscuro sobre imagen de fondo */}
       <Box
         sx={{
           position: 'absolute',
@@ -47,12 +46,11 @@ const CatSimulator = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(9, 8, 8, 0.86)', // puedes ajustar el nivel de opacidad aquí
+          backgroundColor: 'rgba(9, 8, 8, 0.86)',
           zIndex: 1,
         }}
       />
 
-      {/* Contenido principal sobre el overlay */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
         <Box
           sx={{
@@ -62,11 +60,9 @@ const CatSimulator = () => {
             gap: { xs: 6, md: 8 },
           }}
         >
-          {/* Texto */}
           <Box
             sx={{
               flex: 1,
-              transform: { xs: 'none', md: 'skewX(-6deg)' },
               background: { md: 'rgba(255,255,255,0.02)' },
               px: { xs: 0, md: 4 },
               py: { xs: 0, md: 3 },
@@ -75,58 +71,56 @@ const CatSimulator = () => {
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <Box sx={{ transform: { xs: 'none', md: 'skewX(6deg)' } }}>
-              <Typography
-                variant="h3"
-                component="h2"
-                sx={{
-                  fontWeight: 700,
-                  color: 'white',
-                  mb: 2,
-                  fontSize: { xs: '2rem', md: '2.8rem' },
-                }}
-              >
-                <span style={{ color: 'var(--naranja-cat)' }}>CAT</span>SIMULATOR
-              </Typography>
+            <Typography
+              variant="h3"
+              component="h2"
+              className="roboto-condensed"
+              sx={{
+                fontWeight: 700,
+                color: 'white',
+                mb: 2,
+                fontSize: { xs: '2rem', md: '2.8rem' },
+              }}
+            >
+              <span style={{ color: 'var(--naranja-cat)' }}>CAT</span>SIMULATOR
+            </Typography>
 
-              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
-                "CAT SIMULATOR" (Caterpillar) es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
-              </Typography>
+            <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
+              "CAT SIMULATOR" (Caterpillar) es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
+            </Typography>
 
-              <List>
-                {listItems.map((text, index) => (
-                  <ListItem
-                    key={index}
-                    data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
-                    data-aos-duration="900"
-                    sx={{
-                      py: 0.5,
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateX(5px)',
-                      },
-                    }}
-                  >
-                    <ListItemIcon>
-                      <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                ))}
-              </List>
+            <List>
+              {listItems.map((text, index) => (
+                <ListItem
+                  key={index}
+                  data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
+                  data-aos-duration="900"
+                  sx={{
+                    py: 0.5,
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateX(5px)',
+                    },
+                  }}
+                >
+                  <ListItemIcon>
+                    <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+            </List>
 
-              <Typography
-                variant="body2"
-                sx={{ mt: 3, color: '#ccc' }}
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
-              </Typography>
-            </Box>
+            <Typography
+              variant="body2"
+              sx={{ mt: 3, color: '#ccc' }}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
+            </Typography>
           </Box>
 
-          {/* Imagen */}
           <Box
             component="img"
             src="./imgCursos/catSimulator.png"
@@ -135,13 +129,24 @@ const CatSimulator = () => {
             data-aos-duration="1200"
             sx={{
               flex: 1,
-              width: '100%',
-              height: { xs: 300, md: 600 },
+              width: {
+                xs: '100%',
+                sm: '90%',
+                md: '100%',
+                lg: '90%',
+                xl: '80%'
+              },
+              height: {
+                xs: 220,
+                sm: 300,
+                md: 450,
+                lg: 520,
+                xl: 580
+              },
               objectFit: 'cover',
               borderRadius: 3,
               boxShadow: 6,
               mt: { xs: 4, md: 0 },
-              // p: '50px',
             }}
           />
         </Box>
