@@ -14,16 +14,13 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { accorProgramas } from '../../../utils/accordion'
 
-export const AccorCaex = () => {
-  const programasCaex = accorProgramas['caex'];
+export const AccorGrua = () => {
+  const programasCaex = accorProgramas['grua'];
 
   return (
     <AccordionDetails>
       <Accordion
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: {xs: 'space-between', md: 'start'},
           background: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(14px)',
           borderRadius: 2,
@@ -34,19 +31,16 @@ export const AccorCaex = () => {
         }}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src="./imgCursos/caex/caex-bg.png" width={{xs: '50px', md: '150'}} height={150} alt="" />
+            
           <Typography
             variant="subtitle1"
             sx={{
-              display: 'flex',
-              flexDirection: {xs: 'column', md: 'row'},
-              alignItems: 'center',
               color: 'white',
               fontWeight: 600,
               fontSize: { xs: '1rem', sm: '1.1rem' },
             }}
           >
-            CAMIÓN EXTRACCIÓN DE  <span style={{ color: 'var(--verde-inacex)' }}> ALTO TONELAJE</span>
+            OPERACIÓN SEGURA DE <span style={{ color: 'var(--verde-inacex)' }}> GRÚA HORQUILLA</span>
           </Typography>
         </AccordionSummary>
 
@@ -118,4 +112,4 @@ export const AccorCaex = () => {
   );
 };
 
-export default AccorCaex;
+export default AccorGrua;

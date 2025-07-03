@@ -13,9 +13,9 @@ import PricingCards from '../../components/Generals/Plain/PricingCards';
 function Bulldozer() {
   const { cabinaRef } = useContext(UserContext);
   const imageAdvances = "./imgCursos/bull/bull2.png"
-  const image = "./imgCursos/bull/bull2.png";
+  const image = "./imgCursos/bull/bull1.png";
   const req = "./imgCursos/bull/bull2.png"
-  const imgForms = './imgCursos/bull/bull2.png'
+  const imgForms = './imgCursos/bull/bull4.png'
   const bgColor = 'var(--verde-trans)';
   const font = 'white';
   const viewIzq = '400% 110%';
@@ -24,7 +24,7 @@ function Bulldozer() {
   const viewCentMD = '100% 100%';
   const colorInacex = 'var(--verde-inacex)';
   const color = 'white';
-  const imagePlans = "./imgCursos/bull/bull1.png";
+  const imagePlans = "./imgCursos/bull/bull13.png";
 
   const groupPlans = plans[4];
   return (
@@ -43,10 +43,25 @@ function Bulldozer() {
         targetRef={cabinaRef}
         icons={iconsBull} 
     />
-    <Requisitos image={req} requisitos={infoBull} colorIcon={'var(--verde-icons)'}/>
-    <PricingCards plans={groupPlans} color={color} colorInacex={colorInacex} image={imagePlans}/>
-    <Advances image={imageAdvances} />
-    <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
+    <Requisitos 
+        image={req} 
+        requisitos={infoBull} 
+        colorIcon={'var(--verde-icons)'}
+    />
+    <PricingCards 
+        plans={groupPlans} 
+        color={color} 
+        colorInacex={colorInacex} 
+        image={imagePlans}
+    />
+    <Advances 
+        image={imageAdvances} 
+    />
+    <FormularioInacex 
+        image={imgForms} 
+        bgColor={bgColor} 
+        font={font} 
+    />
     </>
   );
 }

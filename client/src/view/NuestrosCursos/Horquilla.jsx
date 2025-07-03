@@ -4,6 +4,7 @@ import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
 import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
 import iconsHorquilla from '../../components/Cabina/Metodologia/icons/iconsHorquilla'
 import infoHorquilla from '../../components/Cabina/Requisitos/Info/InfoHorquilla';
+import Advances from '../../components/Main/Advances/Advances';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
@@ -18,6 +19,8 @@ function Horquilla() {
   const image = "./imgCursos/horquilla/horquillaIA.jpg";
   const imageCab= "./imgCursos/horquilla/horquilla.jpg";
   const imgForms = './imgCursos/horquilla/horquillaForms.jpg';
+  const imagePlans = './imgCursos/horquilla/horquillaPlans.jpg';
+  const imageAdvances = './imgCursos/horquilla/horquillaAdvance.jpg';
   const color = 'var(--naranja-oscuro)';
   const colorInacex = 'var(--verde-inacex)';
   const bgColor = 'var(--bg-transp-forms)';
@@ -41,9 +44,25 @@ function Horquilla() {
     <Metodologia 
         targetRef={cabinaRef} 
         icons={iconsHorquilla} />
-    <Requisitos image={image} requisitos={infoHorquilla} colorIcon={'var(--verde-icons)'}/>
-    <PricingCards plans={groupPlans} color={color} colorInacex={colorInacex} />
-    <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
+    <Requisitos 
+        image={image} 
+        requisitos={infoHorquilla} 
+        colorIcon={'var(--verde-icons)'}
+    />
+    <Advances 
+        image={imageAdvances} 
+    />
+    <PricingCards 
+        plans={groupPlans} 
+        color={color} 
+        colorInacex={colorInacex} 
+        image={imagePlans} 
+    />
+    <FormularioInacex 
+        image={imgForms} 
+        bgColor={bgColor} 
+        font={font} 
+    />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
@@ -24,20 +23,15 @@ con la mejor tecnología de simulación
 CATSIMULATORS.`
   },
   {
-    textoPrincipal: 'Tener disponibilidad de tiempo según el horario del curso',
-    fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
-    icon: <AccessAlarmIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
-  },
-  {
-    textoPrincipal: 'Tener disponibilidad de viajar a simulación',
-    textoSecundario: 'Según región donde te encuentres',
-    fondo: '#1D1D1D',
-    icon: <FlightTakeoffIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
-  },
-  {
     textoPrincipal: 'Tener rendido 4° año medio deseable (mínimo 8 básico)',
     fondo: '#1D1D1D',
     icon: <AssignmentIndOutlinedIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
+  },
+   {
+    textoPrincipal: 'Tener disponibilidad de viajar a simulación',
+    textoSecundario: 'Según región donde te encuentres',
+     fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
+    icon: <FlightTakeoffIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
   },
   {
     textoPrincipal: 'Tener licencia clase D (No excluyente)',

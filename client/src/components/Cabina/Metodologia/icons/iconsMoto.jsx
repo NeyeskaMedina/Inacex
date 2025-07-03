@@ -6,7 +6,7 @@ import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 export const iconsMoto = [
   {
     icon: <CastForEducationOutlinedIcon sx={{ fontSize: { xs: 40, md: 50 }, color: 'var(--naranja-oscuro)', m: 1 }} />,
-    texto: 'Aprendizaje en vivo via Zoom',
+    texto: 'Aprendizaje E-Learning',
   },
   {
     icon: <AssuredWorkloadOutlinedIcon sx={{ fontSize: { xs: 40, md: 50 }, color: 'var(--naranja-oscuro)', m: 1 }} />,
@@ -14,7 +14,7 @@ export const iconsMoto = [
   },
   {
     icon: <AssignmentIndOutlinedIcon sx={{ fontSize: { xs: 40, md: 50 }, color: 'var(--naranja-oscuro)', m: 1 }} />,
-    texto: 'Instructor en línea',
+    texto: 'Tutor especializado',
   },
   {
     icon: <SupportAgentOutlinedIcon sx={{ fontSize: { xs: 40, md: 50 }, color: 'var(--naranja-oscuro)', m: 1 }} />,
