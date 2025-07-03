@@ -431,6 +431,78 @@ export const plans = {
         ],
       foo: 'El valor es PAGO ÚNICO e incluye matrícula y todos los beneficios del programa seleccionado.',
     },
+  ],
+  6: [
+  // RETROEXCAVADORA
+  {
+      title: 'CAMIÓN EXTRACCIÓN + ',
+      nexo: 'GRÚA HORQUILLA',
+      subtitle: 'Programa especial',
+      other: 'Matrícula',
+      price: '$70.000',
+      features: 
+        [
+          '5 Maquinarias', 
+          'Modalidad Online-Zoom', 
+          '4 meses de duración',
+          'Clases 2 veces por semana', 
+          'Soporte al alumno', 
+          'Campus virtual',
+          'Certificación digital',
+          'Certificación indefinida',
+          'Instructor especializado', 
+          'Bolsa de trabajo', 
+          'Practicas en terreno', 
+          'Practicatest'
+        ],
+      foo: 'El valor PAGO ÚNICO y todos los beneficios del programa seleccionado.',
+    },
+    {
+      title: 'OPERACIÓN SEGURA DE ',
+      nexo: 'RETROEXCAVADORA',
+      subtitle: 'Programa único',
+      other: 'Matrícula',
+      price: 'Subvencionado',
+      features: 
+        [
+          '1 Maquinaria', 
+          'Modalidad E-Learning', 
+          '2 meses de duración', 
+          'Campus virtual',
+          'Clases a tu ritmo', 
+          'Soporte al alumno', 
+          'Certificación impresa y digital', 
+          'Certificación indefinida', 
+          'Instructor especializado', 
+          'Bolsa de trabajo', 
+          'Practicas en terreno', 
+          'Practicatest'
+        ],
+      foo: 'El valor es PAGO ÚNICO e incluye todos los beneficios del programa seleccionado.',
+      highlighted: true,
+    },
+    {
+      title: 'RETROEXCAVADORA + ',
+      nexo: 'GRÚA HORQUILLA',
+      subtitle: 'Programa duo',
+      other: 'Matrícula',
+      price: 'Subvencionado',
+      features: [
+          '2 Maquinaria', 
+          'Modalidad E-Learning', 
+          '2 meses de duración', 
+          'Clases a tu ritmo',
+          'Soporte al alumno',
+          'Campus virtual', 
+          'Certificación impresa y digital', 
+          'Certificación indefinida', 
+          'Instructor especializado',  
+          'Bolsa de trabajo', 
+          'Practicas en terreno', 
+          'Practicatest'
+      ],
+      foo: 'El valor es PAGO ÚNICO y todos los beneficios del programa seleccionado.',
+    },
   ]
 };
 

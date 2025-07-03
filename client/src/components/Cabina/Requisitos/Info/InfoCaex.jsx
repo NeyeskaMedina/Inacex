@@ -1,4 +1,8 @@
-
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined';
+import ArtTrackIcon from '@mui/icons-material/ArtTrack';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 
 export const infoCaex = [
   {
@@ -14,19 +18,23 @@ trabajo.`
   {
     textoPrincipal: 'Tener disponibilidad de tiempo según el horario del curso',
     fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
+    icon: <AccessAlarmIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
   },
   {
     textoPrincipal: 'Tener rendido 4° año medio deseable (mínimo 8 básico)',
     fondo: '#1D1D1D',
+    icon: <AssignmentIndOutlinedIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
   },
   {
-    textoPrincipal: 'Tener mínimo 18 años de edad',
-    textoSecundario: 'Requisito obligatorio de acuerdo a la normativa legal vigente.',
+    textoPrincipal: 'Tener licencia clase D (No excluyente)',
     fondo: '#1D1D1D',
+    icon: <ArtTrackIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
   },
   {
-    textoPrincipal: 'Ser chileno o extranjero con residencia permanente o en trámite',
+    textoPrincipal: 'Tener buena conectividad a internet',
+    textoSecundario: 'Se recomienda realizar el curso a través de PC, MAC ó TABLET',
     fondo: 'linear-gradient(135deg, var(--verde-inacex), #84BD2F)',
+    icon: <LaptopChromebookIcon sx={{ color: 'var(--verde-icon)', fontSize: { xs: '35px', md: '40px', lg: '50px' } }} />,
   },
 ];
 

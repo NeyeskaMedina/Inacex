@@ -2,8 +2,9 @@ import ParabrisasCabina from '../../components/Cabina/ParabrisasCabina';
 import Metodologia from '../../components/Cabina/Metodologia/Metodologia';
 import Requisitos from '../../components/Cabina/Requisitos/Requisitos';
 import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
-import iconsFrontal from '../../components/Cabina/Metodologia/icons/iconsFrontal'
+import iconsFrontal from '../../components/Cabina/Metodologia/icons/iconsFrontal';
 import infoFrontal from '../../components/Cabina/Requisitos/Info/InfoFrontal';
+import Advances from '../../components/Main/Advances/Advances';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
@@ -14,8 +15,9 @@ function CargadorFrontal() {
     const groupPlans = plans[1];
 
   const image = "./imgCursos/frontal/frontal.png";
-  const imageCab= "./imgCursos/frontal/26.png";
-  const imgForms = './imgCursos/frontal/frontal3.png'
+  const imageCab= "./imgCursos/frontal/frontal3.png";
+  const imgForms = './imgCursos/frontal/26.png';
+  const imageAdvances = './imgCursos/frontal/26.png';
   const imagePlans = './imgCursos/frontal/12.png';
   const bgColor = 'var(--verde-trans)';
   const color = 'var(--naranja-oscuro)';
@@ -45,6 +47,9 @@ function CargadorFrontal() {
         image={image} 
         requisitos={infoFrontal} 
         colorIcon={'var(--verde-icons)'}
+    />
+    <Advances 
+            image={imageAdvances} 
     />
     <PricingCards 
         plans={groupPlans} 

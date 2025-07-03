@@ -6,10 +6,18 @@ import {
   Typography,
   Box,
 } from '@mui/material';
-import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Paper,
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { formatoMes } from '../../helpers/formatoMes.js';
 import { AccorCaex } from '../../components/Generals/Accordion/AccorCaex';
+import { AccorGrua } from '../../components/Generals/Accordion/AccorGrua';
 
 export default function Programas() {
   const [expanded, setExpanded] = useState(false);
@@ -22,8 +30,8 @@ export default function Programas() {
     <Box
       sx={{
         position: 'relative',
-        px: 3,
-        py: 5,
+        px: { xs: 2, md: 6 },
+        py: { xs: 4, md: 6 },
         backgroundImage: 'url(./imgCursos/frontal/12.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -32,7 +40,7 @@ export default function Programas() {
         zIndex: 0,
       }}
     >
-      {/* Capa blanca semitransparente */}
+      {/* Capa oscura */}
       <Box
         sx={{
           position: 'absolute',
@@ -45,103 +53,150 @@ export default function Programas() {
         }}
       />
 
-      {/* Contenido */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
-        {/* Barra destacada */}
+        {/* Título principal */}
         <Typography
+          variant="h3"
+          className="roboto-condensed"
           sx={{
-            backgroundColor: 'var(--verde-inacex)',
-            color: '#fff',
             textAlign: 'center',
-            py: 1,
-            fontWeight: 'bold',
-            mb: 3,
-            borderRadius: 1,
+            fontWeight: 700,
+            color: 'white',
+            mb: 1,
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem' },
           }}
         >
-          ¡Inscripciones abiertas este mes! Cupos limitados.
+          Programas de Formación
         </Typography>
 
         <Typography
-          variant="h4"
+          variant="h5"
+          className="roboto-condensed"
           sx={{
             textAlign: 'center',
             mb: 4,
-            fontWeight: 'bold',
-            color: 'white',
+            color: 'var(--verde-inacex)',
+            fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem' },
           }}
         >
-          Programas de Formación - <span style={{ color: 'var(--verde-inacex)' }}>{formatoMes()}</span>
+          {formatoMes()}
         </Typography>
 
-        {/* CURSOS DE MAQUINARIA PESADA */}
-        <Accordion sx={{
-            background: 'rgba(255, 255, 255, 0.2)',
+        {/* Accordion Maquinaria */}
+        <Accordion
+          sx={{
+            background: 'rgba(0, 0, 0, 0.3)',
             backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
             borderRadius: 2,
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            p: 2,
-        }} expanded={expanded === 'maquinaria'} onChange={handleChange('maquinaria')}>
+            boxShadow: '0 6px 18px rgba(0, 0, 0, 0.3)',
+            mb: 3,
+          }}
+          expanded={expanded === 'maquinaria'}
+          onChange={handleChange('maquinaria')}
+        >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: 'white' }}>
-              CURSOS DE <span style={{ color: 'var(--verde-inacex)' }}>MAQUINARIA PESADA /</span> <span style={{ color: 'var(--negro-ticket)' }}>Módulos - Modalidad - Horarios </span>
-            </Typography>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  color: '#e0f2f1',
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                }}
+              >
+                CURSOS DE <span style={{ color: 'var(--verde-inacex)' }}>MAQUINARIA PESADA</span>
+              </Typography>
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  color: 'var(--blanco-notification)',
+                  fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+                }}
+              >
+                / Módulos - Modalidad - Horarios
+              </Typography>
+            </Box>
           </AccordionSummary>
-          {/*CURSOS CAEX*/}
+          {/* `PROGRAMAS CAEX` */}
           <AccorCaex />
+           {/* `PROGRAMAS GRUA` */}
+          <AccorGrua />
         </Accordion>
 
-        {/* CURSOS ADMINISTRATIVOS */}
-        <Accordion expanded={expanded === 'admin'} onChange={handleChange('admin')}>
+        {/* Accordion Administrativos */}
+        <Accordion
+          sx={{
+            background: 'rgba(255, 255, 255, 0.12)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: 2,
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            mb: 3,
+          }}
+          expanded={expanded === 'admin'}
+          onChange={handleChange('admin')}
+        >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: '#2e7d32' }}>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: 600,
+                color: '#a5d6a7',
+                fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+              }}
+            >
               Cursos Administrativos
             </Typography>
           </AccordionSummary>
+
           <AccordionDetails>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                <Typography sx={{ fontWeight: 600, fontSize: { xs: '0.95rem', sm: '1rem' } }}>
                   Gestión de Recursos Humanos
                 </Typography>
               </AccordionSummary>
+
               <AccordionDetails>
                 <Accordion>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                    <Typography sx={{ fontWeight: 600, fontSize: { xs: '0.9rem', sm: '1rem' } }}>
                       Programa Intensivo de RRHH
                     </Typography>
                   </AccordionSummary>
 
                   <AccordionDetails>
-                    <TableContainer component={Paper} sx={{ borderRadius: 2, boxShadow: 3 }}>
-                      <Table>
+                    <TableContainer
+                      component={Paper}
+                      sx={{
+                        borderRadius: 2,
+                        boxShadow: 3,
+                      }}
+                    >
+                      <Table size="small">
                         <TableBody>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Modalidad</TableCell>
-                            <TableCell>Online por Zoom</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Duración</TableCell>
-                            <TableCell>+80 horas de formación</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Clases</TableCell>
-                            <TableCell>2 veces por semana</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Certificación</TableCell>
-                            <TableCell>Doble: Chile y Perú</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Soporte</TableCell>
-                            <TableCell>Técnico y académico constante</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>Acceso</TableCell>
-                            <TableCell>Campus Virtual + Material descargable</TableCell>
-                          </TableRow>
+                          {[
+                            ['Modalidad', 'Online por Zoom'],
+                            ['Duración', '+80 horas de formación'],
+                            ['Clases', '2 veces por semana'],
+                            ['Certificación', 'Doble: Chile y Perú'],
+                            ['Soporte', 'Técnico y académico constante'],
+                            ['Acceso', 'Campus Virtual + Material descargable'],
+                          ].map(([label, value], i) => (
+                            <TableRow key={i}>
+                              <TableCell
+                                sx={{
+                                  fontWeight: 'bold',
+                                  color: '#2e7d32',
+                                  fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                                }}
+                              >
+                                {label}
+                              </TableCell>
+                              <TableCell sx={{ fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
+                                {value}
+                              </TableCell>
+                            </TableRow>
+                          ))}
                         </TableBody>
                       </Table>
                     </TableContainer>

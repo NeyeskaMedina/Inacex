@@ -14,11 +14,11 @@ function Motoniveladora() {
  const groupPlans = plans[5];
 
   const { cabinaRef } = useContext(UserContext);
-  const imageAdvances = "./imgCursos/moto/moto1.png"
+  const imageAdvances = "./imgCursos/moto/moto12.png"
   const imagePlans = './imgCursos/moto/moto1.png';
-  const image = "./imgCursos/moto/moto1.png";
+  const image = "./imgCursos/moto/moto2.png";
   const req = "./imgCursos/moto/moto1.png"
-  const imgForms = './imgCursos/moto/moto1.png'
+  const imgForms = './imgCursos/moto/moto3.png'
    const bgColor = 'var(--verde-trans)';
   const font = 'white';
   const viewIzq = '400% 110%'
@@ -44,10 +44,25 @@ function Motoniveladora() {
         targetRef={cabinaRef}
         icons={iconsMoto} 
     />
-    <Requisitos image={req} requisitos={infoMoto} colorIcon={'var(--verde-icons)'}/>
-    <Advances image={imageAdvances} />
-    <PricingCards plans={groupPlans} color={color} colorInacex={colorInacex} image={imagePlans} />
-    <FormularioInacex image={imgForms} bgColor={bgColor} font={font} />
+    <Requisitos 
+        image={req} 
+        requisitos={infoMoto} 
+        colorIcon={'var(--verde-icons)'}
+    />
+    <Advances 
+        image={imageAdvances} 
+    />
+    <PricingCards 
+        plans={groupPlans} 
+        color={color} 
+        colorInacex={colorInacex} 
+        image={imagePlans} 
+    />
+    <FormularioInacex 
+        image={imgForms} 
+        bgColor={bgColor} 
+        font={font} 
+    />
     </>
   );
 }

@@ -13,8 +13,9 @@ export const Metodologia = ({ targetRef, icons }) => {
         if (!targetRef?.current) return;
 
         const rect = targetRef.current.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom > 380;
-
+        const threshold = window.innerWidth >= 1200 ? 800 : 380;
+        const isInView = rect.top < window.innerHeight && rect.bottom > threshold;
+    
         setVisible(isInView);
       };
 
@@ -35,8 +36,8 @@ export const Metodologia = ({ targetRef, icons }) => {
         width: '100%',
         zIndex: { xs: 0, md: 2 }, // detrás en XS, encima en grandes
         position: {
-          xs: 'fixed',       // fijo en móviles
-          md: 'fixed',  // absoluto en pantallas grandes
+          xs: 'fixed',      
+          md: 'fixed', 
         },
         bottom: {
           xs: '10px',  
@@ -60,8 +61,8 @@ export const Metodologia = ({ targetRef, icons }) => {
             alignItems: 'center',
             justifyContent: 'center',
             border: '1px solid var(--naranja-cat)',
-            width: { xs: '120px', sm: '120px', md: '150px', xl: '200px' },
-            height: { xs: '120px', sm: '120px', md: '150px', xl: '200px' },
+            width: { xs: '120px', sm: '120px', md: '150px', xl: '180px' },
+            height: { xs: '120px', sm: '120px', md: '150px', xl: '180px' },
             borderRadius: '12px',
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
             backdropFilter: 'blur(3px)', //zoom
