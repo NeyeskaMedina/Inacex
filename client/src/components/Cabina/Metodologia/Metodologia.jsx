@@ -27,63 +27,70 @@ export const Metodologia = ({ targetRef, icons }) => {
 
   return visible && (
     <Box
+  sx={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: { xs: 'center', md: 'end' },
+    gap: 2,
+    width: '100%',
+    zIndex: { xs: 0, md: 2 },
+    position: 'fixed',
+    bottom: { xs: '10px', md: '10px' },
+    left: 0,
+    backgroundColor: 'transparent',
+  }}
+>
+  {icons.map((item, index) => (
+    <Box
+      key={index}
       sx={{
         display: 'flex',
-        flexWrap: 'wrap',
+        flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'center',
-        alignItems: {xs: 'center', md: 'end'},
-        gap: 2,
-        width: '100%',
-        zIndex: { xs: 0, md: 2 }, // detrás en XS, encima en grandes
-        position: {
-          xs: 'fixed',      
-          md: 'fixed', 
+        border: '1px solid var(--naranja-cat)',
+        width: {
+          xs: 'calc(50% - 40px)', // 2 por fila en móviles (con gap de 24px)
+          sm: '130px',
+          md: '150px',
+          lg: '160px',
+          xl: '180px',
         },
-        bottom: {
-          xs: '10px',  
-          md: '10px'      // fijo al fondo en móviles
-          // md: '15px',
-          // lg: '20px'        // pegado abajo en cabina
+        height: {
+          xs: '120px',
+          sm: '130px',
+          md: '150px',
+          lg: '160px',
+          xl: '180px',
         },
-        left: 0,
-        backgroundColor: {
-          xs: 'transparent',
-          md: 'transparent',
-        },
+        borderRadius: '12px',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        backdropFilter: 'blur(3px)',
       }}
     >
-      {icons.map((item, index) => (
-        <Box
-          key={index}
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            border: '1px solid var(--naranja-cat)',
-            width: { xs: '120px', sm: '120px', md: '150px', xl: '180px' },
-            height: { xs: '120px', sm: '120px', md: '150px', xl: '180px' },
-            borderRadius: '12px',
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            backdropFilter: 'blur(3px)', //zoom
-          }}
-        >
-          {item.icon}
-          <Typography
-            variant="body2"
-            sx={{
-              textAlign: 'center',
-              fontWeight: 500,
-              fontSize: { xs: '0.75rem', sm: '0.85rem', md: '1rem', xl: '1.5rem' },
-              color: 'var(--naranja-cat)',
-              px: 1,
-            }}
-          >
-            {item.texto}
-          </Typography>
-        </Box>
-      ))}
+      {item.icon}
+      <Typography
+        variant="body2"
+        sx={{
+          textAlign: 'center',
+          fontWeight: 500,
+          fontSize: {
+            xs: '0.85rem',
+            sm: '0.95rem',
+            md: '1.2rem',
+            xl: '1.5rem',
+          },
+          color: 'var(--naranja-cat)',
+          px: 1,
+        }}
+      >
+        {item.texto}
+      </Typography>
     </Box>
+  ))}
+</Box>
+
   );
 };
 
