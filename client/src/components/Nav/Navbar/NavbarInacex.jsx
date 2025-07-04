@@ -64,6 +64,7 @@ const NavbarInacex = () => {
     const dynamicAudio = useMemo(() => {
       return audios[location.pathname];
     }, [location.pathname]);
+    
   const handleToggle = () => {
     setOpen((prev) => !prev);
   };
