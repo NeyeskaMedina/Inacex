@@ -16,8 +16,8 @@ function Bulldozer() {
   const image = "./imgCursos/bull/bull1.png";
   const req = "./imgCursos/bull/bull2.png"
   const imgForms = './imgCursos/bull/bull4.png'
-  const bgColor = 'var(--verde-trans)';
-  const font = 'white';
+  const bgColor = 'var(--verde-transp2)';
+  const font = 'black';
   const viewIzq = '400% 110%';
   const viewDer = '400% 100%';
   const viewCentXS = '100% 100%';

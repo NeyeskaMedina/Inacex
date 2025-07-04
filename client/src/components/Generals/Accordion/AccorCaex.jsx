@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { accorProgramas } from '../../../utils/accordion'
+import Contratar from '../Buttons/Contratar/Contratar';
 
 export const AccorCaex = () => {
   const programasCaex = accorProgramas['caex'];
@@ -22,8 +23,9 @@ export const AccorCaex = () => {
       <Accordion
         sx={{
           display: 'flex',
+          flexDirection: {xs: 'column', md: 'row'},
           alignItems: 'center',
-          justifyContent: {xs: 'space-between', md: 'start'},
+          justifyContent: {xs: 'space-between', md: 'space-evenly'},
           background: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(14px)',
           borderRadius: 2,
@@ -41,6 +43,7 @@ export const AccorCaex = () => {
               display: 'flex',
               flexDirection: {xs: 'column', md: 'row'},
               alignItems: 'center',
+              justifyContent: 'center',
               color: 'white',
               fontWeight: 600,
               fontSize: { xs: '1rem', sm: '1.1rem' },
@@ -72,7 +75,6 @@ export const AccorCaex = () => {
                 >
                   {programa.titulo} <span style={{ color: 'white' }}>{programa.nexo}</span>
                 </Typography>
-        
               </AccordionSummary>
 
               <AccordionDetails>
@@ -82,6 +84,7 @@ export const AccorCaex = () => {
                     borderRadius: 2,
                     boxShadow: 3,
                     overflowX: 'auto',
+                    display: 'flex',
                   }}
                 >
                   <Table size="small">
@@ -108,8 +111,33 @@ export const AccorCaex = () => {
                       ))}
                     </TableBody>
                   </Table>
+                  <Table size="small">
+                    <TableBody>
+                      {programa.modulos.map(([label, value], i) => (
+                        <TableRow key={i}>
+                          <TableCell
+                            sx={{
+                              fontWeight: 'bold',
+                              color: '#2e7d32',
+                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                            }}
+                          >
+                            {label}
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                            }}
+                          >
+                            {value}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
                 </TableContainer>
               </AccordionDetails>
+              <Contratar />
             </Accordion>
           ))}
         </AccordionDetails>

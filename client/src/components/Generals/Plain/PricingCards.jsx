@@ -10,6 +10,7 @@ import {
   Grid
 } from '@mui/material';
 import './PricingCards.css';
+import Contratar from '../Buttons/Contratar/Contratar'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Programs from '../Buttons/Programs/Programs'
 
@@ -165,20 +166,7 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
                   </Typography>
 
                   <Box sx={{ mt: 'auto', width: '100%' }}>
-                    <Button
-                      variant="contained"
-                      fullWidth
-                      sx={{
-                        backgroundColor: colorInacex,
-                        color: '#fff',
-                        fontWeight: 600,
-                        '&:hover': {
-                          backgroundColor: '#388e3c',
-                        },
-                      }}
-                    >
-                      Contratar
-                    </Button>
+                    <Contratar />
                   </Box>
                 </CardContent>
               </Card>

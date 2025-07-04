@@ -92,34 +92,39 @@ const FormularioInacex = ({ image, bgColor, font }) => {
 
   return (
     <Box
-  id={'matriculate'}
-  sx={{
-    position: 'sticky',
-    py: 8,
-    px: 2,
-    minHeight: '100vh',
-    backgroundImage: `url(${image})`,
-    backgroundPosition: { xs: 'top center', sm: 'center' },
-    backgroundSize: { xs: 'cover' },
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: { xs: 'scroll', md: 'fixed' },
-    display: 'flex',
-    justifyContent: 'center',
-  }}
+      id={'matriculate'}
+      sx={{
+        position: 'sticky',
+        minHeight: '100vh',
+        backgroundImage: `url(${image})`,
+        backgroundPosition: { xs: 'top center', sm: 'center' },
+        backgroundSize: { xs: 'cover' },
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: { xs: 'scroll', md: 'fixed' },
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2,
+      }}
 >
 
       <Paper
         elevation={8}
         sx={{
           maxWidth: 600,
-          width: '100%',
+          width: 'auto',
+          minHeight: '100vh', // Ajusta a un poco menos que el total de la pantalla
           borderRadius: 3,
-          p: 4,
+          p: 5,
           backgroundColor: bgColor,
           color: font,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between', // Distribuye todo de manera vertical
         }}
       >
         <Typography
+          className='roboto-condensed'
           variant="h5"
           gutterBottom
           sx={{
@@ -132,8 +137,8 @@ const FormularioInacex = ({ image, bgColor, font }) => {
           <span style={{ color: font }}>MATRICULARME EN</span> INACEX
         </Typography>
 
-        <form onSubmit={handleSubmit}>
-          <Stack spacing={3}>
+        <form onSubmit={handleSubmit} style={{ flexGrow: 1 }}>
+            <Stack spacing={2} sx={{ height: '100%' }}>
             <TextField
               label="RUT Chileno"
               name="rut"
