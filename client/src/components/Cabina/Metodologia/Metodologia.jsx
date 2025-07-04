@@ -51,14 +51,14 @@ export const Metodologia = ({ targetRef, icons }) => {
         justifyContent: 'center',
         border: '1px solid var(--naranja-cat)',
         width: {
-          xs: 'calc(50% - 40px)', // 2 por fila en móviles (con gap de 24px)
+          xs: 'calc(50% - 46px)', // 2 por fila en móviles (con gap de 24px)
           sm: '130px',
           md: '150px',
           lg: '160px',
           xl: '180px',
         },
         height: {
-          xs: '120px',
+          xs: 'calc(50vw - 72px)', 
           sm: '130px',
           md: '150px',
           lg: '160px',
