@@ -72,6 +72,7 @@ const ScrollTitleBar = ({ show, src, title }) => {
               />
               </Box>
                     <Toolbar>
+                      <AudioPlayer src={src} />
                       <Typography 
                     className={'roboto-condensed'} 
                     sx={{fontSize: '1.2rem'}} 
