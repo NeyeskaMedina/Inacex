@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 
-const ParabrisasCabina = ({ image, viewIzq, viewDer, viewCentXS, viewCentMD, refProp }) => {
+const ParabrisasCabina = ({ image, viewIzq, viewDer, viewCentXS, viewCentMD, refProp, src, title }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
   

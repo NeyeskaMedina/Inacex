@@ -10,8 +10,9 @@ import {
   Slide,
 } from '@mui/material';
 import './nav.css';
+import AudioPlayer from '../../Generals/Audios/AudioPlayer';
 
-const ScrollTitleBar = ({ show, title }) => {
+const ScrollTitleBar = ({ show, src, title }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -44,6 +45,7 @@ const ScrollTitleBar = ({ show, title }) => {
               />
               </Box>
               <Toolbar>
+              <AudioPlayer src={src} />
                 <Typography 
                     className={'roboto-condensed'} 
                     sx={{fontSize: '1.2rem'}} 

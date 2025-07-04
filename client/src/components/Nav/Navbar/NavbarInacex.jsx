@@ -28,6 +28,7 @@ const NavbarInacex = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const menuRef = useRef(null);
   const location = useLocation();
+  const audioCaex = './sound/audioCaex.mp3';
 
    useEffect(() => {
   console.log("Current path:", location.pathname);
@@ -43,6 +44,14 @@ const NavbarInacex = () => {
       '/cargador-frontal': 'CARGADOR FRONTAL',
       '/bulldozer': 'BULLDOZER',
     };
+    const audios = {
+      '/grua-horquilla': './sound/audioGrua.mp3',
+      '/caex': './sound/audioCaex.mp3',
+      '/retroexcavadora': './sound/audioRetro.mp3',
+      '/motoniveladora': './sound/audioMoto.mp3',
+      '/cargador-frontal': './sound/audioCargador.mp3',
+      '/bulldozer': './sound/audioBull.mp3',
+    }
 
     // Saber si estamos en la home
     const isHome = location.pathname === '/';
@@ -52,6 +61,9 @@ const NavbarInacex = () => {
       return titlesByPath[location.pathname];
     }, [location.pathname]);
 
+    const dynamicAudio = useMemo(() => {
+      return audios[location.pathname];
+    }, [location.pathname]);
   const handleToggle = () => {
     setOpen((prev) => !prev);
   };
@@ -113,7 +125,7 @@ const NavbarInacex = () => {
       {/* Título que aparece al hacer scroll */}
       {/* Mostrar ScrollTitleBar solo si no es Home y hay título */}
     {!isHome && dynamicTitle && (
-      <ScrollTitleBar show={showTitleBar} title={dynamicTitle}/>
+      <ScrollTitleBar show={showTitleBar} src={dynamicAudio}  title={dynamicTitle}/>
     )}
 
 

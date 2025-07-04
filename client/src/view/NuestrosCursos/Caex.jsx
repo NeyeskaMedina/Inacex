@@ -25,7 +25,6 @@ function Caex() {
   const viewDer = '700% 100%'
   const viewCentXS = '250% 100%'
   const viewCentMD = '110% 110%'
-
   const groupPlans = plans[3];
 
   return (
