@@ -39,7 +39,6 @@ export const validateRUT = (rut) => {
 
   return dv.toUpperCase() === computedDV;
 };
-
 export const plans = {
   // CARGADOR FRONTAL
   1: [
@@ -506,11 +505,38 @@ export const plans = {
   ]
 };
 
+// utils/programUtils.js
+
+export const getPlansByNumber = (programas, planNumber) => {
+  const allPrograms = [];
+
+  Object.values(programas).forEach((secciones) => {
+    secciones.forEach((bloque) => {
+     Object.values(bloque).forEach((subcategorias) => {
+     // Aquí subcategorias es un objeto, entonces hacemos:
+     Object.values(subcategorias).forEach((itemsArray) => {
+       itemsArray.forEach((item) => {
+         if (item.active && item.plan === planNumber) {
+           allPrograms.push(item);
+         }
+       });
+     });
+    });
+    });
+  });
+
+  return allPrograms;
+};
+
+
+
+
 
 export default {
     sedes,
     cursos,
     plans,
+    getPlansByNumber,
     validateEmail,
     validateRUT
 }

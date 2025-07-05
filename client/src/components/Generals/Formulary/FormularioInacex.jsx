@@ -108,21 +108,21 @@ const FormularioInacex = ({ image, bgColor, font }) => {
       }}
 >
 
-      <Paper
-        elevation={8}
-        sx={{
-          maxWidth: 600,
-          width: 'auto',
-          minHeight: '100vh', // Ajusta a un poco menos que el total de la pantalla
-          borderRadius: 3,
-          p: 5,
-          backgroundColor: bgColor,
-          color: font,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between', // Distribuye todo de manera vertical
-        }}
-      >
+        <Paper
+          elevation={8}
+          sx={{
+            width: '100%',
+            maxWidth: { xs: '90%', md: '50%' },
+            p: { xs: 3, md: 5 },
+            borderRadius: 3,
+            backgroundColor: bgColor,
+            color: font,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            minHeight: 'auto',
+          }}
+        >
         <Typography
           className='roboto-condensed'
           variant="h5"
@@ -138,7 +138,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
         </Typography>
 
         <form onSubmit={handleSubmit} style={{ flexGrow: 1 }}>
-            <Stack spacing={2} sx={{ height: '100%' }}>
+            <Stack spacing={1} sx={{ height: '100%' }}>
             <TextField
               label="RUT Chileno"
               name="rut"

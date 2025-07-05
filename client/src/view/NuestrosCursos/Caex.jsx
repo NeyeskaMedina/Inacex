@@ -8,7 +8,8 @@ import PricingCards from '../../components/Generals/Plain/PricingCards';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils'; 
+import { getPlansByNumber } from '../../utils/utils'
+import { programas } from '../../utils/programas'
 
 function Caex() {
   const { cabinaRef } = useContext(UserContext);
@@ -25,7 +26,8 @@ function Caex() {
   const viewDer = '700% 100%'
   const viewCentXS = '250% 100%'
   const viewCentMD = '110% 110%'
-  const groupPlans = plans[3];
+  const groupPlans = getPlansByNumber(programas, 1); // cambia a 2, 3, etc. según necesites
+
 
   return (
     <>
