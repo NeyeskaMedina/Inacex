@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Accordion,
   AccordionSummary,
@@ -7,142 +7,193 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableRow,
   Paper,
+  Stack,
+  Box,
+  Button,
+  Select,
+  MenuItem
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { accorProgramas } from '../../../utils/accordion'
+import { obtenerProgramasActivos, imagenesCategorias, obtenerNombreCategoria } from '../../../utils/accordion';
 import Contratar from '../Buttons/Contratar/Contratar';
+import { useMediaQuery, useTheme } from '@mui/material';
+
+
 
 export const AccorCaex = () => {
-  const programasCaex = accorProgramas['caex'];
+  const accorProgramas = obtenerProgramasActivos('caex');
+  const categorias = Object.keys(accorProgramas);
+  const [expandida, setExpandida] = useState(categorias[0]);
+  const [seleccionadoPorCategoria, setSeleccionadoPorCategoria] = useState(
+    categorias.reduce((acc, cat) => {
+      acc[cat] = 0;
+      return acc;
+    }, {})
+  );
+
+  const theme = useTheme();
+  const esXs = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   return (
-    <AccordionDetails>
-      <Accordion
-        sx={{
-          display: 'flex',
-          flexDirection: {xs: 'column', md: 'row'},
-          alignItems: 'center',
-          justifyContent: {xs: 'space-between', md: 'space-evenly'},
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(14px)',
-          borderRadius: 2,
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          p: 1,
-          mb: 2,
-          mt: 2,
-        }}
-      >
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src="./imgCursos/caex/caex-bg.png" width={{xs: '50px', md: '150'}} height={150} alt="" />
-          <Typography
-            variant="subtitle1"
+    <Box sx={{ width: '100%', py: 2 }}>
+      {categorias.map((categoria) => {
+        const cursos = accorProgramas[categoria];
+        const seleccionado = seleccionadoPorCategoria[categoria];
+
+        return (
+          <Accordion
+            key={categoria}
+            expanded={expandida === categoria}
+            onChange={() =>
+              setExpandida(expandida === categoria ? false : categoria)
+            }
             sx={{
-              display: 'flex',
-              flexDirection: {xs: 'column', md: 'row'},
-              alignItems: 'center',
-              justifyContent: 'center',
+              background: 'rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(8px)',
+              borderRadius: 2,
+              mb: 2,
               color: 'white',
-              fontWeight: 600,
-              fontSize: { xs: '1rem', sm: '1.1rem' },
             }}
           >
-            CAMIÓN EXTRACCIÓN DE  <span style={{ color: 'var(--verde-inacex)' }}> ALTO TONELAJE</span>
-          </Typography>
-        </AccordionSummary>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Stack direction="row" spacing={1} alignItems="center">
+              <Box
+                component="img"
+                src={imagenesCategorias(categoria)}
+                alt={categoria}
+                sx={{ width: 150, height: 150, objectFit: 'contain' }}
+              />
+              <Typography fontWeight="bold">
+                {obtenerNombreCategoria(categoria)}
+              </Typography>
+            </Stack>
 
-        <AccordionDetails>
-          {programasCaex.map((programa, idx) => (
-            <Accordion
-              key={idx}
-              sx={{
-                background: 'rgba(255, 255, 255, 0.33)',
-                borderRadius: 2,
-                p: 1,
-                mb: 2,
-              }}
-            >
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: 'black',
-                    fontWeight: 600,
-                    fontSize: { xs: '0.95rem', sm: '1rem' },
-                  }}
-                >
-                  {programa.titulo} <span style={{ color: 'white' }}>{programa.nexo}</span>
-                </Typography>
-              </AccordionSummary>
+            </AccordionSummary>
 
-              <AccordionDetails>
-                <TableContainer
-                  component={Paper}
-                  sx={{
-                    borderRadius: 2,
-                    boxShadow: 3,
-                    overflowX: 'auto',
-                    display: 'flex',
-                  }}
-                >
-                  <Table size="small">
-                    <TableBody>
-                      {programa.detalles.map(([label, value], i) => (
-                        <TableRow key={i}>
-                          <TableCell
-                            sx={{
-                              fontWeight: 'bold',
-                              color: '#2e7d32',
-                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
-                            }}
-                          >
-                            {label}
-                          </TableCell>
-                          <TableCell
-                            sx={{
-                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
-                            }}
-                          >
-                            {value}
-                          </TableCell>
-                        </TableRow>
+            <AccordionDetails>
+              <Stack
+                direction={{ xs: 'column', md: 'row' }}
+                spacing={2}
+                alignItems="flex-start"
+              >
+                {/* Selector lateral de cursos */}
+                {esXs ? (
+                  // En pantallas pequeñas, usar Select
+                  <Box sx={{ width: '100%' }}>
+                    <Select
+                      className='roboto-condensed'
+                      fullWidth
+                      value={seleccionado}
+                      onChange={(e) =>
+                        setSeleccionadoPorCategoria((prev) => ({
+                          ...prev,
+                          [categoria]: e.target.value,
+                        }))
+                      }
+                      sx={{
+                        mb: 2,
+                        backgroundColor: 'var(--verde-inacex)',
+                        borderRadius: 2,
+                      }}
+                    >
+                      {cursos.map((curso, idx) => (
+                        <MenuItem className='roboto-condensed' key={idx} value={idx}>
+                          {curso.titulo}
+                          {curso.nexo && <>&nbsp;{curso.nexo}</>}
+                        </MenuItem>
                       ))}
-                    </TableBody>
-                  </Table>
-                  <Table size="small">
-                    <TableBody>
-                      {programa.modulos.map(([label, value], i) => (
-                        <TableRow key={i}>
-                          <TableCell
-                            sx={{
-                              fontWeight: 'bold',
-                              color: '#2e7d32',
-                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
-                            }}
-                          >
-                            {label}
-                          </TableCell>
-                          <TableCell
-                            sx={{
-                              fontSize: { xs: '0.85rem', sm: '0.95rem' },
-                            }}
-                          >
-                            {value}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </AccordionDetails>
-              <Contratar />
-            </Accordion>
-          ))}
-        </AccordionDetails>
-      </Accordion>
-    </AccordionDetails>
+                    </Select>
+                  </Box>
+                ) : (
+                  // Pantallas grandes, usar lista lateral
+                  <Stack spacing={1} sx={{ width: '35%' }}>
+                    {cursos.map((curso, idx) => (
+                      <Button
+                        key={idx}
+                        onClick={() =>
+                          setSeleccionadoPorCategoria((prev) => ({
+                            ...prev,
+                            [categoria]: idx,
+                          }))
+                        }
+                        sx={{
+                          justifyContent: 'flex-start',
+                          color:
+                            seleccionado === idx
+                              ? 'white'
+                              : 'rgba(255,255,255,0.7)',
+                          backgroundColor:
+                            seleccionado === idx
+                              ? 'var(--verde-inacex)'
+                              : 'transparent',
+                          border: '1px solid rgba(255,255,255,0.2)',
+                          borderRadius: 2,
+                          textTransform: 'none',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {curso.titulo}
+                        {curso.nexo && <span>&nbsp;{curso.nexo}</span>}
+                      </Button>
+                    ))}
+                  </Stack>
+                )}
+            
+                {/* Detalle del curso */}
+                <Box sx={{ flex: 1, width: '100%' }}>
+                  <Paper
+                    elevation={3}
+                    sx={{
+                      borderRadius: 2,
+                      p: 2,
+                      overflowX: 'auto',
+                      backgroundColor: 'rgba(255,255,255,0.9)',
+                    }}
+                  >
+                    <Stack direction={{ xs: 'row', md: 'row' }} spacing={2}>
+                      {/* Tabla detalles */}
+                      <Table size="small">
+                        <TableBody>
+                          {cursos[seleccionado].detalles.map(([label, value], i) => (
+                            <TableRow key={i}>
+                              <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>
+                                {label}
+                              </TableCell>
+                              <TableCell>{value}</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                        
+                      {/* Tabla módulos */}
+                      <Table size="small">
+                        <TableBody>
+                          {cursos[seleccionado].modulos.map(([label, value], i) => (
+                            <TableRow key={i}>
+                              <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>
+                                {label}
+                              </TableCell>
+                              <TableCell>{value}</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </Stack>
+                  </Paper>
+                  <Box mt={2}>
+                    <Contratar />
+                  </Box>
+                </Box>
+              </Stack>
+            </AccordionDetails>
+
+          </Accordion>
+        );
+      })}
+    </Box>
   );
 };
 

@@ -1,67 +1,41 @@
-export const accorProgramas = {
-  // CAEX
-caex: [
-    {
-        titulo: 'CAEX + ',
-        nexo: 'GRÚA HORQUILLA',
-        detalles: [
-          ['Modalidad', 'Online por Zoom'],
-          ['Duración', '4 Meses'],
-          ['Prácticas', '6 Horas Simulacion'],
-          ['Clases', 'Lunes - Miercoles ó Martes - Jueves'],
-          ['Certificación', 'Digital'],
-          ['Acceso', 'Campus Virtual'],
-        ],
-        modulos: [
-           ['Módulo 1', 'Conocimientos previos a la operación'],
-          ['Módulo 2', 'Introducción a la operación camión alto tonelaje'],
-          ['Módulo 3', 'Introducción a la operación Camión Mecánico'],
-          ['Módulo 4', 'Introducción a la operación Camión Eléctrico'],
-          ['Módulo 5', 'Operación segura Grua Horquilla E learning'],
-          ['Módulo 6', '+ INTRODUCCION A LA MINERIA E-LEARNING']
-        ]
-    },
-    {
-        titulo: 'CAEX MECANICOS',
-        nexo: 'CAT 797F Y 793F',
-        detalles: [
-          ['Modalidad', 'E-Learning'],
-          ['Duración', '2 Meses'],
-          ['Practicas', '6 Horas simulación'],
-          ['Certificación', 'Digital e impresa'],
-        ],
-        modulos: [
-          ['Módulo 1', 'Operaciones camiones mecánicos'],
-          ['Módulo 2', 'Introducción a los simuladores'],
-          ['Módulo 3', 'Introducción a la minería'],
-          ['Módulo 4', 'Práctica de simulación']
-        ]
-    },
-],
-grua: [
-    {
-        titulo: 'GRÚA HORQUILLA',
-        nexo: 'E-LEARNING',
-        detalles: [
-          ['Modalidad', 'Online por Zoom'],
-          ['Duración', '+80 horas de formación'],
-          ['Clases', '2 veces por semana'],
-          ['Certificación', 'Doble: Chile y Perú'],
-          ['Soporte', 'Técnico y académico constante'],
-          ['Acceso', 'Campus Virtual + Material descargable'],
-        ],
-    },
-    {
-        titulo: 'GRÚA HORQUILLA',
-        nexo: 'ONLINE VIA ZOOM',
-        detalles: [
-          ['Modalidad', 'Presencial (con simulador)'],
-          ['Duración', '60 horas'],
-          ['Clases', 'Lunes a viernes'],
-          ['Certificación', 'Certificado INACEX + Norma Chilena'],
-          ['Incluye', 'Inducción, seguridad y controles'],
-          ['Acceso', 'Material físico + virtual'],
-        ],
-    },
-]
-}
+import { programas } from '../utils/programas';
+
+export const obtenerProgramasActivos = (categoria) => {
+  if (!programas[categoria]) return {};
+
+  return Object.entries(programas[categoria]).reduce((acc, [key, cursos]) => {
+    const activos = cursos.filter((curso) => curso.active);
+    if (activos.length > 0) acc[key] = activos;
+    return acc;
+  }, {});
+};
+export const obtenerProgramasActivosDirecto = (grupos) => {
+  return Object.entries(grupos).reduce((acc, [key, cursos]) => {
+    const activos = cursos.filter((curso) => curso.active);
+    if (activos.length > 0) acc[key] = activos;
+    return acc;
+  }, {});
+};
+
+
+export const obtenerNombreCategoria = (categoria) => {
+  switch (categoria) {
+    case 'caex':
+      return 'CAMIÓN EXTRACCIÓN DE ALTO TONELAJE';
+    case 'grua':
+      return 'OPERACIÓN SEGURA DE GRÚA HORQUILLA';
+    default:
+      return categoria.toUpperCase().replace(/_/g, ' ');
+  }
+};
+
+export const imagenesCategorias = (categoria) => {
+  switch (categoria) {
+    case 'caex':
+      return './imgCursos/caex/caex-bg.png';
+    case 'grua':
+      return './imgCursos/horquilla/horquilla-bg.png';
+    default:
+      return categoria.toUpperCase().replace(/_/g, ' ');
+  }
+};

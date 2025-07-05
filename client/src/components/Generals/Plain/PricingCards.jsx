@@ -15,6 +15,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Programs from '../Buttons/Programs/Programs'
 
 const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image }) => {
+  
   return (
     <Box
       sx={{
@@ -150,9 +151,9 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
                     className="features-list"
                     sx={{ flexGrow: 1, p: 0, pl: 2, textAlign: 'left', alignSelf: 'stretch' }}
                   >
-                    {plan.features.map((feature, idx) => (
+                    {plan.detalles.map(([key, val], idx) => (
                       <li key={idx}>
-                        <CheckCircleOutlineIcon sx={{ color: colorInacex, mr: 1 }} /> {feature}
+                        <CheckCircleOutlineIcon sx={{ color: colorInacex, mr: 1 }} /> <strong>{key}:</strong> {val}
                       </li>
                     ))}
                   </Box>

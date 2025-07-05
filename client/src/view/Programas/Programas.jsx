@@ -1,31 +1,33 @@
 import React, { useState } from 'react';
 import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  Box,
-} from '@mui/material';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Paper,
+  Accordion, AccordionSummary, AccordionDetails, Typography,
+  Box, Stack, Button, Select, MenuItem, Paper,
+  Table, TableBody, TableCell, TableRow, useMediaQuery, useTheme
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { formatoMes } from '../../helpers/formatoMes.js';
-import { AccorCaex } from '../../components/Generals/Accordion/AccorCaex';
-import { AccorGrua } from '../../components/Generals/Accordion/AccorGrua';
+import data from '../../utils/programas';
+import {
+  imagenesCategorias,
+  obtenerNombreCategoria
+} from '../../utils/accordion';
+import Contratar from '../../components/Generals/Buttons/Contratar/Contratar';
 
-export default function Programas() {
-  const [expanded, setExpanded] = useState(false);
+const Programas = () => {
+  const theme = useTheme();
+  const esXs = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+  const [expandedSeccion, setExpandedSeccion] = useState(null);
+  const [expandedCategoria, setExpandedCategoria] = useState(null);
+  const [seleccionado, setSeleccionado] = useState({});
+
+  const handleSeleccion = (categoria, idx) => {
+    setSeleccionado((prev) => ({
+      ...prev,
+      [categoria]: idx,
+    }));
   };
 
+  // ✅ Recorremos 'maquinaria' y 'admin' por separado
   return (
     <Box
       sx={{
@@ -40,7 +42,6 @@ export default function Programas() {
         zIndex: 0,
       }}
     >
-      {/* Capa oscura */}
       <Box
         sx={{
           position: 'absolute',
@@ -49,164 +50,173 @@ export default function Programas() {
           right: 0,
           bottom: 0,
           backgroundColor: 'rgba(0, 0, 0, 0.7)',
-          zIndex: 1,
+          zIndex: 0,
         }}
       />
 
-      <Box sx={{ position: 'relative', zIndex: 2 }}>
-        {/* Título principal */}
-        <Typography
-          variant="h3"
-          className="roboto-condensed"
+      {['maquinaria', 'admin'].map((seccion) => (
+        <Accordion
+          key={seccion}
+          expanded={expandedSeccion === seccion}
+          onChange={() => setExpandedSeccion(expandedSeccion === seccion ? null : seccion)}
           sx={{
-            textAlign: 'center',
-            fontWeight: 700,
+            background: 'rgba(255, 255, 255, 0.08)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: 2,
+            mb: 2,
             color: 'white',
-            mb: 1,
-            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem' },
           }}
-        >
-          Programas de Formación
-        </Typography>
-
-        <Typography
-          variant="h5"
-          className="roboto-condensed"
-          sx={{
-            textAlign: 'center',
-            mb: 4,
-            color: 'var(--verde-inacex)',
-            fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem' },
-          }}
-        >
-          {formatoMes()}
-        </Typography>
-
-        {/* Accordion Maquinaria */}
-        <Accordion
-          sx={{
-            background: 'rgba(0, 0, 0, 0.3)',
-            backdropFilter: 'blur(8px)',
-            borderRadius: 2,
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            boxShadow: '0 6px 18px rgba(0, 0, 0, 0.3)',
-            mb: 3,
-          }}
-          expanded={expanded === 'maquinaria'}
-          onChange={handleChange('maquinaria')}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  color: '#e0f2f1',
-                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
-                }}
-              >
-                CURSOS DE <span style={{ color: 'var(--verde-inacex)' }}>MAQUINARIA PESADA</span>
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  color: 'var(--blanco-notification)',
-                  fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-                }}
-              >
-                / Módulos - Modalidad - Horarios
-              </Typography>
-            </Box>
-          </AccordionSummary>
-          {/* `PROGRAMAS CAEX` */}
-          <AccorCaex />
-           {/* `PROGRAMAS GRUA` */}
-          <AccorGrua />
-        </Accordion>
-
-        {/* Accordion Administrativos */}
-        <Accordion
-          sx={{
-            background: 'rgba(255, 255, 255, 0.12)',
-            backdropFilter: 'blur(8px)',
-            borderRadius: 2,
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            mb: 3,
-          }}
-          expanded={expanded === 'admin'}
-          onChange={handleChange('admin')}
-        >
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography
-              variant="subtitle1"
-              sx={{
-                fontWeight: 600,
-                color: '#a5d6a7',
-                fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
-              }}
-            >
-              Cursos Administrativos
+            <Typography variant="h6" fontWeight="bold" sx={{ color: 'white' }}>
+              {seccion.toUpperCase()}
             </Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography sx={{ fontWeight: 600, fontSize: { xs: '0.95rem', sm: '1rem' } }}>
-                  Gestión de Recursos Humanos
-                </Typography>
-              </AccordionSummary>
+            {/* CATEGORÍAS DENTRO DE LA SECCIÓN */}
+            {data.programas[seccion]?.map((bloque, i) =>
+              Object.entries(bloque).map(([categoria, grupos]) => {
+                const cursos = [];
 
-              <AccordionDetails>
-                <Accordion>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography sx={{ fontWeight: 600, fontSize: { xs: '0.9rem', sm: '1rem' } }}>
-                      Programa Intensivo de RRHH
-                    </Typography>
-                  </AccordionSummary>
+                // ✅ Reunimos todos los cursos de cada grupo (caex_Grua, caex_Cat, etc.)
+                Object.entries(grupos).forEach(([grupoKey, cursosGrupo]) => {
+                  cursosGrupo.forEach((curso) => {
+                    cursos.push({ ...curso, grupo: grupoKey });
+                  });
+                });
 
-                  <AccordionDetails>
-                    <TableContainer
-                      component={Paper}
-                      sx={{
-                        borderRadius: 2,
-                        boxShadow: 3,
-                      }}
-                    >
-                      <Table size="small">
-                        <TableBody>
-                          {[
-                            ['Modalidad', 'Online por Zoom'],
-                            ['Duración', '+80 horas de formación'],
-                            ['Clases', '2 veces por semana'],
-                            ['Certificación', 'Doble: Chile y Perú'],
-                            ['Soporte', 'Técnico y académico constante'],
-                            ['Acceso', 'Campus Virtual + Material descargable'],
-                          ].map(([label, value], i) => (
-                            <TableRow key={i}>
-                              <TableCell
+                if (cursos.length === 0) return null;
+                const seleccionadoCurso = seleccionado[categoria] ?? 0;
+                const curso = cursos[seleccionadoCurso];
+
+                return (
+                  <Accordion
+                    key={`${seccion}-${categoria}-${i}`}
+                    expanded={expandedCategoria === `${seccion}-${categoria}`}
+                    onChange={() =>
+                      setExpandedCategoria(
+                        expandedCategoria === `${seccion}-${categoria}` ? null : `${seccion}-${categoria}`
+                      )
+                    }
+                    sx={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(8px)',
+                      borderRadius: 2,
+                      mb: 2,
+                      color: 'white',
+                    }}
+                  >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Stack direction="row" spacing={2} alignItems="center">
+                        <Box
+                          component="img"
+                          src={imagenesCategorias(categoria)}
+                          alt={categoria}
+                          sx={{ width: 80, height: 80, objectFit: 'contain' }}
+                        />
+                        <Typography fontWeight="bold" sx={{ color: 'white' }}>
+                          {obtenerNombreCategoria(categoria)}
+                        </Typography>
+                      </Stack>
+                    </AccordionSummary>
+
+                    <AccordionDetails>
+                      <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+                        {esXs ? (
+                          <Box sx={{ width: '100%' }}>
+                            <Select
+                              fullWidth
+                              value={seleccionadoCurso}
+                              onChange={(e) => handleSeleccion(categoria, e.target.value)}
+                              sx={{
+                                mb: 2,
+                                backgroundColor: 'var(--verde-inacex)',
+                                borderRadius: 2,
+                              }}
+                            >
+                              {cursos.map((c, idx) => (
+                                <MenuItem key={idx} value={idx}>
+                                  {c.title} {c.nexo}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </Box>
+                        ) : (
+                          <Stack spacing={1} sx={{ width: '30%' }}>
+                            {cursos.map((c, idx) => (
+                              <Button
+                                key={idx}
+                                onClick={() => handleSeleccion(categoria, idx)}
                                 sx={{
-                                  fontWeight: 'bold',
-                                  color: '#2e7d32',
-                                  fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                                  justifyContent: 'flex-start',
+                                  color: seleccionadoCurso === idx ? 'white' : 'rgba(255,255,255,0.7)',
+                                  backgroundColor: seleccionadoCurso === idx ? 'var(--verde-inacex)' : 'transparent',
+                                  border: '1px solid rgba(255,255,255,0.2)',
+                                  borderRadius: 2,
+                                  textTransform: 'none',
+                                  fontWeight: 600,
                                 }}
                               >
-                                {label}
-                              </TableCell>
-                              <TableCell sx={{ fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
-                                {value}
-                              </TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </TableContainer>
-                  </AccordionDetails>
-                </Accordion>
-              </AccordionDetails>
-            </Accordion>
+                                {c.title} {c.nexo}
+                              </Button>
+                            ))}
+                          </Stack>
+                        )}
+
+                        <Box sx={{ flex: 1 }}>
+                          <Paper
+                            elevation={3}
+                            sx={{
+                              borderRadius: 2,
+                              p: 2,
+                              overflowX: 'auto',
+                              backgroundColor: 'rgba(255,255,255,0.9)',
+                            }}
+                          >
+                            <Stack direction="row" spacing={2}>
+                              <Table size="small">
+                                <TableBody>
+                                  {curso.detalles?.map(([label, value], i) => (
+                                    <TableRow key={i}>
+                                      <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>
+                                        {label}
+                                      </TableCell>
+                                      <TableCell>{value}</TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+
+                              <Table size="small">
+                                <TableBody>
+                                  {curso.modulos?.map(([label, value], i) => (
+                                    <TableRow key={i}>
+                                      <TableCell sx={{ fontWeight: 'bold', color: '#2e7d32' }}>
+                                        {label}
+                                      </TableCell>
+                                      <TableCell>{value}</TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+                            </Stack>
+                          </Paper>
+                          <Box mt={2}>
+                            <Contratar />
+                          </Box>
+                        </Box>
+                      </Stack>
+                    </AccordionDetails>
+                  </Accordion>
+                );
+              })
+            )}
           </AccordionDetails>
         </Accordion>
-      </Box>
+      ))}
     </Box>
   );
-}
+};
+
+export default Programas;
