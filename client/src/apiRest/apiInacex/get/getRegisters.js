@@ -10,6 +10,7 @@ const getRegisters = async () => {
         return { response: [], error: "Error al obtener datos en BD", loading: false };
     }
 }
+
 export {
     getRegisters
 }

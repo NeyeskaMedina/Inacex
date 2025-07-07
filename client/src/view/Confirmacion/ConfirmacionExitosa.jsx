@@ -7,6 +7,12 @@ export const ConfirmacionExitosa = () => {
       sx={{
         minHeight: '100vh',
         backgroundColor: '#007d3c',
+        backgroundImage: 'url(./imgCursos/frontal/12.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        zIndex: 0,
         color: 'white',
         display: 'flex',
         justifyContent: 'center',
@@ -14,7 +20,7 @@ export const ConfirmacionExitosa = () => {
         p: 4,
       }}
     >
-      <Box sx={{ textAlign: 'center' }}>
+      <Box sx={{ textAlign: 'center', zIndex: 1 }}>
         <Typography variant="h4" gutterBottom>
           ✅ ¡Correo confirmado con éxito!
         </Typography>
