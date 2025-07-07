@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import { getCursosFromProgramas } from '../../../utils/utils';
 import {
   Box,
   TextField,
@@ -12,14 +13,13 @@ import {
 import SendIcon from '@mui/icons-material/Send';
 import { 
   sedes,
-  cursos,
   validateEmail,
   validateRUT
 } from '../../../utils/utils'
 import { postRegisters } from '../../../apiRest/apiInacex/post/postRegisters.js';
 
 
-const FormularioInacex = ({ image, bgColor, font }) => {
+const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
   const [form, setForm] = useState({
     rut: '',
     nombre: '',
@@ -30,6 +30,14 @@ const FormularioInacex = ({ image, bgColor, font }) => {
     curso: '',
   });
 
+  useEffect(() => {
+  if (cursoSeleccionado) {
+    setForm((prevForm) => ({
+      ...prevForm,
+      curso: cursoSeleccionado,
+    }));
+  }
+  }, [cursoSeleccionado]);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -89,7 +97,6 @@ const FormularioInacex = ({ image, bgColor, font }) => {
       }
     }
   };
-
   return (
     <Box
       id={'matriculate'}
@@ -111,8 +118,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
         <Paper
           elevation={8}
           sx={{
-            width: '100%',
-            maxWidth: { xs: '90%', md: '50%' },
+            width: { xs: 320, md: 380, lg: 450, xl: 520 },
             p: { xs: 3, md: 5 },
             borderRadius: 3,
             backgroundColor: bgColor,
@@ -224,6 +230,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
               select
               label="Curso de Interés"
               name="curso"
+              // value={cursoSeleccionado === '' ? form.curso : cursoSeleccionado}
               value={form.curso}
               onChange={handleChange}
               variant="outlined"
@@ -234,7 +241,7 @@ const FormularioInacex = ({ image, bgColor, font }) => {
               InputProps={{ style: { color: font } }}
               sx={textFieldStyles}
             >
-              {cursos.map((curso, i) => (
+              {getCursosFromProgramas().map((curso, i) => (
                 <MenuItem
                   key={i}
                   value={curso}

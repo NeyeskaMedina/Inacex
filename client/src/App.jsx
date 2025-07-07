@@ -7,7 +7,8 @@ import { Home } from "./view/Home";
 import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
 import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
-import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut'
+import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut';
+import Contratar from './view/Programas/Contratar'
 import { useLocation } from 'react-router-dom';
 // import { useState } from 'react'
 // En tu index.js o App.jsx
@@ -22,10 +23,9 @@ import Bulldozer from './view/NuestrosCursos/Bulldozer';
 import Motoniveladora from './view/NuestrosCursos/Motoniveladora';
 import ListProspectBk from './view/ListProspectBk';
 import Programas from './view/Programas/Programas'
+import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
 
 
 function App() {
@@ -116,8 +116,20 @@ function App() {
     </Routes>
     <Routes>
         <Route
+            path ='/contratar'
+            element ={<Contratar />}
+        />
+    </Routes>
+    <Routes>
+        <Route
             path ='/prospectos'
             element ={<ListProspectBk />}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/confirmacion-exitosa'
+            element ={<ConfirmacionExitosa />}
         />
     </Routes>
         <ScrollToTop />

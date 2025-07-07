@@ -106,13 +106,13 @@ export const programas = {
         price: '30% DESCUENTO',
         detalles: [
             ['Maquinarias', '1 Maquinaria'],
-            ['Modalidad', 'E-Learning'],
-            ['Duración', '2 Meses'],
-            ['Clases', 'A tu ritmo'],
+            ['Modalidad', 'Online'],
+            ['Duración', '1 Mes'],
+            ['Clases', 'Sabados'],
             ['Prácticas', '2 Horas'],
-            ['Certificación', 'Digital e impresa'],
+            ['Certificación', 'Digital'],
             ['Bonus', 'Practicatest'],
-            ['Instructor', 'Tutor especializado'],
+            ['Instructor', 'Instructor en línea'],
             ['Soporte', 'Soporte al alumno'],
             ['Metodología', 'Campus virtual'],
           ],
@@ -135,8 +135,8 @@ admin: [
         admin: {
             adminBod: [
                 {
-                title: 'CAMIÓN EXTRACCIÓN + ',
-                nexo: 'GRÚA HORQUILLA',
+                title: 'ADMINISTRACIÓN DE ',
+                nexo: 'BODEGA',
                 subtitle: 'Programa especial',
                 other: 'Matrícula',
                 price: '$70.000',
@@ -168,8 +168,8 @@ admin: [
             ],
             extintores: [
                 {
-                title: 'CAEX MECÁNICOS',
-                nexo: 'CAT 797F 793F',
+                title: 'MANEJO DE ',
+                nexo: 'EXTINTORES',
                 subtitle: 'Programa duo',
                 other: 'Matrícula',
                 price: '40% DESCUENTO',

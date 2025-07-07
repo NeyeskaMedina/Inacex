@@ -6,13 +6,14 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import data from '../../utils/programas';
+import { formatoMes } from '../../helpers/formatoMes';
 import {
   imagenesCategorias,
   obtenerNombreCategoria
 } from '../../utils/accordion';
 import Contratar from '../../components/Generals/Buttons/Contratar/Contratar';
 
-const Programas = () => {
+export const Programas = () => {
   const theme = useTheme();
   const esXs = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -27,7 +28,6 @@ const Programas = () => {
     }));
   };
 
-  // ✅ Recorremos 'maquinaria' y 'admin' por separado
   return (
     <Box
       sx={{
@@ -53,7 +53,10 @@ const Programas = () => {
           zIndex: 0,
         }}
       />
-
+      <Box sx={{ position: 'relative', zIndex: 1  }}>
+        <h1 className='roboto-condensed' style={{ textAlign: 'center', color: 'white', zIndex: 10}}>PROGRAMA DE FORMACIÓN</h1>
+        <h5  className='roboto-condensed' style={{ textAlign: 'center', color: 'var(--verde-inacex)'}}>{formatoMes()}</h5>
+      </Box>
       {['maquinaria', 'admin'].map((seccion) => (
         <Accordion
           key={seccion}
@@ -68,18 +71,18 @@ const Programas = () => {
           }}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6" fontWeight="bold" sx={{ color: 'white' }}>
-              {seccion.toUpperCase()}
+            <Typography className='roboto-condensed' variant="h6" fontWeight="bold" sx={{ color: 'white' }}>
+              CURSOS DE{' '}
+                <span style={{ color: 'var(--verde-inacex)' }}>
+                  {seccion === 'maquinaria' ? 'MAQUINARIA PESADA' : 'ADMINISTRACIÓN'}
+                </span>
             </Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            {/* CATEGORÍAS DENTRO DE LA SECCIÓN */}
             {data.programas[seccion]?.map((bloque, i) =>
               Object.entries(bloque).map(([categoria, grupos]) => {
                 const cursos = [];
-
-                // ✅ Reunimos todos los cursos de cada grupo (caex_Grua, caex_Cat, etc.)
                 Object.entries(grupos).forEach(([grupoKey, cursosGrupo]) => {
                   cursosGrupo.forEach((curso) => {
                     cursos.push({ ...curso, grupo: grupoKey });
@@ -150,8 +153,10 @@ const Programas = () => {
                                 onClick={() => handleSeleccion(categoria, idx)}
                                 sx={{
                                   justifyContent: 'flex-start',
-                                  color: seleccionadoCurso === idx ? 'white' : 'rgba(255,255,255,0.7)',
-                                  backgroundColor: seleccionadoCurso === idx ? 'var(--verde-inacex)' : 'transparent',
+                                  color:
+                                    seleccionadoCurso === idx ? 'white' : 'rgba(255,255,255,0.7)',
+                                  backgroundColor:
+                                    seleccionadoCurso === idx ? 'var(--verde-inacex)' : 'transparent',
                                   border: '1px solid rgba(255,255,255,0.2)',
                                   borderRadius: 2,
                                   textTransform: 'none',

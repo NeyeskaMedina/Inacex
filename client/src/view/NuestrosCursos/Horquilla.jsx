@@ -8,11 +8,13 @@ import Advances from '../../components/Main/Advances/Advances';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils';
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
+
 
 function Horquilla() {
   const { cabinaRef } = useContext(UserContext);
-  const groupPlans = plans[2];
+  const groupPlans = getPlansByNumber(programas, 1);
 
 
 

@@ -1,10 +1,12 @@
+import { programas } from './programas';
+
 export const sedes = [
   'Antofagasta', 'Arica', 'Calama', 'Concepción', 'Copiapó',
   'Iquique', 'Ovalle', 'Rancagua', 'Serena', 'Viña del mar'
 ].sort();
 
 export const cursos = [
-  'CAMIÓN EXTRACCIÓN de alto tonelaje + GRÚA HORQUILLA',
+  'CAMIÓN EXTRACCIÓN + GRÚA HORQUILLA',
   'Operación segura de GRÚA HORQUILLA',
   'Operación segura de RETROEXCAVADORA',
   'Operación segura de RETROEXCAVADORA + GRÚA HORQUILLA',
@@ -530,11 +532,53 @@ export const getPlansByNumber = (programas, planNumber) => {
 
 
 
+export const getCursosFromProgramas = () => {
+  const lista = [];
+
+  Object.values(programas).forEach((seccion) => {
+    seccion.forEach((bloque) => {
+      Object.values(bloque).forEach((grupos) => {
+        Object.values(grupos).forEach((cursos) => {
+          cursos.forEach((curso) => {
+            if (curso.active) {
+              lista.push(`${curso.title}${curso.nexo}`);
+            }
+          });
+        });
+      });
+    });
+  });
+
+  return [...new Set(lista)]; // Eliminar duplicados si los hay
+};
+export const getCursoPorTituloYAnexo = (titulo, nexo) => {
+  let cursoEncontrado = null;
+
+  Object.values(programas).forEach((seccion) => {
+    seccion.forEach((bloque) => {
+      Object.values(bloque).forEach((grupos) => {
+        Object.values(grupos).forEach((cursos) => {
+          cursos.forEach((curso) => {
+            if (curso.active && curso.title === titulo && curso.nexo === nexo) {
+              cursoEncontrado = `${curso.title}${curso.nexo}`;
+            }
+          });
+        });
+      });
+    });
+  });
+
+  return cursoEncontrado;
+};
+
+
 
 
 export default {
     sedes,
-    cursos,
+    getCursosFromProgramas,
+    getCursoPorTituloYAnexo,
+    // cursos,
     plans,
     getPlansByNumber,
     validateEmail,

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
-const Programs = () => {
+export const Programs = () => {
 
   return (
+    <Link to={'/programas'} style={{ textDecoration: 'none' }}>
     <Button 
         className={'roboto-condensed'}
         sx={{ 
@@ -16,6 +18,7 @@ const Programs = () => {
     >
         Ver Programas
     </Button>
+    </Link>
   );
 };
 
