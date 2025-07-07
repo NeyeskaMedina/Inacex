@@ -1,5 +1,5 @@
 export const programas = {
-    maquinaria:[
+maquinaria:[
     // CAEX ( 1 )
     {
         caex: {

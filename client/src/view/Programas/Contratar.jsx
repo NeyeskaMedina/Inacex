@@ -5,9 +5,10 @@ import PricingCardsUnit from '../../components/Generals/Plain/PricingCardsUnit';
 import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
 import { getCursoPorTituloYAnexo } from '../../utils/utils';
 
-const Contratar = ({ image }) => {
+const Contratar = () => {
   const location = useLocation();
   const plan = location.state?.plan;
+  const image = location.state?.image;
   const cursoSeleccionado = getCursoPorTituloYAnexo(plan?.title, plan?.nexo);
 
   if (!plan) {

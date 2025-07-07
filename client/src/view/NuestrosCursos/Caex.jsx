@@ -8,12 +8,12 @@ import PricingCards from '../../components/Generals/Plain/PricingCards';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { getPlansByNumber } from '../../utils/utils'
-import { programas } from '../../utils/programas'
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
 
 function Caex() {
   const { cabinaRef } = useContext(UserContext);
-  const imageAdvances = "./imgCursos/caex/caexAdvances.png"
+  const imageAdvances = "./imgCursos/caex/caexAdvances.png";
   const imagePlans = "./imgCursos/caex/caex-cat.png";
   const image = "./imgCursos/caex/caex-cab.png";
   const req = "./imgCursos/caex/caex-cat.png"

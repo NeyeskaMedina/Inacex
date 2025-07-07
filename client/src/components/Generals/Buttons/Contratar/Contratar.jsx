@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 
 
-export const Contratar = ({ plan }) => {
+export const Contratar = ({ plan, image }) => {
 
   return (
     <Link 
       to="/contratar" 
-      state={{ plan }}
+      state={{ plan, image }}
       style={{ textDecoration: 'none', color: 'inherit' }}>
     <Button
       variant="contained"
