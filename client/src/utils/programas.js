@@ -128,15 +128,15 @@ maquinaria:[
                     ['Instructor', 'Instructor en línea'],
                     ['Soporte', 'Soporte al alumno'],
                     ['Metodología', 'Campus virtual'],
-                    ['extra', 'PracticaTest']
+                    ['extra', 'PracticaTest'],
                     ['Bonus', 'Administración de bodega'],
-                  ],
-                  modulos: [
+                ],
+                modulos: [
                     ['Módulo 1', 'Tipos y Fundamentos'],
                     ['Módulo 2', 'Operación Segura de Grúa Horquilla'],
                     ['Módulo 3', 'El Lugar de Trabajo'],
                     ['Módulo 4', 'Introducción a la mineria'],
-                  ],
+                ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
                 plan: 2,
                 active: true,

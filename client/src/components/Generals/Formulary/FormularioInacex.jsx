@@ -103,6 +103,7 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
       sx={{
         position: 'sticky',
         minHeight: '100vh',
+        maxHeigth: '600px',
         backgroundImage: `url(${image})`,
         backgroundPosition: { xs: 'top center', sm: 'center' },
         backgroundSize: { xs: 'cover' },

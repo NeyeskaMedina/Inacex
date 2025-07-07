@@ -56,7 +56,7 @@ const Contratar = () => {
           zIndex: 1,
         }}
       >
-        <Grid container spacing={4} justifyContent={{ xs: 'center', md: 'space-around' }} >
+        <Grid container spacing={4} justifyContent={{ xs: 'center', md: 'space-around' }} alignContent={'center'} >
           <Grid item xs={12} md={5}>
             <PricingCardsUnit plan={plan} />
           </Grid>

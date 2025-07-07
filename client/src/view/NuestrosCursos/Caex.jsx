@@ -28,7 +28,7 @@ function Caex() {
   const viewCentMD = '110% 110%'
   const groupPlans = getPlansByNumber(programas, 1); 
 
-
+  console.log('groupPlans:', groupPlans);
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>
