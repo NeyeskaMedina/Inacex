@@ -23,7 +23,7 @@ import Bulldozer from './view/NuestrosCursos/Bulldozer';
 import Motoniveladora from './view/NuestrosCursos/Motoniveladora';
 import ListProspectBk from './view/ListProspectBk';
 import Programas from './view/Programas/Programas'
-import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
+import {ConfirmacionExitosa} from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

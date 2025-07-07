@@ -1,4 +1,3 @@
-// src/pages/ConfirmacionExitosa.jsx
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
@@ -20,7 +19,7 @@ export const ConfirmacionExitosa = () => {
           ✅ ¡Correo confirmado con éxito!
         </Typography>
         <Typography variant="body1">
-          Gracias por confirmar tu correo. Un asesor se pondrá en contacto contigo muy pronto.
+          Gracias por confirmar tu correo. Un asesor se pondrá en contacto contigo muy pronto, continua desde tu correo electronico.
         </Typography>
       </Box>
     </Box>
