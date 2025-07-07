@@ -13,7 +13,11 @@ export const Programs = () => {
             backgroundColor: 'var(--verde-inacex)', 
             color: 'white',
             marginLeft: '10px',
-            borderRadius: '10px'
+            borderRadius: '10px',
+            '&:hover': {
+              backgroundColor: 'var(--blanco-notification)', // usa una variable o color directo
+              color: 'var(--verde-inacex)'
+            }
         }}
     >
         Ver Programas

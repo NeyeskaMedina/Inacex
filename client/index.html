@@ -21,5 +21,24 @@
     <!-- Link Scripts Facebook -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v23.0&appId=472859312423052"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC0m3Vvs_TRTaUzeJTPIBXPyVTluwSSZFQ",
+        authDomain: "inacex-e806d.firebaseapp.com",
+        projectId: "inacex-e806d",
+        storageBucket: "inacex-e806d.firebasestorage.app",
+        messagingSenderId: "595664548662",
+        appId: "1:595664548662:web:ae3463f729c3209e0b7997"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>

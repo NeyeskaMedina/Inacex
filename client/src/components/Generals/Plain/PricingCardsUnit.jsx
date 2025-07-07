@@ -18,6 +18,7 @@ const PricingCardsUnit = ({ plan, color = '#f57c00', colorInacex = '#4caf50' }) 
       <Box
         sx={{
           width: { xs: 320, md: 380, lg: 450, xl: 520 },
+          maxHeigth: '600px',
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
           '&:hover': {
             transform: 'scale(1.02)',

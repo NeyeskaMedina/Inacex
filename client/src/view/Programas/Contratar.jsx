@@ -8,6 +8,7 @@ import { getCursoPorTituloYAnexo } from '../../utils/utils';
 const Contratar = () => {
   const location = useLocation();
   const plan = location.state?.plan;
+  const image = location.state?.image;
   const cursoSeleccionado = getCursoPorTituloYAnexo(plan?.title, plan?.nexo);
 
   if (!plan) {
@@ -25,7 +26,7 @@ const Contratar = () => {
       sx={{
         position: 'relative',
         minHeight: '100vh',
-        backgroundImage: 'url(./imgCursos/frontal/12.png)', // Asegúrate de tener esta imagen
+        backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -55,7 +56,7 @@ const Contratar = () => {
           zIndex: 1,
         }}
       >
-        <Grid container spacing={4} justifyContent={{ xs: 'center', md: 'space-around' }} >
+        <Grid container spacing={4} justifyContent={{ xs: 'center', md: 'space-around' }} alignContent={'center'} >
           <Grid item xs={12} md={5}>
             <PricingCardsUnit plan={plan} />
           </Grid>

@@ -15,7 +15,8 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Programs from '../Buttons/Programs/Programs'
 
 const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image }) => {
-  
+console.log(plans)
+
   return (
     <Box
       sx={{
@@ -180,7 +181,7 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
                   </Typography>
 
                   <Box sx={{ mt: 'auto', width: '100%' }}>
-                    <Contratar plan={plan} />
+                    <Contratar plan={plan} image={image} />
                   </Box>
                 </CardContent>
               </Card>

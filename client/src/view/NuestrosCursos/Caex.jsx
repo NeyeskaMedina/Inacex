@@ -8,12 +8,12 @@ import PricingCards from '../../components/Generals/Plain/PricingCards';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { getPlansByNumber } from '../../utils/utils'
-import { programas } from '../../utils/programas'
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
 
 function Caex() {
   const { cabinaRef } = useContext(UserContext);
-  const imageAdvances = "./imgCursos/caex/caexAdvances.png"
+  const imageAdvances = "./imgCursos/caex/caexAdvances.png";
   const imagePlans = "./imgCursos/caex/caex-cat.png";
   const image = "./imgCursos/caex/caex-cab.png";
   const req = "./imgCursos/caex/caex-cat.png"
@@ -26,9 +26,9 @@ function Caex() {
   const viewDer = '700% 100%'
   const viewCentXS = '250% 100%'
   const viewCentMD = '110% 110%'
-  const groupPlans = getPlansByNumber(programas, 1); // cambia a 2, 3, etc. según necesites
+  const groupPlans = getPlansByNumber(programas, 1); 
 
-
+  console.log('groupPlans:', groupPlans);
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>

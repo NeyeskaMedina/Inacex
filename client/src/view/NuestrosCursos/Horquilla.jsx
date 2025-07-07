@@ -14,7 +14,7 @@ import { programas } from '../../utils/programas';
 
 function Horquilla() {
   const { cabinaRef } = useContext(UserContext);
-  const groupPlans = getPlansByNumber(programas, 1);
+  const groupPlans = getPlansByNumber(programas, 2);
 
 
 

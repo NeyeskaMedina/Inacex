@@ -8,12 +8,14 @@ import infoRetro from '../../components/Cabina/Requisitos/Info/InfoRetro';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils';
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
+
 
 
 function Retroexcavadora() {
   const { cabinaRef } = useContext(UserContext);
-  const groupPlans = plans[6];
+  const groupPlans = getPlansByNumber(programas, 3);
 
   const imageReq = "./imgCursos/retro/retro.jpg";
   const imageCab = "./imgCursos/retro/retro2.jpg";

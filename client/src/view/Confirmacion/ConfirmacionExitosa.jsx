@@ -21,10 +21,10 @@ export const ConfirmacionExitosa = () => {
       }}
     >
       <Box sx={{ textAlign: 'center', zIndex: 1 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography sx={{ color: 'black' }} className={'roboto-condensed'} variant="h4" gutterBottom>
           ✅ ¡Correo confirmado con éxito!
         </Typography>
-        <Typography variant="body1">
+        <Typography sx={{ color: 'black' }} variant="body1">
           Gracias por confirmar tu correo. Un asesor se pondrá en contacto contigo muy pronto, continua desde tu correo electronico.
         </Typography>
       </Box>

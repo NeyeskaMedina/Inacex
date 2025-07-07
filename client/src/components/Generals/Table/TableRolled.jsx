@@ -6,6 +6,9 @@ import { getRegisters } from '../../../apiRest/apiInacex/get/getRegisters.js';
 
 const columns = [
   { field: 'id', headerName: 'ID', minWidth: 70, flex: 0.3 },
+  { field: 'confirmacion_correo', headerName: 'Confirmó correo', minWidth: 100, flex: 0.8, renderCell: (params) => (
+    params.value ? '✅' : '❌'
+  ), },
   {
   field: 'create_date',
   headerName: 'Fecha',
@@ -18,18 +21,20 @@ const columns = [
     return `${day}/${month}/${year}`;
   },
 },
-  { field: 'rut', headerName: 'RUT', minWidth: 150, flex: 0.7 },
-  { field: 'nombre', headerName: 'Nombre', minWidth: 180, flex: 1 },
-  { field: 'telefono', headerName: 'Teléfono', minWidth: 130, flex: 0.7 },
-  { field: 'correo', headerName: 'Correo', minWidth: 200, flex: 1 },
-  { field: 'sede', headerName: 'Sede', minWidth: 120, flex: 0.6 },
-  { field: 'curso', headerName: 'Curso', minWidth: 200, flex: 1 },
-  { field: 'direccion', headerName: 'Dirección', minWidth: 220, flex: 1.2 },
+  { field: 'rut', headerName: 'RUT', width: 150, flex: 0.7 },
+  { field: 'nombre', headerName: 'Nombre', width: 180, flex: 1 },
+  { field: 'telefono', headerName: 'Teléfono', width: 130, flex: 0.7 },
+  { field: 'correo', headerName: 'Correo', width: 200, flex: 1 },
+  { field: 'sede', headerName: 'Sede', width: 120, flex: 0.6 },
+  { field: 'curso', headerName: 'Curso', width: 200, flex: 1 },
+  { field: 'direccion', headerName: 'Dirección', width: 220, flex: 1.2 },
+ 
 ];
 
 export default function TableRolled() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const [selectedIds, setSelectedIds] = useState([])
 
   useEffect(() => {
     const axiosProspect = async () => {
@@ -60,13 +65,12 @@ export default function TableRolled() {
   <Box
     sx={{
       width: '100vw',
-      overflowX: 'scroll',
+      overflowX: 'auto',
     }}
   >
     <Box
       sx={{
-        width: '100%', // esto hace que se ajuste al contenedor padre
-        maxWidth: '100vw',
+        minWidth: '900px', // fuerza un scroll si el contenido necesita más de 100vw
         height: 600,
       }}
     >
@@ -82,26 +86,26 @@ export default function TableRolled() {
           <CircularProgress color="success" />
         </Box>
       ) : (
-        <Box sx={{ height: 600, width: '100%'}}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            sx={{
-              width: '100%',
-            }}
-            disableRowSelectionOnClick
-            initialState={{
-              pagination: {
-                paginationModel: { pageSize: 10 },
-              },
-            }}
-            pageSizeOptions={[5, 10, 20]}
-            checkboxSelection
-          />
-        </Box>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          sx={{
+            minWidth: '100%',
+          }}
+          disableRowSelectionOnClick
+          initialState={{
+            pagination: {
+              paginationModel: { pageSize: 10 },
+            },
+          }}
+          pageSizeOptions={[5, 10, 20]}
+          checkboxSelection
+          // onRowSelectionModelChange={(ids)=> {setSelectedIds(ids)}}
+        />
       )}
     </Box>
   </Box>
 );
+
 
 }
