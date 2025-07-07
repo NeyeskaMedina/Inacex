@@ -25,7 +25,7 @@ const addRegister = async (req, res) => {
                   <p style="font-size: 16px">Para continuar con el proceso de inscripción, por favor confirma tu correo electrónico:</p>
 
                   <div style="text-align: center; margin: 30px 0;">
-                    <a href="https://inacex.netlify.app/api/v1/confirmar-correo?correo=${correo}" 
+                    <a href="https://inacex.onrender.com/api/v1/confirmar-correo?correo=${correo}" 
                        style="background-color: #007d3c; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">
                        ✅ Confirmar correo
                     </a>
