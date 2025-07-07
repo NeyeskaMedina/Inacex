@@ -39,3 +39,4 @@ export const imagenesCategorias = (categoria) => {
       return categoria.toUpperCase().replace(/_/g, ' ');
   }
 };
+

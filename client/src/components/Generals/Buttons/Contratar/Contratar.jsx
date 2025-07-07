@@ -1,11 +1,16 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 
-const Contratar = () => {
+export const Contratar = ({ plan }) => {
 
   return (
+    <Link 
+      to="/contratar" 
+      state={{ plan }}
+      style={{ textDecoration: 'none', color: 'inherit' }}>
     <Button
       variant="contained"
       fullWidth
@@ -20,6 +25,7 @@ const Contratar = () => {
     >
       Contratar
     </Button>
+    </Link>
   );
 };
 

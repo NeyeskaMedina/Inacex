@@ -178,7 +178,7 @@ const Carousel = () => {
                   {slide.notification}
                 </Typography>
 
-                <Link to={slide.URL} style={{ textDecoration: 'none' }}>
+        <Link to={slide.URL} style={{ textDecoration: 'none' }}>
         <Button
           color="inherit"
           sx={{

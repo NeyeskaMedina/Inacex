@@ -27,10 +27,21 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
         backgroundRepeat: 'no-repeat',
         py: 10,
         px: 2,
+        '&::after': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(155, 155, 155, 0.6)', // Overlay claro
+              zIndex: 0,
+            },
       }}
     >
+
       {/* TÍTULOS FUERA DEL GRID */}
-      <Box sx={{ textAlign: 'center', mb: 4 }}>
+      <Box sx={{ textAlign: 'center', mb: 4, position: 'relative', zIndex: 1}}>
         <Typography
           variant="h3"
           className="pricing-title roboto-condensed"
@@ -67,7 +78,9 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
             <Zoom in={true} style={{ transitionDelay: `${index * 200}ms` }}>
               <Card
                 sx={{
-                  width: {xs: 320, md: 320, lg: 350, xl: 450},
+                  position: 'relative', 
+                  zIndex: 1,
+                  width: { xs: 320, md: 380, lg: 450, xl: 520 },
                   minHeight: { xs: 'auto', sm: 500 },
                   // maxHeight: 600,
                   background: 'rgba(255, 255, 255, 0.48)',
@@ -167,7 +180,7 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
                   </Typography>
 
                   <Box sx={{ mt: 'auto', width: '100%' }}>
-                    <Contratar />
+                    <Contratar plan={plan} />
                   </Box>
                 </CardContent>
               </Card>

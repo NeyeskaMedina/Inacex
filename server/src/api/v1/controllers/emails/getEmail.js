@@ -14,10 +14,7 @@ const getEmail = async (req, res) => {
         const response = await updatEmail(correo);
         console.log("Respuesta de la actualización:", response);
         const wasUpdated = response[0] && response[0].create_date;
-        return res.status(200).json({ 
-            message: wasUpdated ? "Correo confirmado con éxito" : "Correo ya estaba confirmado", 
-            data: response[0]
-        });
+        return res.redirect('https://inacex.vercel.app/confirmacion-exitosa');
     } catch (error) {
         const errorFound = handleError(error.code) || [
             { status: 500, message: "Error interno del servidor al confirmar correo" },
