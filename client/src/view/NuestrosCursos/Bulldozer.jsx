@@ -7,7 +7,8 @@ import infoBull from '../../components/Cabina/Requisitos/Info/InfoBull';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils';
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 
 function Bulldozer() {
@@ -26,7 +27,7 @@ function Bulldozer() {
   const color = 'white';
   const imagePlans = "./imgCursos/bull/bull13.png";
 
-  const groupPlans = plans[4];
+  const groupPlans = getPlansByNumber(programas, 6);
   return (
     <>
     <div style={{ backgroundColor: '#121212', maxHeight: '100vh', maxWidth: '100vw', overflow: 'hidden', position: 'relative' }}>

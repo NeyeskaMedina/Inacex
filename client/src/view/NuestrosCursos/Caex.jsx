@@ -26,7 +26,7 @@ function Caex() {
   const viewDer = '700% 100%'
   const viewCentXS = '250% 100%'
   const viewCentMD = '110% 110%'
-  const groupPlans = getPlansByNumber(programas, 1); // cambia a 2, 3, etc. según necesites
+  const groupPlans = getPlansByNumber(programas, 1); 
 
 
   return (

@@ -8,10 +8,11 @@ import infoMoto from '../../components/Cabina/Requisitos/Info/InfoMoto';
 import Advances from '../../components/Main/Advances/Advances';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils';
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
 
 function Motoniveladora() {
- const groupPlans = plans[5];
+  const groupPlans = getPlansByNumber(programas, 5);
 
   const { cabinaRef } = useContext(UserContext);
   const imageAdvances = "./imgCursos/moto/moto12.png"

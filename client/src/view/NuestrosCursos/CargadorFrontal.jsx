@@ -8,11 +8,12 @@ import Advances from '../../components/Main/Advances/Advances';
 import PricingCards from '../../components/Generals/Plain/PricingCards';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import { plans } from '../../utils/utils'; 
+import { getPlansByNumber } from '../../utils/utils';
+import { programas } from '../../utils/programas';
 
 function CargadorFrontal() {
     const { cabinaRef } = useContext(UserContext);
-    const groupPlans = plans[1];
+  const groupPlans = getPlansByNumber(programas, 4);
 
   const image = "./imgCursos/frontal/frontal.png";
   const imageCab= "./imgCursos/frontal/frontal3.png";

@@ -1,5 +1,6 @@
 export const programas = {
     maquinaria:[
+    // CAEX ( 1 )
     {
         caex: {
             caex_Grua: [
@@ -63,7 +64,7 @@ export const programas = {
                     ['Módulo 3', 'Introducción a la minería'],
                   ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
-                plan: 0,
+                plan: 1,
                 active: true,
                 valorPromocion: '350.000',
                 valorMatricula: '0',
@@ -73,6 +74,7 @@ export const programas = {
             ]  
         }   
     },
+    // GRUA ( 2 )
     {
         grua: {
             grua_learning: [
@@ -101,7 +103,7 @@ export const programas = {
                     ['Módulo 4', 'Introducción a la mineria'],
                   ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
-                plan: 1,
+                plan: 2,
                 active: true,
                 valorPromocion: '250.000',
                 valorMatricula: '0',
@@ -146,6 +148,7 @@ export const programas = {
             ]  
         }
     },
+    // RETRO ( 3 )
     {
         retro: {
             retro_learning: [
@@ -174,11 +177,128 @@ export const programas = {
                     ['Módulo 4', 'Introducción a la mineria'],
                   ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
-                plan: 1,
+                plan: 3,
                 active: true,
                 valorPromocion: '350.000',
                 valorMatricula: '0',
                 valorContado: '240.000',
+                dosCuotas: '0',
+                },
+            ],
+        }
+    },
+    // CARGADOR ( 4 )
+    {
+        cargador: {
+            cargador_learning: [
+                {
+                title: 'OPERACIÓN SEGURA DE ',
+                nexo: 'CARGADOR FRONTAL E-LEARNING',
+                subtitle: 'Programa único',
+                other: 'Matrícula',
+                price: '30% DESCUENTO',
+                detalles: [
+                    ['Maquinarias', '1 Maquinaria'],
+                    ['Modalidad', 'E-Learning'],
+                    ['Duración', '2 Meses'],
+                    ['Clases', 'A tu ritmo'],
+                    ['Prácticas', '2 Horas'],
+                    ['Certificación', 'Digital e impresa'],
+                    ['Instructor', 'Tutor especializado'],
+                    ['Soporte', 'Soporte al alumno'],
+                    ['Metodología', 'Campus virtual'],
+                    ['Extra', 'Practicatest'],
+                  ],
+                  modulos: [
+                    ['Módulo 1', 'Tipos y Fundamentos'],
+                    ['Módulo 2', 'Operación Segura de Grúa Horquilla'],
+                    ['Módulo 3', 'El Lugar de Trabajo'],
+                    ['Módulo 4', 'Introducción a la mineria'],
+                  ],
+                foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
+                plan: 4,
+                active: true,
+                valorPromocion: '340.000',
+                valorMatricula: '0',
+                valorContado: '210.000',
+                dosCuotas: '0',
+                },
+            ],
+        }
+    },
+    // MOTO ( 5 )
+    {
+        moto: {
+            moto_learning: [
+                {
+                title: 'OPERACIÓN SEGURA DE ',
+                nexo: 'MOTONIVELADORA E-LEARNING',
+                subtitle: 'Programa único',
+                other: 'Matrícula',
+                price: '30% DESCUENTO',
+                detalles: [
+                    ['Maquinarias', '1 Maquinaria'],
+                    ['Modalidad', 'E-Learning'],
+                    ['Duración', '2 Meses'],
+                    ['Clases', 'A tu ritmo'],
+                    ['Prácticas', '2 Horas'],
+                    ['Certificación', 'Digital e impresa'],
+                    ['Instructor', 'Tutor especializado'],
+                    ['Soporte', 'Soporte al alumno'],
+                    ['Metodología', 'Campus virtual'],
+                    ['Extra', 'Practicatest'],
+                  ],
+                  modulos: [
+                    ['Módulo 1', 'Tipos y Fundamentos'],
+                    ['Módulo 2', 'Operación Segura de Grúa Horquilla'],
+                    ['Módulo 3', 'El Lugar de Trabajo'],
+                    ['Módulo 4', 'Introducción a la mineria'],
+                  ],
+                foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
+                plan: 5,
+                active: true,
+                valorPromocion: '420.000',
+                valorMatricula: '0',
+                valorContado: '250.000',
+                dosCuotas: '0',
+                },
+            ],
+        }
+    },
+    // BULL ( 6 )
+    {
+        bull: {
+            bull_learning: [
+                {
+                title: 'OPERACIÓN SEGURA DE ',
+                nexo: 'BULLDOZER E-LEARNING',
+                subtitle: 'Programa único',
+                other: 'Matrícula',
+                price: '30% DESCUENTO',
+                detalles: [
+                    ['Maquinarias', '1 Maquinaria'],
+                    ['Modalidad', 'E-Learning'],
+                    ['Duración', '2 Meses'],
+                    ['Clases', 'A tu ritmo'],
+                    ['Prácticas', '2 Horas'],
+                    ['Certificación', 'Digital e impresa'],
+                    ['Instructor', 'Tutor especializado'],
+                    ['Soporte', 'Soporte al alumno'],
+                    ['Metodología', 'Campus virtual'],
+                    ['Extra', 'Practicatest'],
+                  ],
+                  modulos: [
+                    ['Módulo 1', 'Tipos y Fundamentos'],
+                    ['Módulo 2', 'Operación Segura de Grúa Horquilla'],
+                    ['Módulo 3', 'El Lugar de Trabajo'],
+                    ['Módulo 4', 'Introducción a la mineria'],
+                  ],
+                foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
+                plan: 6,
+                active: true,
+                valorPromocion: '420.000',
+                valorMatricula: '0',
+                valorContado: '250.000',
                 dosCuotas: '0',
                 },
             ],
@@ -217,7 +337,7 @@ admin: [
                     ['Módulo 6', '+ INTRODUCCION A LA MINERIA E-LEARNING'],
                   ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
-                plan: 2,
+                plan: 7,
                 active: true,
                   valorPromocion: '200.000',
                   valorMatricula: '0',
@@ -249,7 +369,7 @@ admin: [
                     ['Módulo 3', 'Introducción a la minería'],
                   ],
                 foo: 'El valor sólo matrícula y todos los beneficios del programa seleccionado.', 
-                plan: 0,
+                plan: 7,
                 active: true,
                 valorPromocion: '80.000',
                 valorMatricula: '0',
