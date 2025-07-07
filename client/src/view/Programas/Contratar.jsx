@@ -5,7 +5,7 @@ import PricingCardsUnit from '../../components/Generals/Plain/PricingCardsUnit';
 import FormularioInacex from '../../components/Generals/Formulary/FormularioInacex';
 import { getCursoPorTituloYAnexo } from '../../utils/utils';
 
-const Contratar = () => {
+const Contratar = ({ image }) => {
   const location = useLocation();
   const plan = location.state?.plan;
   const cursoSeleccionado = getCursoPorTituloYAnexo(plan?.title, plan?.nexo);
@@ -25,7 +25,7 @@ const Contratar = () => {
       sx={{
         position: 'relative',
         minHeight: '100vh',
-        backgroundImage: 'url(./imgCursos/frontal/12.png)', // Asegúrate de tener esta imagen
+        backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

@@ -180,7 +180,7 @@ const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image
                   </Typography>
 
                   <Box sx={{ mt: 'auto', width: '100%' }}>
-                    <Contratar plan={plan} />
+                    <Contratar image={image} />
                   </Box>
                 </CardContent>
               </Card>
