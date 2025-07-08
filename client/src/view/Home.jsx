@@ -7,8 +7,15 @@ import FormularioInacex from '../components/Generals/Formulary/FormularioInacex.
 import CatSimulator from '../components/Main/CatSimulator/CatSimulator.jsx';
 import Advances from '../components/Main/Advances/Advances.jsx';
 
+
+// import { UserContext } from '../context/UserContext.jsx';
+// import { useContext, useEffect } from 'react';
+
 export const Home = () => {
-  const imageAdvances  = './imgCursos/caex/caexAdvances.png'
+
+
+
+  const imageAdvances  = './imgCursos/caex/caexAdvances.png';
   const image= "./imgCursos/caex/caexForms.webp"
   const bgColor = 'var(--verde-trans)';
   const font = 'white';
