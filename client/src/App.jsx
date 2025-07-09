@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
 import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
 import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut';
+import TerminosCondiciones from './view/TerminosCondiciones';
 import Contratar from './view/Programas/Contratar'
 import { useLocation } from 'react-router-dom';
 import Login from './view/Login/Login'
@@ -131,6 +132,12 @@ function App() {
         <Route
             path ='/ingreso'
             element ={<Login />}
+        />
+    </Routes>
+    <Routes>
+        <Route
+            path ='/terminos-y-condiciones'
+            element ={<TerminosCondiciones />}
         />
     </Routes>
     {/* <Routes>

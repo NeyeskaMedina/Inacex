@@ -4,8 +4,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Footer = () => {
+  const { setOpen } = useContext(UserContext)
+
+  const handleOpen = () => setOpen(true);
   return (
     <Box
       component="footer"
@@ -39,13 +44,13 @@ const Footer = () => {
             Navegación
           </Typography>
           <Link href="#nuestros-cursos" underline="hover" color="inherit" variant="body2">Nuestros Cursos</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Bulldozer</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Cargador frontal</Link><br />
+          <Link href="/bulldozer" underline="hover" color="inherit" variant="body2">Bulldozer</Link><br />
+          <Link href="/cargador-frontal" underline="hover" color="inherit" variant="body2">Cargador frontal</Link><br />
           <Link href="/caex" underline="hover" color="inherit" variant="body2">Camión Extracción</Link><br />
           <Link href="/grua-horquilla" underline="hover" color="inherit" variant="body2">Grua Horquilla</Link><br />
           <Link component={RouterLink} to="/retroexcavadora" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
+          <Link href="/motoniveladora" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
+          <Link href="/terminos-y-condiciones" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
         </Grid>
 
@@ -56,7 +61,7 @@ const Footer = () => {
           </Typography>
           <Link href="#" underline="hover" color="inherit" variant="body2">CATSIMULATOR</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Campus Virtual</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Certificaciones</Link><br />
+          <Link component="button" onClick={handleOpen} underline="hover" color="inherit" variant="body2">Certificaciones</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Instructores especializados</Link>
         </Grid>
 

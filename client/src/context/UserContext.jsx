@@ -9,6 +9,7 @@ export const ContextProvider = ( {children} ) => {
          const [showTicker, setShowTicker] = useState(true);
          const location = useLocation();
          const [ userLogin, setUserLogin ] = useState(null);
+         const [ open, setOpen ] = useState(false);
 
             useEffect(() => {
                 const currentPath = location.pathname;
@@ -51,6 +52,8 @@ export const ContextProvider = ( {children} ) => {
        
         
         const sharedContext = {
+            open, 
+            setOpen,
             userLogin,
             setUserLogin,
             showTicker,

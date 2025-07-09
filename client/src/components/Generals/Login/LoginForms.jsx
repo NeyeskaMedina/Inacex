@@ -12,10 +12,7 @@ import {
 import Swal from 'sweetalert2';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-const pass = import.meta.env.VITE_PASSWORD;
-const usuario = import.meta.env.VITE_USER;
-const passe = import.meta.env.VITE_PASSE;
-const ejecutiva = import.meta.env.VITE_EJEC;
+import { postLogin } from '../../../apiRest/apiInacex/post/postLogin';
 
 export const LoginForms = ({ onLogin }) => {
   const [user, setUser] = useState('');
@@ -23,34 +20,33 @@ export const LoginForms = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Reemplaza esto por tu lógica real
-    if (
-      (user === usuario && password === pass) || 
-      (user === ejecutiva && password === passe)) {
-        Swal.fire({
-            title: '¡Éxito!',
-            text: '¡Ingreso exitoso!, Matriculen mucho 😎',
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
-            confirmButtonColor: 'var(--verde-inacex)',
-        });
-        localStorage.setItem('auth', 'true');
-        navigate('/prospectos')
-    } else {
-      Swal.fire({
-            title: '¡Error!',
-            text: 'Credenciales incorrectas 🤔',
-            icon: 'Error',
-            confirmButtonText: 'Salir',
-            confirmButtonColor: 'red',
-        });
-        navigate('/ingreso');
-    }
+  const { response, error } = await postLogin({ username: user, password });
+  console.log(response);
+  
+  if (response?.token) {
+    Swal.fire({
+      title: '¡Éxito!',
+      text: response.message,
+      icon: 'success',
+      confirmButtonColor: 'var(--verde-inacex)',
+    });
+
+    // Guarda solo el token
+    localStorage.setItem('token', response.token);
+
+    navigate('/prospectos'); // redirige al inicio
+  } else {
+    Swal.fire({
+      title: '¡Error!',
+      text: error,
+      icon: 'error',
+      confirmButtonColor: 'red',
+    });
+  }
   };
-
   return (
     <Box
       sx={{
