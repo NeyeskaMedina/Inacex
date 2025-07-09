@@ -1,62 +1,45 @@
-import { Box, Typography, Grid } from '@mui/material';
-const Videos = () => {
-const videos = [
-  {
-    url: './videos/21.mp4',
-  },
-  {
-    url: './videos/13.mp4',
-  },
-  {
-    url: './videos/18.mp4',
-  },
-];
+import { Grid, Box, Typography } from '@mui/material';
 
-    return (
-        <Box sx={{ width: '100%', backgroundColor: '#f5f5f5', py: 5 }}>
-  <Typography
-    variant="h4"
-    textAlign="center"
-    className='roboto-condensed'
-    sx={{ fontWeight: 700, mb: 3 }}
-  >
-    <span style={{ color: 'var(--verde-inacex)'}}>LO MÁS RECIENTE</span> EN VIDEOS
-  </Typography>
+export const Videos = () => {
+  const videos = [
+    { url: './videos/21.mp4' },
+    { url: './videos/13.mp4' },
+    { url: './videos/18.mp4' },
+  ];
 
-  <Grid container spacing={3} justifyContent="center">
-    {videos.map((video, index) => (
-      <Grid item xs={12} sm={6} md={4} key={index}>
-        <Box
-          sx={{
-            position: 'relative',
-            overflow: 'hidden',
-            borderRadius: 2,
-            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-          }}
-        >
-          <iframe
-            width="100%"
-            height="400"
-            src={video.url}
-            title={video.title}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ border: 'none' }}
-          ></iframe>
-          <Box sx={{ p: 2 }}>
-            <Typography variant="subtitle1" fontWeight={600}>
-              {video.title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {video.desc}
-            </Typography>
-          </Box>
-        </Box>
+  return (
+    <Box sx={{ px: 2, py: 4 }}>
+      <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', mb: 4 }}>
+        LO MÁS RECIENTE EN <span style={{ color: 'var(--verde-inacex)' }}>VIDEOS</span>
+      </Typography>
+
+      <Grid container spacing={2} justifyContent="center">
+        {videos.map((video, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Box
+              sx={{
+                width: '100%',
+                aspectRatio: '9 / 16', // <-- Esto lo mantiene vertical como historia
+                borderRadius: 2,
+                boxShadow: 3,
+                overflow: 'hidden',
+              }}
+            >
+              <video
+                src={video.url}
+                controls
+                style={{
+                  width: '360px',
+                  height: '640px',
+                  objectFit: 'cover', // Muy importante para mantener proporción
+                }}
+              />
+            </Box>
+          </Grid>
+        ))}
       </Grid>
-    ))}
-  </Grid>
-</Box>
-
-    );
+    </Box>
+  );
 };
+
 export default Videos;

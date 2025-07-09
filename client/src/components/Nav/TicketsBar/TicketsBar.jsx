@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Typography } from '@mui/material';
 import './ticketsBar.css'; // Asegúrate de tenerlo
+import { UserContext } from '../../../context/UserContext';
 
 const TicketsBar = () => {
+  const { showTicker } = useContext(UserContext); // Accede al estado
+
+  if (!showTicker) return null;
   return (
     <Box
       sx={{

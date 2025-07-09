@@ -18,10 +18,10 @@ maquinaria:[
                     ['Horario', '20:00 a 23:00hrs'],
                     ['Prácticas', '6 Horas Simulacion'],
                     ['Certificación', 'Digital'],
-                    ['Bonus', 'Practicatest'],
                     ['Instructor', 'Instructor en línea'],
                     ['Soporte', 'Soporte al alumno'],
                     ['Metodología', 'Campus virtual'],
+                    ['Bonus', 'Practicatest'],
                   ],
                   modulos: [
                     ['Módulo 1', 'Conocimientos previos a la operación'],

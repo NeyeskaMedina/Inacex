@@ -208,7 +208,7 @@ export const Programas = () => {
                             </Stack>
                           </Paper>
                           <Box mt={2}>
-                            <Contratar />
+                            <Contratar plan={curso} image={'./imgCursos/moto/moto12.png'} />
                           </Box>
                         </Box>
                       </Stack>

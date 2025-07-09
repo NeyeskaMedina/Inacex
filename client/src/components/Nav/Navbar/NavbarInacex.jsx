@@ -12,6 +12,7 @@ import {
   Slide
 
 } from '@mui/material';
+import LogoutButton from '../../Generals/Buttons/Logout/LogoutButton'
 import MenuIcon from '@mui/icons-material/Menu';
 import './nav.css';
 import ScrollTitleBar from './ScrollTitleBar'
@@ -118,6 +119,7 @@ const NavbarInacex = () => {
       >
         <span className={'btnMat'} style={{border: '1px solid var(--verde-inacex)', borderRadius: '20px', padding: '10px'}}>Matricúlate</span>
       </Button>
+      <LogoutButton />
     </>
   );
 
