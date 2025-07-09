@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
   useMediaQuery,
+  Grid,
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTheme } from '@mui/material/styles';
@@ -27,7 +28,7 @@ const CatSimulator = () => {
     <Box
       id="cat-simulator"
       sx={{
-        position: 'relative',
+        width: '100%',
         backgroundColor: '#111',
         backgroundImage: 'url(./imgCursos/bgCat.png)',
         backgroundSize: 'cover',
@@ -36,9 +37,11 @@ const CatSimulator = () => {
         py: { xs: 8, md: 12 },
         px: { xs: 3, md: 10 },
         fontFamily: '"Roboto Condensed", sans-serif',
+        position: 'relative',
         overflow: 'hidden',
       }}
     >
+      {/* Capa oscura */}
       <Box
         sx={{
           position: 'absolute',
@@ -51,105 +54,99 @@ const CatSimulator = () => {
         }}
       />
 
+      {/* Contenido */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignItems: 'center',
-            gap: { xs: 6, md: 8 },
-          }}
-        >
-          <Box
-            sx={{
-              flex: 1,
-              background: { md: 'rgba(255,255,255,0.02)' },
-              px: { xs: 0, md: 4 },
-              py: { xs: 0, md: 3 },
-              borderRadius: 2,
-            }}
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          >
-            <Typography
-              variant="h3"
-              component="h2"
-              className="roboto-condensed"
+        <Grid container spacing={6} alignItems="center">
+          {/* Texto */}
+          <Grid item xs={12} md={6}>
+            <Box
               sx={{
-                fontWeight: 700,
-                color: 'white',
-                mb: 2,
-                fontSize: { xs: '2rem', md: '2.8rem' },
+                background: { md: 'rgba(255,255,255,0.02)' },
+                px: { xs: 0, md: 4 },
+                py: { xs: 0, md: 3 },
+                borderRadius: 2,
               }}
+              data-aos="fade-right"
+              data-aos-duration="1000"
             >
-              <span style={{ color: 'var(--naranja-cat)' }}>CAT</span>SIMULATOR
-            </Typography>
+              <Typography
+                variant="h3"
+                component="h2"
+                sx={{
+                  fontWeight: 700,
+                  color: 'white',
+                  mb: 2,
+                  fontSize: { xs: '2rem', md: '2.8rem' },
+                }}
+              >
+                PRÁCTICAS CON TECNOLOGÍA DE{' '}
+                <span style={{ color: 'var(--verde-inacex)' }}>CLASE MUNDIAL</span>
+              </Typography>
 
-            <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
-              "CAT SIMULATOR" (Caterpillar) es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
-            </Typography>
+              <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
+                "Simulador Caterpillar" es una herramienta de última generación que capacita
+                operadores de maquinaria pesada en un entorno seguro, controlado y completamente
+                inmersivo:
+              </Typography>
 
-            <List>
-              {listItems.map((text, index) => (
-                <ListItem
-                  key={index}
-                  data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
-                  data-aos-duration="900"
-                  sx={{
-                    py: 0.5,
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateX(5px)',
-                    },
-                  }}
-                >
-                  <ListItemIcon>
-                    <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-            </List>
+              <List>
+                {listItems.map((text, index) => (
+                  <ListItem
+                    key={index}
+                    data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
+                    data-aos-duration="900"
+                    sx={{
+                      py: 0.5,
+                      transition: 'transform 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateX(5px)',
+                      },
+                    }}
+                  >
+                    <ListItemIcon>
+                      <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+              </List>
 
-            <Typography
-              variant="body2"
-              sx={{ mt: 3, color: '#ccc' }}
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
-            </Typography>
-          </Box>
+              <Typography
+                variant="body2"
+                sx={{ mt: 3, color: '#ccc' }}
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                Realizas tus prácticas en simuladores Caterpillar para la industria minera, aprobado
+                y comprobado a nivel mundial.
+              </Typography>
+            </Box>
+          </Grid>
 
-          <Box
-            component="img"
-            src="./imgCursos/catSimulator.png"
-            alt="Simulador CAT CAEX"
-            data-aos="zoom-in"
-            data-aos-duration="1200"
-            sx={{
-              flex: 1,
-              width: {
-                xs: '100%',
-                sm: '90%',
-                md: '100%',
-                lg: '90%',
-                xl: '80%'
-              },
-              height: {
-                xs: 220,
-                sm: 300,
-                md: 450,
-                lg: 520,
-                xl: 580
-              },
-              objectFit: 'cover',
-              borderRadius: 3,
-              boxShadow: 6,
-              mt: { xs: 4, md: 0 },
-            }}
-          />
-        </Box>
+          {/* Imagen */}
+          <Grid item xs={12} md={6}>
+            <Box
+              component="img"
+              src="./imgCursos/catSimulator.png"
+              alt="Simulador CAT CAEX"
+              data-aos="zoom-in"
+              data-aos-duration="1200"
+              sx={{
+                width: 'auto',
+                height: {
+                  xs: 220,
+                  sm: 300,
+                  md: 450,
+                  lg: 520,
+                  xl: 580,
+                },
+                objectFit: 'cover',
+                borderRadius: 3,
+                boxShadow: 6,
+              }}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

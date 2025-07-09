@@ -34,7 +34,7 @@ const TerminosCondiciones = () => {
           2. Propiedad intelectual
         </Typography>
         <Typography paragraph>
-          Todo el contenido de este sitio web, incluyendo textos, imágenes, logos, videos y marcas
+          Todo el contenido de este sitio web, imágenes, logos, videos y marcas
           registradas, pertenece a INACEX o a sus respectivos propietarios y está protegido por las
           leyes de propiedad intelectual. Queda prohibida la reproducción o distribución sin
           autorización previa por escrito.

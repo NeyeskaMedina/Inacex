@@ -507,6 +507,14 @@ export const plans = {
   ]
 };
 
+export const validateDNI = (dni) => {
+  return /^[0-9]{7,10}$/.test(dni);
+};
+
+export const validatePasaporte = (passport) => {
+  return /^[A-Z0-9]{6,12}$/i.test(passport);
+};
+
 // utils/programUtils.js
 
 export const getPlansByNumber = (programas, planNumber) => {
@@ -582,5 +590,7 @@ export default {
     plans,
     getPlansByNumber,
     validateEmail,
-    validateRUT
+    validateRUT,
+    validateDNI,
+    validatePasaporte,
 }
