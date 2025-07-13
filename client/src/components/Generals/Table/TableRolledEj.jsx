@@ -145,57 +145,11 @@ export default function TableRolled() {
           );
         } else {
           return (
-            <Select
-              size="small"
-              value={editedRows[params.row.id] || ''}
-              onChange={(e) =>
-                handleEjecutivaChange(params.row.id, e.target.value)
-              }
-              displayEmpty
-              fullWidth
-            >
-              <MenuItem value="">
-                <em>Seleccione</em>
-              </MenuItem>
-              {EJECUTIVAS.map((op) => (
-                <MenuItem key={op} value={op}>
-                  {op}
-                </MenuItem>
-              ))}
-            </Select>
+            <Typography variant="body2" color="text.primary">
+              Sin asignar
+            </Typography>
           );
         }
-      },
-    },
-    {
-      field: 'acciones',
-      headerName: 'Acciones',
-      minWidth: 120,
-      renderCell: (params) => {
-        const ejecutivaAsignada =
-          params.row.ejecutiva &&
-          params.row.ejecutiva.trim() !== '' &&
-          params.row.ejecutiva !== 'NULL';
-
-        return (
-          <Button
-            variant="contained"
-            size="small"
-            color={ejecutivaAsignada ? 'info' : 'success'}
-            disabled={
-              ejecutivaAsignada ||
-              updatingIds.includes(params.row.id) ||
-              !editedRows[params.row.id]
-            }
-            onClick={() => handleUpdate(params.row.id)}
-          >
-            {ejecutivaAsignada
-              ? 'Asignado'
-              : updatingIds.includes(params.row.id)
-              ? 'Guardando...'
-              : 'Asignar'}
-          </Button>
-        );
       },
     },
   ];

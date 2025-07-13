@@ -17,6 +17,8 @@ import ProtectedRoute from './context/ProtectedRoute'
 // En tu index.js o App.jsx
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 // import CabinaInteractiva from './components/Cabina/CabinaInteractiva';
 import Horquilla from './view/NuestrosCursos/Horquilla';
 import CargadorFrontal from './view/NuestrosCursos/CargadorFrontal';
@@ -25,6 +27,7 @@ import Caex from './view/NuestrosCursos/Caex'
 import Bulldozer from './view/NuestrosCursos/Bulldozer';
 import Motoniveladora from './view/NuestrosCursos/Motoniveladora';
 import ListProspectBk from './view/ListProspectBk';
+import ListProspectBkEj from './view/ListProspectBkEj';
 import Programas from './view/Programas/Programas'
 import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
@@ -33,7 +36,7 @@ import 'aos/dist/aos.css';
 
 function App() {
   // const [count, setCount] = useState(0)
-  const location = useLocation;
+  const location = useLocation();
   useEffect(() => {
       AOS.init({ duration: 1000, once: true });
   }, []); 
@@ -124,6 +127,16 @@ function App() {
     </Routes>
     <Routes>
         <Route
+            path ='/prospectos-ejecutivas'
+            element ={
+                <ProtectedRoute>
+                    <ListProspectBkEj />
+                </ProtectedRoute>
+            }
+        />
+    </Routes>
+    <Routes>
+        <Route
             path ='/confirmacion-exitosa'
             element ={<ConfirmacionExitosa />}
         />
@@ -148,9 +161,10 @@ function App() {
     </Routes> */}
 
         <ScrollToTop />
-        <Whatsapp />
+        <Whatsapp number={'56976512953'} text={'Hola,%20quiero%20más%20información%20sobre%20los%20cursos'} />
     </main>
     <Footer />
+     <ToastContainer />
     </ContextProvider>
     </>
   )

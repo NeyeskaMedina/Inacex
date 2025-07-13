@@ -2,11 +2,11 @@ import React from 'react';
 import { Fab, useMediaQuery } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-const Whatsapp = () => {
+const Whatsapp = ({ number, text }) => {
   const isMobile = useMediaQuery('(max-width:480px)');
 
   const handleClick = () => {
-    window.open('https://wa.me/56976512953?text=Hola,%20quiero%20más%20información%20sobre%20los%20cursos', '_blank');
+    window.open(`'https://wa.me/${number}?text=${text}', '_blank'`);
   };
 
   return (

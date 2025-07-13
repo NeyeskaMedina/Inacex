@@ -24,7 +24,8 @@ const style = {
 };
 
 const ModalInacex = ({ open, handleClose }) => {
-  const whatsappNumber = '56912345678'; // coloca aquí tu número sin "+" ni espacios
+  const whatsappNumber = '56976512953'; 
+  const text = ''
 
   return (
     <Modal open={open} onClose={handleClose}>

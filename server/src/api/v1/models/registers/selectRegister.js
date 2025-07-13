@@ -12,6 +12,7 @@ const selectProspects = async () => {
     curso,
     direccion,
     confirmacion_correo,
+    ejecutiva,
     TO_CHAR(create_date, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS create_date
   FROM registers
   ORDER BY create_date DESC;
