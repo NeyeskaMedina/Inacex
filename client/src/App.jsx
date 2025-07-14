@@ -13,6 +13,7 @@ import Contratar from './view/Programas/Contratar'
 import { useLocation } from 'react-router-dom';
 import Login from './view/Login/Login'
 import ProtectedRoute from './context/ProtectedRoute'
+import HtmlEmail from './components/Generals/Extras/HtmlEmail';
 // import { useState } from 'react'
 // En tu index.js o App.jsx
 import "slick-carousel/slick/slick.css"; 
@@ -32,6 +33,7 @@ import Programas from './view/Programas/Programas'
 import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PaginaNoEncontrada from './view/NotFound/PaginaNoEncontrada';
 
 
 function App() {
@@ -66,56 +68,38 @@ function App() {
             path ='/'
             element ={<Home/>}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/grua-horquilla'
             element ={<Horquilla/>}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/retroexcavadora'
             element ={<Retroexcavadora/>}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/caex'
             element ={<Caex/>}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/cargador-frontal'
             element ={<CargadorFrontal />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/bulldozer'
             element ={<Bulldozer />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/motoniveladora'
             element ={<Motoniveladora />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/programas'
             element ={<Programas />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/contratar'
             element ={<Contratar />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/prospectos'
             element ={
@@ -124,8 +108,6 @@ function App() {
                 </ProtectedRoute>
             }
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/prospectos-ejecutivas'
             element ={
@@ -134,31 +116,27 @@ function App() {
                 </ProtectedRoute>
             }
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/confirmacion-exitosa'
             element ={<ConfirmacionExitosa />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/ingreso'
             element ={<Login />}
         />
-    </Routes>
-    <Routes>
         <Route
             path ='/terminos-y-condiciones'
             element ={<TerminosCondiciones />}
         />
-    </Routes>
-    {/* <Routes>
+        <Route
+            path ='/email_extranet'
+            element ={<HtmlEmail />}
+        />
         <Route
             path ='/*'
-            element ={<NotFound />}
+            element ={<PaginaNoEncontrada />}
         />
-    </Routes> */}
+    </Routes>
 
         <ScrollToTop />
         <Whatsapp number={'56976512953'} text={'Hola,%20quiero%20más%20información%20sobre%20los%20cursos'} />

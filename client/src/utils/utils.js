@@ -578,7 +578,28 @@ export const getCursoPorTituloYAnexo = (titulo, nexo) => {
 
   return cursoEncontrado;
 };
+// Función que busca un plan por nombre de grupo
+export function findPlanByGroup(groupName) {
+  for (const categoria of programas.maquinaria) {
+    for (const [key, subgrupo] of Object.entries(categoria)) {
+      if (subgrupo[groupName]) {
+        // Retorna el primer plan del grupo encontrado
+        return subgrupo[groupName][0];
+      }
+    }
+  }
 
+  for (const categoria of programas.admin) {
+    for (const [key, subgrupo] of Object.entries(categoria)) {
+      if (subgrupo[groupName]) {
+        return subgrupo[groupName][0];
+      }
+    }
+  }
+
+  // Si no encontró nada
+  return null;
+}
 
 
 
@@ -593,4 +614,5 @@ export default {
     validateRUT,
     validateDNI,
     validatePasaporte,
+    findPlanByGroup
 }

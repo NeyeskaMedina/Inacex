@@ -17,7 +17,7 @@ const CatSimulator = () => {
         background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
         py: { xs: 6, md: 10 },
         px: { xs: 2, sm: 4 },
-        maxWidth: '1700px',
+        maxWidth: '100%',
         mx: 'auto',
       }}
     >
@@ -60,8 +60,9 @@ const CatSimulator = () => {
             <Typography
               variant="h6"
               sx={{ mb: 3, lineHeight: 1.8, color: '#ccc' }}
+              className='roboto-condensed'
             >
-              <span style={{ color: 'var(--naranja-cat)' }}>Simulador Caterpillar</span>
+              Simulador <span style={{ color: 'var(--naranja-cat)' }}> Caterpillar</span>
             </Typography>
 
             <Typography

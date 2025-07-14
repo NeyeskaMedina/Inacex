@@ -1,0 +1,28 @@
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  margin-top: 20px;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 40s linear infinite;
+  gap: 2rem;
+}
+
+.ticker-image {
+  height: 50px; /* Ajusta según necesites */
+  flex-shrink: 0;
+  margin-right: 2rem; /* Espacio entre imágenes */
+}
+ 
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

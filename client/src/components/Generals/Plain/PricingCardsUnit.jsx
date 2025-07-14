@@ -12,7 +12,7 @@ import './PricingCards.css';
 
 const PricingCardsUnit = ({ plan, color = '#f57c00', colorInacex = '#4caf50' }) => {
   if (!plan) return null;
-
+console.log(plan)
   return (
     <Zoom in={true}>
       <Box
