@@ -39,6 +39,7 @@ console.log(username, password);
   return res.status(200).json({
     message: 'Login exitoso',
     token,
+    role
   });
 };
 

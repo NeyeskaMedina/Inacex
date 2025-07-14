@@ -10,6 +10,7 @@ import Advances from '../components/Main/Advances/Advances.jsx';
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext.jsx';
 import { useEffect } from 'react';
+import { TickerImagenes } from '../components/Generals/TickerImagenes/TickerImagenes.jsx'
 
 
 // import { UserContext } from '../context/UserContext.jsx';
@@ -43,6 +44,7 @@ export const Home = () => {
       <CatSimulator />
       <Tips />
       <Videos />
+       <TickerImagenes />
       <FormularioInacex image={image} bgColor={bgColor} font={font}/>
       {/* Modal */}
       <ModalInacex open={open} handleClose={handleClose} />

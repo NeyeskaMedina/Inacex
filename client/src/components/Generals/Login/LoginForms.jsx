@@ -35,9 +35,15 @@ export const LoginForms = ({ onLogin }) => {
     });
 
     // Guarda solo el token
-    localStorage.setItem('token', response.token);
+     localStorage.setItem('token', response.token);
+    if(response.role === 'admin'){
+     navigate('/prospectos'); 
+    } else {
+      navigate('/prospectos-ejecutivas'); 
+    }
+    
 
-    navigate('/prospectos'); // redirige al inicio
+    
   } else {
     Swal.fire({
       title: '¡Error!',

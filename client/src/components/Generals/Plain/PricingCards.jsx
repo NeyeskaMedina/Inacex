@@ -15,7 +15,6 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Programs from '../Buttons/Programs/Programs'
 
 const PricingCards = ({ plans, color = '#f57c00', colorInacex = '#4caf50', image }) => {
-console.log(plans)
 
   return (
     <Box

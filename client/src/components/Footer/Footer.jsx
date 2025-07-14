@@ -59,7 +59,7 @@ const Footer = () => {
           <Typography variant="h6" sx={{ color: 'var(--verde-inacex)', mb: 1 }}>
             Recursos
           </Typography>
-          <Link href="#" underline="hover" color="inherit" variant="body2">CATSIMULATOR</Link><br />
+          <Link href="#" underline="hover" color="inherit" variant="body2">Simulador Caterpillar</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Campus Virtual</Link><br />
           <Link component="button" onClick={handleOpen} underline="hover" color="inherit" variant="body2">Certificaciones</Link><br />
           <Link href="#" underline="hover" color="inherit" variant="body2">Instructores especializados</Link>

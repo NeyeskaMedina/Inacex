@@ -9,12 +9,15 @@ import {
   Button,
   Paper,
   Stack,
+  Select
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { 
   sedes,
   validateEmail,
-  validateRUT
+  validateRUT,
+  validateDNI,
+  validatePasaporte,
 } from '../../../utils/utils'
 import { postRegisters } from '../../../apiRest/apiInacex/post/postRegisters.js';
 
@@ -39,6 +42,8 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
   }
   }, [cursoSeleccionado]);
   const [errors, setErrors] = useState({});
+  const [documentType, setDocumentType] = useState('DNI');
+  const [documentValue, setDocumentValue] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +61,16 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!validateRUT(form.rut)) newErrors.rut = 'RUT no valido';
+    if (documentType === 'rut' && !validateRUT(documentValue)) {
+      newErrors.documentValue = 'Rut inválido';
+    };
+    if (documentType === 'DNI' && !validateDNI(documentValue)) {
+      newErrors.documentValue = 'DNI inválido';
+    };
+
+    if (documentType === 'pasaporte' && !validatePasaporte(documentValue)) {
+      newErrors.documentValue = 'Pasaporte inválido';
+    };
     if (!form.nombre.trim()) newErrors.nombre = 'Campo requerido';
     if (!form.telefono.match(/^9\d{8}$/)) newErrors.telefono = 'Debe comenzar con 9 y tener 9 dígitos';
     if (!validateEmail(form.correo)) newErrors.correo = 'Correo no válido';
@@ -146,20 +160,42 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
 
         <form onSubmit={handleSubmit} style={{ flexGrow: 1 }}>
             <Stack spacing={1} sx={{ height: '100%' }}>
-            <TextField
-              label="RUT Chileno"
-              name="rut"
-              value={form.rut}
-              onChange={handleChange}
-              placeholder="12345678-9"
-              variant="outlined"
-              fullWidth
-              error={!!errors.rut}
-              helperText={errors.rut}
-              InputLabelProps={{ style: { color: font } }}
-              InputProps={{ style: { color: font } }}
-              sx={textFieldStyles}
-            />
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={1}
+              alignItems="center"
+            >
+              <TextField
+                select
+                value={documentType}
+                onChange={(e) => setDocumentType(e.target.value)}
+                variant="outlined"
+                label="Tipo"
+                sx={{
+                  width: { xs: '100%', sm: '30%' },
+                  ...textFieldStyles,
+                }}
+                InputLabelProps={{ style: { color: font } }}
+                InputProps={{ style: { color: font } }}
+              >
+                <MenuItem value="rut">RUT</MenuItem>
+                <MenuItem value="DNI">DNI / CI</MenuItem>
+                <MenuItem value="pasaporte">Pasaporte</MenuItem>
+              </TextField>
+              
+              <TextField
+                fullWidth
+                label={`Ingrese su ${documentType.toUpperCase()}`}
+                variant="outlined"
+                value={documentValue}
+                onChange={(e) => setDocumentValue(e.target.value)}
+                error={!!errors.documentValue}
+                helperText={errors.documentValue}
+                InputLabelProps={{ style: { color: font } }}
+                InputProps={{ style: { color: font } }}
+                sx={textFieldStyles}
+              />
+            </Stack>            
             <TextField
               label="Nombre Completo"
               name="nombre"

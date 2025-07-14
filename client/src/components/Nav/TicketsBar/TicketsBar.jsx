@@ -28,7 +28,7 @@ const TicketsBar = () => {
             px: 2,
           }}
         >
-          🎉 ¡Inscripciones abiertas! — <span style={{color: 'var(--negro-ticket)'}}> 40% de descuento </span> en cursos de camión alto tonelaje — Certifícate con INACEX — Cupos limitados 🚨 — ¡Matricúlate ahora!
+          🎉 ¡Inscripciones abiertas! — <span style={{color: 'var(--negro-ticket)'}}> SUBVENCIÓN </span> en cursos de Camión extracción alto tonelaje — Certifícate con INACEX — Cupos limitados 🚨 — ¡Matricúlate ahora!
         </Typography>
       </Box>
     </Box>

@@ -15,8 +15,8 @@ export const Metodologia = ({ targetRef, icons }) => {
         const rect = targetRef.current.getBoundingClientRect();
         const threshold = window.innerWidth >= 1200 ? 800 : 380;
         const isInView = rect.top < window.innerHeight && rect.bottom > threshold;
-    
         setVisible(isInView);
+        
       };
 
       window.addEventListener('scroll', handleScroll);

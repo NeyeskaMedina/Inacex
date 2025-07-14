@@ -2,71 +2,41 @@ import React from 'react';
 import {
   Box,
   Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  Grid,
   useMediaQuery,
 } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useTheme } from '@mui/material/styles';
 
 const CatSimulator = () => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
-  const listItems = [
-    'Controles Cat auténticos para una experiencia real.',
-    'Entorno minero virtual con terreno, iluminación y maquinaria.',
-    'Compatibilidad con realidad virtual para mayor inmersión.',
-    'Entrenamiento en seguridad y procedimientos de mantenimiento.',
-    'Evaluación de habilidades en carga, descarga y conducción.',
-  ];
-
   return (
     <Box
-      id="cat-simulator"
       sx={{
-        position: 'relative',
-        backgroundColor: '#111',
-        backgroundImage: 'url(./imgCursos/bgCat.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        color: '#fff',
-        py: { xs: 8, md: 12 },
-        px: { xs: 3, md: 10 },
-        fontFamily: '"Roboto Condensed", sans-serif',
-        overflow: 'hidden',
+        background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+        py: { xs: 6, md: 10 },
+        px: { xs: 2, sm: 4 },
+        maxWidth: '100%',
+        mx: 'auto',
       }}
     >
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(9, 8, 8, 0.86)',
-          zIndex: 1,
-        }}
-      />
-
-      <Box sx={{ position: 'relative', zIndex: 2 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignItems: 'center',
-            gap: { xs: 6, md: 8 },
-          }}
-        >
+      <Grid
+        container
+        spacing={6}
+        alignItems="center"
+        wrap={isMdUp ? 'nowrap' : 'wrap'}
+        justifyContent="center"
+      >
+        {/* Texto */}
+        <Grid item xs={12} md={5}>
           <Box
             sx={{
-              flex: 1,
-              background: { md: 'rgba(255,255,255,0.02)' },
-              px: { xs: 0, md: 4 },
-              py: { xs: 0, md: 3 },
-              borderRadius: 2,
+              maxWidth: '600px',
+              backgroundColor: { md: 'rgba(255,255,255,0.02)' },
+              p: { xs: 2, md: 4 },
+              borderRadius: 3,
+              mx: { xs: 'auto', md: 0 },
             }}
             data-aos="fade-right"
             data-aos-duration="1000"
@@ -74,42 +44,33 @@ const CatSimulator = () => {
             <Typography
               variant="h3"
               component="h2"
-              className="roboto-condensed"
               sx={{
                 fontWeight: 700,
                 color: 'white',
                 mb: 2,
-                fontSize: { xs: '2rem', md: '2.8rem' },
+                fontSize: { xs: '2rem', md: '2.5rem' },
               }}
             >
-              <span style={{ color: 'var(--naranja-cat)' }}>CAT</span>SIMULATOR
+              PRÁCTICAS CON TECNOLOGÍA DE{' '}
+              <Box component="span" sx={{ color: 'var(--verde-inacex)' }}>
+                CLASE MUNDIAL
+              </Box>
             </Typography>
 
-            <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8 }}>
-              "CAT SIMULATOR" (Caterpillar) es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
+            <Typography
+              variant="h6"
+              sx={{ mb: 3, lineHeight: 1.8, color: '#ccc' }}
+              className='roboto-condensed'
+            >
+              Simulador <span style={{ color: 'var(--naranja-cat)' }}> Caterpillar</span>
             </Typography>
 
-            <List>
-              {listItems.map((text, index) => (
-                <ListItem
-                  key={index}
-                  data-aos={index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
-                  data-aos-duration="900"
-                  sx={{
-                    py: 0.5,
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateX(5px)',
-                    },
-                  }}
-                >
-                  <ListItemIcon>
-                    <CheckCircleIcon sx={{ color: 'var(--naranja-cat)' }} />
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-            </List>
+            <Typography
+              variant="body1"
+              sx={{ mb: 3, lineHeight: 1.8, color: '#ccc' }}
+            >
+              Es una herramienta de última generación que capacita operadores de maquinaria pesada en un entorno seguro, controlado y completamente inmersivo:
+            </Typography>
 
             <Typography
               variant="body2"
@@ -117,10 +78,13 @@ const CatSimulator = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              Mejora la seguridad, reduce los costos y optimiza la productividad de los operadores en faena.
+              Realizas tus prácticas en simuladores Caterpillar para la industria minera, aprobado y comprobado a nivel mundial.
             </Typography>
           </Box>
+        </Grid>
 
+        {/* Imagen */}
+        <Grid item xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box
             component="img"
             src="./imgCursos/catSimulator.png"
@@ -128,29 +92,16 @@ const CatSimulator = () => {
             data-aos="zoom-in"
             data-aos-duration="1200"
             sx={{
-              flex: 1,
-              width: {
-                xs: '100%',
-                sm: '90%',
-                md: '100%',
-                lg: '90%',
-                xl: '80%'
-              },
-              height: {
-                xs: 220,
-                sm: 300,
-                md: 450,
-                lg: 520,
-                xl: 580
-              },
-              objectFit: 'cover',
+              width: { xs: '90%', sm: '80%', md: '100%' },
+              maxWidth: '800px',
+              height: 'auto',
+              objectFit: 'contain',
               borderRadius: 3,
               boxShadow: 6,
-              mt: { xs: 4, md: 0 },
             }}
           />
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
