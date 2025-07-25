@@ -1,4 +1,4 @@
-import TableRolledEj from '../components/Generals/Table/TableRolledEj.jsx';
+import TableRolledEj from '../../components/Generals/Table/TableRolledEj.jsx';
 
 const ListProspectBk = () => {
  

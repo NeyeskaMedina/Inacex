@@ -51,7 +51,7 @@ const Footer = () => {
           <Link component={RouterLink} to="/retroexcavadora" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
           <Link href="/motoniveladora" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
           <Link href="/terminos-y-condiciones" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
-          <Link href="#" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
+          <Link href="/politicas-de-privacidad" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
         </Grid>
 
         {/* Otros enlaces */}
@@ -87,7 +87,7 @@ const Footer = () => {
           © {new Date().getFullYear()} INACEX Centro de Entrenamiento Minero. Todos los derechos reservados.
         </Typography>
         <Typography variant="body2" sx={{ fontSize: '0.75rem', mt: 1 }}>
-          Diseño web por NeyeTI | Versión 2025
+          Diseño web por { <Link href="https://wa.me/56976512953" target="_blank" rel="noopener">NeyeTI</Link> } | Versión 2025
         </Typography>
       </Box>
     </Box>
