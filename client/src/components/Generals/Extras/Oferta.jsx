@@ -24,6 +24,8 @@ import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 
 
 const Oferta = () => {
+  const nombre = "María Mamani";
+  const acronimo = 'María'
   return (
     <Container maxWidth="sm" sx={{ py: 5 }}>
       <Card
@@ -69,13 +71,28 @@ const Oferta = () => {
             <span style={{color: 'var(--verde-inacex)'}}>CAMIÓN EXTRACCIÓN DE ALTO TONELAJE</span> + GRÚA HORQUILLA
           </Typography>
 
-          <Typography className='roboto-condensed' variant="body1" sx={{ color: '#444', mb: 2 }}>
-            En <strong>INACEX</strong> te preparamos para ingresar al rubro minero con nuestros cursos prácticos y certificados en maquinaria pesada. ¡Cambia tu futuro!
-          </Typography>
-          <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="red" gutterBottom style={{ textAlign: 'center' }}>
+           <Typography className='roboto-condensed' variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#444' }}>
+      
+      <span style={{color: 'var(--verde-inacex)'}}>¡{nombre}</span>, esta oportunidad es para ti!
+      </Typography>
+      <Typography className='roboto-condensed' variant="body1" sx={{ color: '#444', mb: 2 }}>
+        Te invitamos a dar el siguiente paso en tu desarrollo laboral con una <strong>oferta especial</strong> en el curso <strong>CAEX + Grúa Horquilla</strong>, ideal para comenzar tu camino en el sector minero y logístico.
+      </Typography>
+          <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="black" gutterBottom style={{ textAlign: 'center' }}>
             Valor matrícula 70.000$ CLP
           </Typography>
           <List dense>
+            <ListItem>
+              <ListItemIcon>
+                🦺
+                {/* <AccessTimeFilledIcon sx={{ color: '#8ba920' }} /> */}
+              </ListItemIcon>
+              <ListItemText  primary={
+                              <>
+                                <strong>Certificación:</strong> 5 maquinarias
+                              </>
+                            } />
+            </ListItem>
             <ListItem>
               <ListItemIcon>
                 ⏰
@@ -139,15 +156,26 @@ const Oferta = () => {
           <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="red" gutterBottom style={{ textAlign: 'center' }}>
            50% de descuento
           </Typography>
+          <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="red" gutterBottom style={{ textAlign: 'center' }}>
+           Valor promoción 370.000$ CLP
+          </Typography>
           <Divider sx={{ my: 2 }} />
 
           <Typography variant="body2" sx={{ mb: 2 }}>
             <CheckCircle fontSize="small" sx={{ color: '#8ba920', mr: 1 }} />
-            Bonificación <strong>teórica y práctica</strong> para licencia clase D<br />
+            Bonificación teórica y práctica para que gestiones <strong>licencia clase D</strong><br />
             <CheckCircle fontSize="small" sx={{ color: '#8ba920', mr: 1 }} />
-            Modalidad teórica online y práctica presencial<br />
+            Modalidad Mixta teórica online y práctica presencial<br />
             <CheckCircle fontSize="small" sx={{ color: '#8ba920', mr: 1 }} />
-            Certificación reconocida en CHILE y PERÚ.
+            Certificación reconocida a nivel nacional.<br />
+            <CheckCircle fontSize="small" sx={{ color: '#8ba920', mr: 1 }} />
+             Alta empleabilidad en el sector minero y logístico.<br />
+             <CheckCircle fontSize="small" sx={{ color: '#8ba920', mr: 1 }} />
+             Excelentes remuneraciones<br />
+          </Typography>
+
+          <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="black" gutterBottom style={{ textAlign: 'center' }}>
+            {acronimo} ¡Cambia tu futuro ahora!
           </Typography>
 
           <Box sx={{ textAlign: 'center', mt: 3 }}>
@@ -166,7 +194,7 @@ const Oferta = () => {
               }}
               href="https://forms.gle/jmg8R6X9RDZJN4fE7"
             >
-              POSTULA AHORA
+              POSTULAR AQUÍ
             </Button>
           </Box>
 
@@ -174,7 +202,7 @@ const Oferta = () => {
             variant="body2"
             sx={{ mt: 4, fontSize: 13, color: '#777', textAlign: 'center' }}
           >
-            ¿Tienes dudas? llámanos al +56 9 7651 2953.
+            ¿Tienes dudas? escribenos al <a href="mailto:soporte@inacexcem.cl">soporte@inacexcem.cl</a> óllámanos al +56 9 7651 2953.
           </Typography>
           {/* <a href="mailto:contacto@inacex.cl">contacto@inacex.cl</a> */}
         </CardContent>

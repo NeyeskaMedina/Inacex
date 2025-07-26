@@ -51,7 +51,7 @@ const Footer = () => {
           <Link component={RouterLink} to="/retroexcavadora" underline="hover" color="inherit" variant="body2">Retro-excavadora</Link><br />
           <Link href="/motoniveladora" underline="hover" color="inherit" variant="body2">Motoniveladora</Link><br />
           <Link href="/terminos-y-condiciones" underline="hover" color="inherit" variant="body2">Términos y Condiciones</Link><br />
-          <Link href="/politicas-de-privacidad" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
+          <Link href="/políticas-de-privacidad" underline="hover" color="inherit" variant="body2">Política de Privacidad</Link>
         </Grid>
 
         {/* Otros enlaces */}

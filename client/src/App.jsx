@@ -34,7 +34,7 @@ import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PaginaNoEncontrada from './view/NotFound/PaginaNoEncontrada';
-// import Oferta from './components/Generals/Extras/Oferta';
+import Oferta from './components/Generals/Extras/Oferta';
 // import HtmlEmail from './components/Generals/Extras/HtmlEmail';
 
 
@@ -138,10 +138,10 @@ function App() {
             path ='/email_extranet'
             element ={<HtmlEmail />}
         /> */}
-        {/* <Route
+        <Route
             path ='/oferta'
             element ={<Oferta />}
-        /> */}
+        />
         <Route
             path ='/*'
             element ={<PaginaNoEncontrada />}
