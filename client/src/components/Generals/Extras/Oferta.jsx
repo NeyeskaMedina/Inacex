@@ -70,14 +70,17 @@ const Oferta = () => {
           <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="black" gutterBottom>
             <span style={{color: 'var(--verde-inacex)'}}>CAMIÓN EXTRACCIÓN DE ALTO TONELAJE</span> + GRÚA HORQUILLA
           </Typography>
-
-           <Typography className='roboto-condensed' variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#444' }}>
+          <Typography className='roboto-condensed' variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#444' }}>
       
-      <span style={{color: 'var(--verde-inacex)'}}>¡{nombre}</span>, esta oportunidad es para ti!
-      </Typography>
-      <Typography className='roboto-condensed' variant="body1" sx={{ color: '#444', mb: 2 }}>
-        Te invitamos a dar el siguiente paso en tu desarrollo laboral con una <strong>oferta especial</strong> en el curso <strong>CAEX + Grúa Horquilla</strong>, ideal para comenzar tu camino en el sector minero y logístico.
-      </Typography>
+          <span style={{color: 'var(--verde-inacex)'}}>¡FELICIDADES!</span> {nombre}
+          </Typography>
+          <Typography className='roboto-condensed' variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#444' }}>
+      
+          <span style={{color: 'var(--verde-inacex)'}}>¡{nombre}</span>, esta oportunidad es para ti!
+          </Typography>
+          <Typography className='roboto-condensed' variant="body1" sx={{ color: '#444', mb: 2 }}>
+            Te invitamos a dar el siguiente paso en tu desarrollo laboral con una <strong>oferta especial</strong> en el curso <strong>CAEX + Grúa Horquilla</strong>, ideal para comenzar tu camino en el sector minero y logístico.
+          </Typography>
           <Typography className='roboto-condensed' variant="h5" fontWeight="bold" color="black" gutterBottom style={{ textAlign: 'center' }}>
             Valor matrícula 70.000$ CLP
           </Typography>
