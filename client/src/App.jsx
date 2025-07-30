@@ -8,12 +8,12 @@ import Footer from "./components/Footer/Footer";
 import Whatsapp from "./components/Generals/Buttons/Whatsapp/Whatsapp";
 import ScrollToTop from './components/Generals/Buttons/ScrollTop/ScrollToTop';
 import ScrollTopAut from './components/Generals/Buttons/ScrollTop/ScrollTopAut';
-import TerminosCondiciones from './view/TerminosCondiciones';
+import TerminosCondiciones from './view/Terminos/TerminosCondiciones';
+import PoliticasDePrivacidad from './view/Terminos/PoliticasDePrivacidad';
 import Contratar from './view/Programas/Contratar'
 import { useLocation } from 'react-router-dom';
-import Login from './view/Login/Login'
-import ProtectedRoute from './context/ProtectedRoute'
-import HtmlEmail from './components/Generals/Extras/HtmlEmail';
+import Login from './view/Login/Login';
+import ProtectedRoute from './context/ProtectedRoute';
 // import { useState } from 'react'
 // En tu index.js o App.jsx
 import "slick-carousel/slick/slick.css"; 
@@ -27,13 +27,15 @@ import Retroexcavadora from './view/NuestrosCursos/Retroexcavadora'
 import Caex from './view/NuestrosCursos/Caex'
 import Bulldozer from './view/NuestrosCursos/Bulldozer';
 import Motoniveladora from './view/NuestrosCursos/Motoniveladora';
-import ListProspectBk from './view/ListProspectBk';
-import ListProspectBkEj from './view/ListProspectBkEj';
+import ListProspectBk from './view/Extranet/ListProspectBk';
+import ListProspectBkEj from './view/Extranet/ListProspectBkEj';
 import Programas from './view/Programas/Programas'
 import ConfirmacionExitosa from "./view/Confirmacion/ConfirmacionExitosa"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PaginaNoEncontrada from './view/NotFound/PaginaNoEncontrada';
+import Oferta from './components/Generals/Extras/Oferta';
+// import HtmlEmail from './components/Generals/Extras/HtmlEmail';
 
 
 function App() {
@@ -128,9 +130,17 @@ function App() {
             path ='/terminos-y-condiciones'
             element ={<TerminosCondiciones />}
         />
-        <Route
+         <Route
+            path ='/políticas-de-privacidad'
+            element ={<PoliticasDePrivacidad />}
+        />
+        {/* <Route
             path ='/email_extranet'
             element ={<HtmlEmail />}
+        /> */}
+        <Route
+            path ='/oferta'
+            element ={<Oferta />}
         />
         <Route
             path ='/*'

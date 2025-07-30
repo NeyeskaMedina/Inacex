@@ -244,7 +244,7 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
 
             <TextField
               select
-              label="Sede"
+              label="Ciudad"
               name="sede"
               value={form.sede}
               onChange={handleChange}

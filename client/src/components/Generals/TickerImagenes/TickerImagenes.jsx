@@ -1,5 +1,5 @@
 import React from "react";
-import "./tickerImagenes.css";
+import "./ticker.css";
 
 export const TickerImagenes = () => {
   return (
