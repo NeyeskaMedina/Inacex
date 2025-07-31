@@ -6,7 +6,11 @@ const postLogin = async ({ username, password }) => {
         const response = await axios.post(`${URL}/login`,{
             username, 
             password
-        });
+        },
+        {
+            headers: { "Content-Type": "application/json" }
+        }
+    );
         return { response: response.data, error: null, loading: true }
     } catch (err) {
         console.error("Error al ingresar", err);

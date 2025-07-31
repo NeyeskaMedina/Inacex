@@ -25,7 +25,7 @@ const AvancesInacex = ({ image }) => {
             width: '100%',
             height: '100%',
             backgroundImage: `url(${image})`, // reemplaza por tu imagen
-            backgroundAttachment: { xs: 'scroll', md: 'fixed' },
+            backgroundAttachment: { xs: 'fixed', md: 'fixed' },
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
