@@ -2,7 +2,7 @@ import Carousel from '../components/Carousel/Carousel.jsx';
 import ListCourses from '../components/Main/CardCourses/ListCourses.jsx';
 // import Facebook from '../components/Main/SectionFacebook/Facebook.jsx';
 import Videos from '../components/Generals/Videos/Videos.jsx'
-import Tips from '../components/Main/Tips/Tips.jsx';
+// import Tips from '../components/Main/Tips/Tips.jsx';
 import FormularioInacex from '../components/Generals/Formulary/FormularioInacex.jsx';
 import ModalInacex from '../components/Generals/Modals/ModalInacex.jsx';
 import CatSimulator from '../components/Main/CatSimulator/CatSimulator.jsx';
@@ -42,7 +42,7 @@ export const Home = () => {
       <ListCourses />
       <Advances image={imageAdvances}/>
       <CatSimulator />
-      <Tips />
+      {/* <Tips /> */}
       <Videos />
        <TickerImagenes />
       <FormularioInacex image={image} bgColor={bgColor} font={font}/>

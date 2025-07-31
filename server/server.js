@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) =>{
+app.get("/v1", (req, res) =>{
     res.send("Servidor corriendo");
 })
 app.use("/v1", handleRoutes);
