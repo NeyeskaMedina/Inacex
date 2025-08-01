@@ -3,10 +3,10 @@ import jwt from 'jsonwebtoken';
 
 const postLogin = async (req, res) => {
   const { username, password } = req.body;
-console.log(username, password);
+  console.log(username, password);
 
   let validUser = null;
-  let storedHash = null;
+  let storedHash = Buffer.from(process.env.ADMIN_PASS_HASH, 'base64').toString('utf-8');
   let role = null;
 
   if (username === process.env.ADMIN_USER) {
