@@ -18,7 +18,7 @@ const postLogin = async (req, res) => {
         return res.status(500).json({ message: 'Configuración de admin inválida' });
       }
       validUser = process.env.ADMIN_USER;
-      storedHash = Buffer.from(process.env.ADMIN_PASS_HASH, 'base64').toString('utf-8');
+      storedHash = process.env.ADMIN_PASS_HASH;  // <-- usar hash directamente, sin base64
       role = 'admin';
 
     } else if (username === process.env.EJEC_USER) {
@@ -26,20 +26,20 @@ const postLogin = async (req, res) => {
         return res.status(500).json({ message: 'Configuración de ejecutiva inválida' });
       }
       validUser = process.env.EJEC_USER;
-      storedHash = Buffer.from(process.env.EJEC_PASS_HASH, 'base64').toString('utf-8');
+      storedHash = process.env.EJEC_PASS_HASH;  // <-- usar hash directamente, sin base64
       role = 'ejecutiva';
 
     } else {
       return res.status(401).json({ message: 'Usuario no encontrado' });
     }
 
-    // ✅ Comparar la contraseña
+    // ✅ Comparar la contraseña con bcrypt directamente
     const isMatch = await bcrypt.compare(password, storedHash);
     if (!isMatch) {
       return res.status(401).json({ message: 'Contraseña incorrecta' });
     }
 
-    // ✅ Generar el token
+    // ✅ Generar el token JWT
     const token = jwt.sign(
       { username: validUser, role },
       process.env.JWT_SECRET,
