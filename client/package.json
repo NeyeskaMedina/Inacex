@@ -20,6 +20,7 @@
     "axios": "^1.6.2",
     "bootstrap": "^5.3.2",
     "framer-motion": "^12.16.0",
+    "postcss": "^8.5.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-countup": "^6.5.3",
@@ -31,7 +32,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.18",
     "sweetalert2": "^11.22.1",
-    "swiper": "^11.2.7"
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
