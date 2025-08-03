@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 const postLogin = async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log('Datos recibidos: ', { username, password });
 
     if (!username || !password) {
       return res.status(400).json({ message: 'Usuario y contraseña son requeridos' });
