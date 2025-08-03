@@ -1,56 +1,39 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { selectUser } from '../../models/users/selectUser.js';
 
-const postLogin = async (req, res) => {
+export const postLogin = async (req, res) => {
   try {
     const { username, password } = req.body;
-    console.log('Datos recibidos: ', { username, password });
+    console.log('Datos recibidos:', { username, password });
 
     if (!username || !password) {
       return res.status(400).json({ message: 'Usuario y contraseña son requeridos' });
     }
 
-    let validUser = null;
-    let storedHash = null;
-    let role = null;
-
-    if (username === process.env.ADMIN_USER) {
-      if (!process.env.ADMIN_PASS_HASH) {
-        return res.status(500).json({ message: 'Configuración de admin inválida' });
-      }
-      validUser = process.env.ADMIN_USER;
-      storedHash = process.env.ADMIN_PASS_HASH;  // <-- usar hash directamente, sin base64
-      role = 'admin';
-
-    } else if (username === process.env.EJEC_USER) {
-      if (!process.env.EJEC_PASS_HASH) {
-        return res.status(500).json({ message: 'Configuración de ejecutiva inválida' });
-      }
-      validUser = process.env.EJEC_USER;
-      storedHash = process.env.EJEC_PASS_HASH;  // <-- usar hash directamente, sin base64
-      role = 'ejecutiva';
-
-    } else {
+    // ✅ Buscar usuario en la base de datos
+    const user = await selectUser(username);
+    if (!user) {
       return res.status(401).json({ message: 'Usuario no encontrado' });
     }
 
-    // ✅ Comparar la contraseña con bcrypt directamente
-    const isMatch = await bcrypt.compare(password, storedHash);
+    // ✅ Verificar contraseña
+    const isMatch = await bcrypt.compare(password, user.password); // user.password debe estar hasheado
     if (!isMatch) {
       return res.status(401).json({ message: 'Contraseña incorrecta' });
     }
 
-    // ✅ Generar el token JWT
+    // ✅ Generar token JWT
     const token = jwt.sign(
-      { username: validUser, role },
+      { id: user.id, username: user.username, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRES_IN }
+      { expiresIn: process.env.JWT_EXPIRES_IN || '1h' }
     );
 
     return res.status(200).json({
       message: 'Login exitoso',
       token,
-      role
+      role: user.role
     });
 
   } catch (error) {
@@ -58,5 +41,3 @@ const postLogin = async (req, res) => {
     return res.status(500).json({ message: 'Error interno en el servidor' });
   }
 };
-
-export { postLogin };
