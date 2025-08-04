@@ -25,7 +25,7 @@ export const postLogin = async (req, res) => {
 
     // ✅ Generar token JWT
     const token = jwt.sign(
-      { id: user.id, username: user.username, role: user.role },
+      { id: user.id, name: user.username, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '1h' }
     );
@@ -33,7 +33,8 @@ export const postLogin = async (req, res) => {
     return res.status(200).json({
       message: 'Login exitoso',
       token,
-      role: user.role
+      role: user.role,
+      name: user.name,
     });
 
   } catch (error) {

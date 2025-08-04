@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Box,
   Button,
@@ -13,20 +13,26 @@ import Swal from 'sweetalert2';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { postLogin } from '../../../apiRest/apiInacex/post/postLogin';
+import { UserContext } from '../../../context/UserContext';
 
 export const LoginForms = ({ onLogin }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const { setUserLogin } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
   e.preventDefault();
 
   const { response, error } = await postLogin({ username: user, password });
-  console.log(response);
+  
   
   if (response?.token) {
+
+    setUserLogin({
+      username: response.name
+    });
     Swal.fire({
       title: '¡Éxito!',
       text: response.message,

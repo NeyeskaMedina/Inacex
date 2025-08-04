@@ -3,7 +3,6 @@ const URL = import.meta.env.VITE_URL_BACK;
 
 const postRegisters = async (form) => {
     try {
-        console.log(form)
         const response = await axios.post(`${URL}/registers`, form, {
             headers: {
                 'Content-Type': 'application/json'

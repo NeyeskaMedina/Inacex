@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {
   Box,
   CircularProgress,
@@ -11,6 +11,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { getRegisters } from '../../../apiRest/apiInacex/get/getRegisters.js';
 import { toast, Bounce } from 'react-toastify';
 import { putRegister } from '../../../apiRest/apiInacex/put/putRegister.js';
+import { UserContext } from '../../../context/UserContext';
 
 const EJECUTIVAS = ['Francys', 'Jhoana', 'Carina', 'Angelica', 'Neye'];
 
@@ -19,6 +20,7 @@ export default function TableRolled() {
   const [loading, setLoading] = useState(true);
   const [editedRows, setEditedRows] = useState({});
   const [updatingIds, setUpdatingIds] = useState([]);
+  const { userLogin } = useContext(UserContext);
 
   const notify = () =>
     toast.success('Ejecutiva asignada con éxito!', {
@@ -81,7 +83,6 @@ export default function TableRolled() {
     try {
       const { error, loading } = await putRegister(id, selectedEjecutiva);
       if (error === null && loading === true) {
-        console.log(error, loading);
 
         setRows((prev) =>
           prev.map((row) =>

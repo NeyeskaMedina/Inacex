@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 export const Contratar = ({ plan, image }) => {
-      {console.log(plan)}
 
   return (
     <Link 
