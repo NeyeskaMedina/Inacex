@@ -32,7 +32,6 @@ const NavbarInacex = () => {
   const audioCaex = './sound/audioCaex.mp3';
 
    useEffect(() => {
-  console.log("Current path:", location.pathname);
   }, [location]);
   
 

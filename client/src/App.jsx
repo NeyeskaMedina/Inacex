@@ -138,10 +138,10 @@ function App() {
             path ='/email_extranet'
             element ={<HtmlEmail />}
         /> */}
-        <Route
+        {/* <Route
             path ='/oferta'
             element ={<Oferta />}
-        />
+        /> */}
         <Route
             path ='/*'
             element ={<PaginaNoEncontrada />}

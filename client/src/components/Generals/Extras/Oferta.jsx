@@ -207,7 +207,7 @@ const Oferta = () => {
           >
             ¿Tienes dudas? escribenos al <a href="mailto:soporte@inacexcem.cl">soporte@inacexcem.cl</a> óllámanos al +56 9 7651 2953.
           </Typography>
-          {/* <a href="mailto:contacto@inacex.cl">contacto@inacex.cl</a> */}
+          {/* <a href="mailto:matriculas@inacexcem.cl">matriculas@inacexcem.cl</a> */}
         </CardContent>
 
         {/* Pie de página */}

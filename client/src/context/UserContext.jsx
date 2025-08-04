@@ -8,8 +8,9 @@ export const UserContext = createContext({});
 export const ContextProvider = ( {children} ) => {
          const [showTicker, setShowTicker] = useState(true);
          const location = useLocation();
-         const [ userLogin, setUserLogin ] = useState(null);
+         const [ userLogin, setUserLogin ] = useState({});
          const [ open, setOpen ] = useState(false);
+            
 
             useEffect(() => {
                 const currentPath = location.pathname;

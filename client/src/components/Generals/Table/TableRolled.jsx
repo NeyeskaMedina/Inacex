@@ -81,7 +81,6 @@ export default function TableRolled() {
     try {
       const { error, loading } = await putRegister(id, selectedEjecutiva);
       if (error === null && loading === true) {
-        console.log(error, loading);
 
         setRows((prev) =>
           prev.map((row) =>

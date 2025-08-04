@@ -3,10 +3,9 @@ const URL = import.meta.env.VITE_URL_BACK;
 
 const postLogin = async ({ username, password }) => {
     try {
-        console.log("📤 Enviando login:", { username, password });
         const response = await axios.post(
             `${URL}/login`,
-            JSON.stringify({ username, password }),
+            { username, password },
             {
                 headers: { "Content-Type": "application/json" }
             }

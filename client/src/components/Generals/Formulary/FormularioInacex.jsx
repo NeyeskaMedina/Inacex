@@ -87,7 +87,6 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
         rut: documentValue,
       };
 
-      console.log('Datos enviados:', dataToSend);
       const response = await postRegisters(dataToSend);
 
       if (response && response.error === null && response.loading === true) {
