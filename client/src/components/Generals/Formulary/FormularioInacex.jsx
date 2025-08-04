@@ -9,7 +9,6 @@ import {
   Button,
   Paper,
   Stack,
-  Select
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { 
@@ -18,9 +17,8 @@ import {
   validateRUT,
   validateDNI,
   validatePasaporte,
-} from '../../../utils/utils'
+} from '../../../utils/utils';
 import { postRegisters } from '../../../apiRest/apiInacex/post/postRegisters.js';
-
 
 const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
   const [form, setForm] = useState({
@@ -33,44 +31,43 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
     curso: '',
   });
 
-  useEffect(() => {
-  if (cursoSeleccionado) {
-    setForm((prevForm) => ({
-      ...prevForm,
-      curso: cursoSeleccionado,
-    }));
-  }
-  }, [cursoSeleccionado]);
   const [errors, setErrors] = useState({});
   const [documentType, setDocumentType] = useState('DNI');
   const [documentValue, setDocumentValue] = useState('');
 
+  useEffect(() => {
+    if (cursoSeleccionado) {
+      setForm((prevForm) => ({
+        ...prevForm,
+        curso: cursoSeleccionado,
+      }));
+    }
+  }, [cursoSeleccionado]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Detectar si es campo select (no se transforma)
     const isSelectField = ['sede', 'curso'].includes(name);
-    
     const newValue = isSelectField ? value : value.toUpperCase();
-    
     setForm({ ...form, [name]: newValue });
     setErrors({ ...errors, [name]: '' });
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
+
+    // Validaciones del documento
     if (documentType === 'rut' && !validateRUT(documentValue)) {
       newErrors.documentValue = 'Rut inválido';
-    };
+    }
     if (documentType === 'DNI' && !validateDNI(documentValue)) {
       newErrors.documentValue = 'DNI inválido';
-    };
-
+    }
     if (documentType === 'pasaporte' && !validatePasaporte(documentValue)) {
       newErrors.documentValue = 'Pasaporte inválido';
-    };
+    }
+
+    // Otras validaciones
     if (!form.nombre.trim()) newErrors.nombre = 'Campo requerido';
     if (!form.telefono.match(/^9\d{8}$/)) newErrors.telefono = 'Debe comenzar con 9 y tener 9 dígitos';
     if (!validateEmail(form.correo)) newErrors.correo = 'Correo no válido';
@@ -80,11 +77,29 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      
-      try {
-        // Envío de formulario al bk
-        console.log('Datos enviados:', form);
+      return;
+    }
+
+    try {
+      // ✅ Se agrega el rut/DNI/pasaporte al objeto antes de enviarlo
+      const dataToSend = {
+        ...form,
+        rut: documentValue,
+      };
+
+      console.log('Datos enviados:', dataToSend);
+      const response = await postRegisters(dataToSend);
+
+      if (response && response.error === null && response.loading === true) {
+        Swal.fire({
+          title: '¡Éxito!',
+          text: '¡Registro exitoso!, se acaba de enviar un correo de confirmación para continuar con el proceso.',
+          icon: 'success',
+          confirmButtonText: 'Continuar',
+          confirmButtonColor: 'var(--verde-inacex)',
+        });
+
+        // Resetear formulario y documento
         setForm({
           rut: '',
           nombre: '',
@@ -94,23 +109,14 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
           direccion: '',
           curso: '',
         });
-        const response = await postRegisters(form);
-        const { error, loading } = response;
-        if (error === null && loading === true) {
-          Swal.fire({
-            title: '¡Éxito!',
-            text: '¡Registro exitoso!, se acaba de enviar un correo de confirmación para continuar con el proceso.',
-            icon: 'success',
-            confirmButtonText: 'Continuar',
-            confirmButtonColor: 'var(--verde-inacex)',
-          });
-        }
-      } catch (error) {
-        console.error('Error al enviar los datos:', error);
-        alert('Error al enviar el formulario. Inténtalo de nuevo más tarde.');
+        setDocumentValue('');
       }
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+      alert('Error al enviar el formulario. Inténtalo de nuevo más tarde.');
     }
   };
+
   return (
     <Box
       id={'matriculate'}
@@ -128,22 +134,21 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
         alignItems: 'center',
         p: 2,
       }}
->
-
-        <Paper
-          elevation={8}
-          sx={{
-            width: { xs: 320, md: 380, lg: 450, xl: 520 },
-            p: { xs: 3, md: 5 },
-            borderRadius: 3,
-            backgroundColor: bgColor,
-            color: font,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            minHeight: 'auto',
-          }}
-        >
+    >
+      <Paper
+        elevation={8}
+        sx={{
+          width: { xs: 320, md: 380, lg: 450, xl: 520 },
+          p: { xs: 3, md: 5 },
+          borderRadius: 3,
+          backgroundColor: bgColor,
+          color: font,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          minHeight: 'auto',
+        }}
+      >
         <Typography
           className='roboto-condensed'
           variant="h5"
@@ -159,7 +164,7 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
         </Typography>
 
         <form onSubmit={handleSubmit} style={{ flexGrow: 1 }}>
-            <Stack spacing={1} sx={{ height: '100%' }}>
+          <Stack spacing={1} sx={{ height: '100%' }}>
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
               spacing={1}
@@ -267,7 +272,6 @@ const FormularioInacex = ({ image, bgColor, font, cursoSeleccionado }) => {
               select
               label="Curso de Interés"
               name="curso"
-              // value={cursoSeleccionado === '' ? form.curso : cursoSeleccionado}
               value={form.curso}
               onChange={handleChange}
               variant="outlined"
