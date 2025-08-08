@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- 🔹 SEO Básico -->
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
   <title>Inacex - Centro de Entrenamiento Minero</title>
   <meta name="description" content="Inacex - Centro de entrenamiento minero especializado en cursos de maquinaria pesada para minería y construcción. Aprende con expertos y potencia tu futuro laboral. ¡Matrículate ahora!">
   <meta name="keywords" content="inacex, cursos de minería, maquinaria pesada, capacitación minera, construcción, camión de extracción, grúa horquilla, retroexcavadora, bulldozer, motoniveladora, cargador frontal.">
   <meta name="author" content="Inacex">
   <meta name="robots" content="index, follow" />
 
-  <!-- 🔹 Open Graph (SEO redes sociales) -->
-  <meta property="og:title" content="Inacex - Centro de entrenamiento minero" />
-  <meta name="description" content="🚜 Inacex: Capacitación minera y construcción en Chile. Aprende con expertos, practica en terreno y certifícate en maquinaria pesada. ¡Inscripciones abiertas ahora!">
-  <meta property="og:image" content="./logo60x36.png" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Inacex - Centro de Entrenamiento Minero" />
+  <meta property="og:description" content="🚜 Inacex: Capacitación minera y construcción en Chile. Aprende con expertos, practica en terreno y certifícate en maquinaria pesada. ¡Inscripciones abiertas ahora!">
+  <meta property="og:image" content="https://inacexcem.cl/LogoInacexBgBlack.png" />
   <meta property="og:url" content="https://inacexcem.cl" />
   <meta property="og:type" content="website" />
 
-  <!-- 🔹 Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Inacex - Cursos de minería y construcción" />
   <meta name="twitter:description" content="Aprende maquinaria pesada con expertos en minería y construcción. Matrículate ya en Inacex." />
-  <meta name="twitter:image" content="./logo60x36.png" />
+  <meta name="twitter:image" content="https://inacexcem.cl/LogoInacexBgBlack.png" />
 
-  <!-- ✅ Favicon -->
-  <link rel="icon" type="image/png" href="./logo60x36.png" />
-
-  <!-- 🔹 Fuente optimizada -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <!-- ✅ CSS Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- ✅ Favicons -->
+  <link rel="icon" type="image/png" href="https://inacexcem.cl/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://inacexcem.cl/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="https://inacexcem.cl/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://inacexcem.cl/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Inacex" />
+  <link rel="manifest" href="https://inacexcem.cl/favicon/site.webmanifest" />
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Inacex",
+    "url": "https://inacexcem.cl",
+    "logo": "https://inacexcem.cl/LogoInacexBgBlack.png",
+    "sameAs": [
+      "https://www.facebook.com/inacexchile",
+      "https://www.instagram.com/inacexchile"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -49,21 +60,5 @@
   <!-- ✅ SDK Facebook -->
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v23.0&appId=472859312423052"></script>
-
-  <!-- ✅ Firebase Config -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyC0m3Vvs_TRTaUzeJTPIBXPyVTluwSSZFQ",
-      authDomain: "inacex-e806d.firebaseapp.com",
-      projectId: "inacex-e806d",
-      storageBucket: "inacex-e806d.firebasestorage.app",
-      messagingSenderId: "595664548662",
-      appId: "1:595664548662:web:ae3463f729c3209e0b7997"
-    };
-    
-    initializeApp(firebaseConfig);
-  </script>
 </body>
 </html>
