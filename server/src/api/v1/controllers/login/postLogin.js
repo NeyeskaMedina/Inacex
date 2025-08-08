@@ -36,8 +36,8 @@ export const postLogin = async (req, res) => {
     return res.status(200).json({
       message: 'Login exitoso',
       token,
-      role: user.role,
-      name: user.name,
+      // role: user.role,
+      // name: user.name,
     });
 
   } catch (error) {
