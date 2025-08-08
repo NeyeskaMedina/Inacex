@@ -1,0 +1,22 @@
+{
+  "name": "Inacex - Centro de entrenamiento minero.",
+  "short_name": "Inacex",
+  "description": "Capacitación minera y construcción en Chile. Aprende con expertos, practica en terreno y certifícate en maquinaria pesada.",
+  "icons": [
+    {
+      "src": "/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

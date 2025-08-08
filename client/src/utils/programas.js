@@ -403,7 +403,7 @@ maquinaria:[
                   ],
                   modulos: [
                     ['Módulo 1', 'Tipos y Fundamentos'],
-                    ['Módulo 2', 'Operación Segura de Grúa Horquilla'],
+                    ['Módulo 2', 'Operación Segura de Bulldozer'],
                     ['Módulo 3', 'El Lugar de Trabajo'],
                     ['Módulo 4', 'Introducción a la mineria'],
                   ],

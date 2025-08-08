@@ -82,46 +82,23 @@ const PrevArrow = ({ onClick }) => (
 
 const ListCourses = () => {
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    slidesToShow: 5,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        },
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 1526,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5
-        },
-      },
-    ],
-  };
+  dots: false,
+  infinite: true,
+  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  slidesToShow: 4,
+  responsive: [
+    { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    { breakpoint: 1400, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+    { breakpoint: 1700, settings: { slidesToShow: 4, slidesToScroll: 1 } },
+  ],
+};
+
 
   return (
     <Box

@@ -2,6 +2,8 @@ import axios from "axios";
 const URL = import.meta.env.VITE_URL_BACK;
 
 const postLogin = async ({ username, password }) => {
+    console.log(username, password);
+    
     try {
         const response = await axios.post(
             `${URL}/login`,
