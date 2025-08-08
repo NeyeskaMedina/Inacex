@@ -14,6 +14,7 @@ export const postLogin = async (req, res) => {
     // ✅ Buscar usuario en la base de datos
     const user = await selectUser(username);
     console.log('Usuario: ', user);
+
     
     
     if (!user) {
@@ -28,7 +29,7 @@ export const postLogin = async (req, res) => {
 
     // ✅ Generar token JWT
     const token = jwt.sign(
-      { id: user.id, name: user.username, role: user.role },
+      { id: user.id, name: user.name, role: user.name },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '1h' }
     );
@@ -36,8 +37,8 @@ export const postLogin = async (req, res) => {
     return res.status(200).json({
       message: 'Login exitoso',
       token,
-      // role: user.role,
-      // name: user.name,
+      role: user.name,
+      name: user.name,
     });
 
   } catch (error) {

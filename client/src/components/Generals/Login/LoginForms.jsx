@@ -27,6 +27,7 @@ export const LoginForms = ({ onLogin }) => {
 
   const { response, error } = await postLogin({ username: user, password });
   
+  console.log(response);
   
   if (response?.token) {
 
