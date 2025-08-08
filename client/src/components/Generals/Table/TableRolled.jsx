@@ -49,7 +49,7 @@ export default function TableRolled() {
   useEffect(() => {
     const axiosProspect = async () => {
       const { response, error } = await getRegisters();
-
+      console.log('Registros obtenidos:', response);
       if (error) {
         console.error('Error al obtener registros:', error);
         setRows([]);

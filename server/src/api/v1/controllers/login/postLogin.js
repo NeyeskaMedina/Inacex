@@ -13,7 +13,8 @@ export const postLogin = async (req, res) => {
 
     // ✅ Buscar usuario en la base de datos
     const user = await selectUser(username);
-
+    console.log('Usuario: ', user);
+    
     
     if (!user) {
       return res.status(401).json({ message: 'Usuario no encontrado' });
